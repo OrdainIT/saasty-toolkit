@@ -337,6 +337,61 @@ function od_kses($raw)
             'class' => array(),
         ),
 
+        // Allow SVG and its child tags
+        'svg' => [
+            'xmlns'         => true,
+            'xmlns:xlink'   => true,
+            'width'         => true,
+            'height'        => true,
+            'viewBox'       => true,
+            'fill'          => true,
+            'stroke'        => true,
+            'stroke-width'  => true,
+            'stroke-linecap' => true,
+            'stroke-linejoin' => true,
+        ],
+        'path' => [
+            'd'             => true,
+            'fill'          => true,
+            'stroke'        => true,
+            'stroke-width'  => true,
+            'stroke-linecap' => true,
+            'stroke-linejoin' => true,
+        ],
+        'circle' => [
+            'cx'            => true,
+            'cy'            => true,
+            'r'             => true,
+            'fill'          => true,
+            'stroke'        => true,
+            'stroke-width'  => true,
+        ],
+        'rect' => [
+            'x'             => true,
+            'y'             => true,
+            'width'         => true,
+            'height'        => true,
+            'rx'            => true,
+            'ry'            => true,
+            'fill'          => true,
+            'stroke'        => true,
+            'stroke-width'  => true,
+        ],
+        'line' => [
+            'x1'            => true,
+            'y1'            => true,
+            'x2'            => true,
+            'y2'            => true,
+            'stroke'        => true,
+            'stroke-width'  => true,
+        ],
+        'polygon' => [
+            'points'        => true,
+            'fill'          => true,
+            'stroke'        => true,
+            'stroke-width'  => true,
+        ],
+
     );
 
     if (function_exists('wp_kses')) { // Check if WP sanitization is available

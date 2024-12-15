@@ -1,69 +1,10 @@
-.it-about-style-3 .it-about-thumb-cloud-1 img,
-.it-about-style-3 .it-about-thumb-cloud-2 img {
-  max-width: 76px;
+.elementor-widget-container .it-hero-thumb img {
+  max-width: inherit;
+}
+.pg-hero-input-box button {
+  right: 83px !important;
 }
 
-.elementor-widget-container .it-hero-sub-thumb img {
-  border: 5px solid #fff;
-  border-radius: 1000px;
-  width: 270px;
-  height: 450px;
-}
-
-.elementor-widget-container .it-hero-thumb > img {
-  border: 5px solid #fff;
-  border-radius: 1000px;
-  height: 600px;
-}
-
-/* tour CSs */
-
-h3.it-discover-passenger-categories span {
-  display: block;
-  margin-top: 10px;
-}
-
-.it-work-quantity span {
-  font-size: 24px;
-  text-align: center;
-  display: inline-block;
-  color: var(--it-common-white);
-  border-radius: 50%;
-  transition: 0.3s;
-  background-color: var(--it-common-accent);
-  padding: 10px;
-  width: 50px;
-  height: 50px;
-  line-height: 30px;
-}
-
-.elementor-widget-container .it-destination-2-thumb img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.elementor-widget-container .it-instagram-thumb img {
-  border-radius: 10px;
-}
-/* Testimonial 2 thumb */
-
-.elementor-widget-container .it-testi-2-area .it-testi-2-thumb img {
-  border-radius: 170px 10px 10px 10px;
-}
-
-/* Testimonial 5 img */
-
-.elementor-widget-container .it-testi-inner-avater img {
-  border-radius: 50%;
-  border: 1px dashed var(--it-theme-1);
-}
-
-/* Team social box */
-.elementor-widget-container .it-team-social-box {
-  padding: 10px 20px !important;
-}
-
-/* Category icon box color */
-.it-categories-item:hover .it-categories-icon span {
-  background-color: #ff6525 !important;
+.dt-hero-input-box button {
+  right: 80px !important;
 }
