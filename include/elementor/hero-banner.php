@@ -113,6 +113,23 @@ class OD_Hero_Banner extends Widget_Base
         return $od_cfa;
     }
 
+    // Button func
+    private function set_button_attributes($link_type, $page_link, $custom_link, $attribute_name, $class)
+    {
+        if ('2' == $link_type) {
+            $this->add_render_attribute($attribute_name, 'href', get_permalink($page_link));
+            $this->add_render_attribute($attribute_name, 'target', '_self');
+            $this->add_render_attribute($attribute_name, 'rel', 'nofollow');
+            $this->add_render_attribute($attribute_name, 'class', $class);
+        } else {
+            if (! empty($custom_link['url'])) {
+                $this->add_link_attributes($attribute_name, $custom_link);
+                $this->add_render_attribute($attribute_name, 'class', $class);
+            }
+        }
+    }
+
+
     /**
      * Register the widget controls.
      *
@@ -143,9 +160,13 @@ class OD_Hero_Banner extends Widget_Base
         $od_hero_banner_subtitle = $settings['od_hero_banner_subtitle'];
         $od_hero_banner_description = $settings['od_hero_banner_description'];
         $od_hero_banner_btn_text = $settings['od_btn_text'];
+        $od_hero_banner_btn_text_2 = $settings['od_btn_text_2'];
         $od_btn_link_type = $settings['od_btn_link_type'];
         $od_btn_link = $settings['od_btn_link'];
         $od_btn_page_link = $settings['od_btn_page_link'];
+        $od_btn_link_type_2 = $settings['od_btn_link_type_2'];
+        $od_btn_link_2 = $settings['od_btn_link_2'];
+        $od_btn_page_link_2 = $settings['od_btn_page_link_2'];
         $od_hero_banner_video_btn_text = $settings['od_hero_banner_video_btn_text'];
         $od_hero_banner_video_btn_url = $settings['od_hero_banner_video_btn_url'];
         $od_hero_banner_thumbnail_image = $settings['od_hero_banner_thumbnail_image'];
@@ -160,6 +181,7 @@ class OD_Hero_Banner extends Widget_Base
         $od_hero_brand_title = $settings['od_hero_brand_title'];
         $od_hero_brand_slider_autoplay = $settings['od_hero_brand_slider_autoplay'];
         $od_hero_banner_shape_svg = $settings['od_hero_banner_shape_svg'];
+        $od_hero_banner_thumbnail_image_2 = $settings['od_hero_banner_thumbnail_image_2'];
 
 ?>
 
@@ -167,23 +189,187 @@ class OD_Hero_Banner extends Widget_Base
         <?php if ($settings['od_design_style']  == 'layout-9'): ?>
 
         <?php elseif ($settings['od_design_style']  == 'layout-8'): ?>
-        <?php elseif ($settings['od_design_style']  == 'layout-7'): ?>
-        <?php elseif ($settings['od_design_style']  == 'layout-6'): ?>
-        <?php elseif ($settings['od_design_style']  == 'layout-5'): ?>
-        <?php elseif ($settings['od_design_style']  == 'layout-4'):
+        <?php elseif ($settings['od_design_style']  == 'layout-7'):
 
-            // Link
-            if ('2' == $od_btn_link_type) {
-                $this->add_render_attribute('od-button-arg', 'href', get_permalink($od_btn_page_link));
-                $this->add_render_attribute('od-button-arg', 'target', '_self');
-                $this->add_render_attribute('od-button-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('od-button-arg', 'class', 'cr-btn mr-30');
-            } else {
-                if (! empty($od_btn_link['url'])) {
-                    $this->add_link_attributes('od-button-arg', $od_btn_link);
-                    $this->add_render_attribute('od-button-arg', 'class', 'cr-btn mr-30');
-                }
-            }
+            //Set attributes for Button
+            $this->set_button_attributes(
+                $od_btn_link_type,
+                $od_btn_page_link,
+                $od_btn_link,
+                'od-button-arg',
+                'cr-btn hover-2 mr-30'
+            );
+
+        ?>
+
+            <div
+                class="seo-hero-style cr-hero-area z-index-1 p-relative section-bg seo-hero-ptb"
+                style="background-image: url('<?php echo esc_url($od_hero_banner_background_image['url'], 'ordainit-toolkit'); ?>');">
+                <img
+                    class="seo-hero-shape-1 d-none d-sm-block"
+                    src="<?php echo esc_url($od_hero_banner_shape_image_1['url'], 'ordainit-toolkit'); ?>"
+                    alt="">
+                <img
+                    class="seo-hero-shape-2"
+                    src="<?php echo esc_url($od_hero_banner_shape_image_2['url'], 'ordainit-toolkit'); ?>"
+                    alt="">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="cr-hero-content text-center">
+                                <h1 class="seo-hero-title mb-10 it_text_reveal_anim"><?php echo od_kses($od_hero_banner_title, 'ordainit-toolkit'); ?></h1>
+                                <div class="seo-hero-text">
+                                    <div class="it-fade-anim" data-fade-from="bottom" data-delay=".5">
+                                        <p class="mb-25"><?php echo od_kses($od_hero_banner_description, 'ordainit-toolkit'); ?></p>
+                                    </div>
+                                    <div class="cr-hero-button flex-nowrap d-sm-flex align-items-center justify-content-center it-fade-anim" data-fade-from="bottom" data-delay=".7">
+                                        <a <?php echo $this->get_render_attribute_string('od-button-arg'); ?>>
+                                            <?php echo esc_html($od_hero_banner_btn_text, 'ordainit-toolkit'); ?>
+                                        </a>
+                                        <div class="it-hero-video d-flex align-items-center">
+                                            <a href="<?php echo esc_url($od_hero_banner_video_btn_url, 'ordainit-toolkit'); ?>" class="popup-video">
+                                                <i>
+                                                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M10 6.2265L0 0.452994L0 12L10 6.2265Z"
+                                                            fill="currentcolor" />
+                                                    </svg>
+                                                </i>
+                                            </a>
+                                            <span>
+                                                <?php echo esc_html($od_hero_banner_video_btn_text, 'ordainit-toolkit');  ?>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="seo-hero-thumb z-index-1 p-relative it-fade-anim" data-fade-from="bottom" data-delay=".7">
+                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image['url'], 'ordainit-toolkit'); ?>" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php elseif ($settings['od_design_style']  == 'layout-6'): ?>
+
+            <div
+                class="ai-hero-area ai-hero-ptb z-index-1 p-relative section-bg"
+                style="background-image: url('<?php echo esc_url($od_hero_banner_background_image['url'], 'ordainit-toolkit'); ?>');">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="ai-hero-content">
+                                <h1 class="ai-hero-title mb-20 it_text_reveal_anim"><?php echo od_kses($od_hero_banner_title, 'ordainit-toolkit'); ?></h1>
+                                <div class="it-fade-anim" data-fade-from="bottom" data-delay=".3">
+                                    <p class="mb-35"><?php echo od_kses($od_hero_banner_description, 'ordainit-toolkit'); ?></p>
+                                </div>
+                                <div class="dt-hero-input-box p-relative mb-30 it-fade-anim" data-fade-from="bottom" data-delay=".5">
+                                    <?php echo do_shortcode('[contact-form-7  id="' . $od_hero_contact_form_list . '"]'); ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 it-fade-anim" data-fade-from="right" data-delay=".5" data-ease="bounce">
+                            <div class="ai-hero-thumb-wrap z-index-1 p-relative">
+                                <div class="ai-hero-thumb text-center text-lg-end">
+                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image['url'], 'ordainit-toolkit'); ?>" alt="">
+                                </div>
+                                <div class="ai-hero-thumb-sm">
+                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_2['url'], 'ordainit-toolkit'); ?>" alt="">
+                                </div>
+                                <img
+                                    class="ai-hero-thumb-shape-1"
+                                    src="<?php echo esc_url($od_hero_banner_shape_image_1['url'], 'ordainit-toolkit'); ?>"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        <?php elseif ($settings['od_design_style']  == 'layout-5'):
+
+            // Set attributes for Button 1
+            $this->set_button_attributes(
+                $od_btn_link_type,
+                $od_btn_page_link,
+                $od_btn_link,
+                'od-button-arg',
+                'ss-btn mr-30'
+            );
+
+            // Set attributes for Button 2
+            $this->set_button_attributes(
+                $od_btn_link_type_2,
+                $od_btn_page_link_2,
+                $od_btn_link_2,
+                'od-button-arg-2',
+                ''
+            );
+
+        ?>
+
+            <div
+                class="ss-hero-area blue-bg p-relative z-index-1 fix ss-hero-ptb"
+                style="background-image: url('<?php echo esc_url($od_hero_banner_background_image['url'], 'ordainit-toolkit'); ?>');">
+                <img
+                    class="ss-hero-shape-3"
+                    src="<?php echo esc_url($od_hero_banner_shape_image_3['url'], 'ordainit-toolkit'); ?>"
+                    alt="">
+                <img
+                    class="ss-hero-shape-4"
+                    src="<?php echo esc_url($od_hero_banner_shape_image_4['url'], 'ordainit-toolkit'); ?>"
+                    alt="">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="ss-hero-content it-text-anim">
+                                <h1 class="ss-hero-title it-split-text it-split-in-right"><?php echo od_kses($od_hero_banner_title, 'ordainit-toolkit'); ?></h1>
+                                <div class="ss-hero-text">
+                                    <p class="mb-35"><?php echo od_kses($od_hero_banner_description, 'ordainit-toolkit'); ?></p>
+                                    <div class="it-hero-button d-flex align-items-center it-fade-anim" data-fade-from="top" data-ease="bounce" data-delay=".7">
+                                        <a <?php echo $this->get_render_attribute_string('od-button-arg'); ?>>
+                                            <?php echo esc_html($od_hero_banner_btn_text, 'ordainit-toolkit'); ?>
+                                        </a>
+
+                                        <div class="ss-hero-explore">
+                                            <a <?php echo $this->get_render_attribute_string('od-button-arg-2'); ?>>
+                                                <?php echo esc_html($od_hero_banner_btn_text_2, 'ordainit-toolkit'); ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 it-fade-anim" data-fade-from="right" data-delay=".5" data-ease="bounce">
+                            <div class="ss-hero-thumb-box p-relative z-index-1 text-center text-lg-end">
+                                <div class="ss-hero-thumb">
+                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image['url'], 'ordainit-toolkit'); ?>" alt="">
+                                </div>
+                                <img
+                                    class="ss-hero-shape-1"
+                                    src="<?php echo esc_url($od_hero_banner_shape_image_1['url'], 'ordainit-toolkit'); ?>"
+                                    alt="">
+                                <img
+                                    class="ss-hero-shape-2"
+                                    src="<?php echo esc_url($od_hero_banner_shape_image_2['url'], 'ordainit-toolkit'); ?>"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php elseif ($settings['od_design_style']  == 'layout-4'):
+            //Set attributes for Button
+            $this->set_button_attributes(
+                $od_btn_link_type,
+                $od_btn_page_link,
+                $od_btn_link,
+                'od-button-arg',
+                'cr-btn mr-30'
+            );
         ?>
 
             <div
@@ -359,18 +545,14 @@ class OD_Hero_Banner extends Widget_Base
 
         <?php else:
 
-            // Link
-            if ('2' == $od_btn_link_type) {
-                $this->add_render_attribute('od-button-arg', 'href', get_permalink($od_btn_page_link));
-                $this->add_render_attribute('od-button-arg', 'target', '_self');
-                $this->add_render_attribute('od-button-arg', 'rel', 'nofollow');
-                $this->add_render_attribute('od-button-arg', 'class', 'it-btn mr-30');
-            } else {
-                if (! empty($od_btn_link['url'])) {
-                    $this->add_link_attributes('od-button-arg', $od_btn_link);
-                    $this->add_render_attribute('od-button-arg', 'class', 'it-btn mr-30');
-                }
-            }
+            //Set attributes for Button
+            $this->set_button_attributes(
+                $od_btn_link_type,
+                $od_btn_page_link,
+                $od_btn_link,
+                'od-button-arg',
+                'it-btn mr-30'
+            );
         ?>
 
             <div class="it-hero-area p-relative it-hero-ptb">

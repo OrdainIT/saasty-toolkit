@@ -8,3 +8,7 @@
 .dt-hero-input-box button {
   right: 80px !important;
 }
+
+.elementor-widget-container .ss-hero-explore a {
+  text-decoration: underline;
+}
