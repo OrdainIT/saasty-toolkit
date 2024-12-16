@@ -182,13 +182,191 @@ class OD_Hero_Banner extends Widget_Base
         $od_hero_brand_slider_autoplay = $settings['od_hero_brand_slider_autoplay'];
         $od_hero_banner_shape_svg = $settings['od_hero_banner_shape_svg'];
         $od_hero_banner_thumbnail_image_2 = $settings['od_hero_banner_thumbnail_image_2'];
-
+        $od_hero_banner_thumbnail_image_3 = $settings['od_hero_banner_thumbnail_image_3'];
+        $od_hero_banner_thumbnail_image_4 = $settings['od_hero_banner_thumbnail_image_4'];
+        $od_hero_banner_thumbnail_image_5 = $settings['od_hero_banner_thumbnail_image_5'];
+        $od_hero_banner_info_lists = $settings['od_hero_banner_info_lists'];
+        $od_hero_brand_2_lists = $settings['od_hero_brand_2_lists'];
+        $od_hero_banner_info_switcher = $settings['od_hero_banner_info_switcher'];
+        $od_hero_brand_slider_switcher = $settings['od_hero_brand_slider_switcher'];
 ?>
 
 
         <?php if ($settings['od_design_style']  == 'layout-9'): ?>
 
+            <div
+                class="ag-hero-area ag-hero-ptb z-index-1 p-relative black-2-bg section-bg"
+                style="background-image: url('<?php echo esc_url($od_hero_banner_background_image['url'], 'ordainit-toolkit'); ?>');">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <div class="ag-hero-content text-center mb-110">
+                                <div class="it-fade-anim" data-fade-from="bottom" data-delay=".3">
+                                    <h1 class="ag-hero-title mb-20"><?php echo od_kses($od_hero_banner_title, 'ordainit-toolkit'); ?></h1>
+                                </div>
+                                <div class="ag-hero-text it-fade-anim" data-fade-from="bottom" data-delay=".5">
+                                    <p class="mb-40"><?php echo od_kses($od_hero_banner_description, 'ordainit-toolkit'); ?></p>
+                                </div>
+                                <div class="dt-hero-input-box p-relative it-fade-anim" data-fade-from="bottom" data-delay=".7">
+                                    <?php echo do_shortcode('[contact-form-7  id="' . $od_hero_contact_form_list . '"]'); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ag-hero-mb it-fade-anim" data-fade-from="bottom" data-delay=".7">
+                        <div class="row gx-35">
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-35">
+                                <div class="ag-hero-thumb-box it-img-anim-wrap p-relative">
+                                    <div class="ag-hero-thumb it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                        <img src="<?php echo esc_url($od_hero_banner_thumbnail_image['url'], 'ordainit-toolkit'); ?>" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12 order-1 order-lg-0 mb-35">
+                                <div class="ag-hero-thumb-box">
+                                    <div class="row gx-35">
+                                        <div class="col-12">
+                                            <div class="it-img-anim-wrap p-relative">
+                                                <div class="ag-hero-thumb mb-35 it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_2['url'], 'ordainit-toolkit'); ?>" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="it-img-anim-wrap p-relative">
+                                                <div class="ag-hero-thumb it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_3['url'], 'ordainit-toolkit'); ?>" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="it-img-anim-wrap p-relative">
+                                                <div class="ag-hero-thumb it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_4['url'], 'ordainit-toolkit'); ?>" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 order-0 order-lg-1 mb-35">
+                                <div class="ag-hero-thumb-box it-img-anim-wrap p-relative">
+                                    <div class="ag-hero-thumb it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                        <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_5['url'], 'ordainit-toolkit'); ?>" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- brand-area-start -->
+                <?php if (!empty($od_hero_brand_slider_switcher)) : ?>
+                    <div class="ss-brand-area ag-brand-ptb">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="ss-brand-wrap mb-30">
+                                        <div class="swiper-container ss-brand-active" dir="rtl">
+                                            <div class="swiper-wrapper slider-transtion d-flex align-items-center">
+                                                <?php foreach ($od_hero_brand_lists as $od_hero_brand_list):
+                                                    $brand_thumbnail = $od_hero_brand_list['od_hero_brand_list_thumbnail'];
+                                                ?>
+                                                    <div class="swiper-slide">
+                                                        <div class="ss-brand-item text-center">
+                                                            <img src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit') ?>" alt="">
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10">
+                                    <div class="ss-brand-wrap">
+                                        <div class="swiper-container ss-brand-active-2">
+                                            <div class="swiper-wrapper slider-transtion d-flex align-items-center">
+
+                                                <?php foreach ($od_hero_brand_2_lists as $od_hero_brand_2_list):
+                                                    $brand_thumbnail = $od_hero_brand_2_list['od_hero_brand_2_list_thumbnail'];
+                                                ?>
+                                                    <div class="swiper-slide">
+                                                        <div class="ss-brand-item text-center">
+                                                            <img src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit') ?>" alt="">
+                                                        </div>
+                                                    </div>
+                                                <?php endforeach; ?>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <!-- brand-area-end -->
+
+            </div>
+
+
         <?php elseif ($settings['od_design_style']  == 'layout-8'): ?>
+
+            <div
+                class="ma-hero-style cr-hero-area z-index-1 p-relative p-relative section-bg ma-hero-ptb"
+                style="background-image: url('<?php echo esc_url($od_hero_banner_background_image['url'], 'ordainit-toolkit'); ?>');">
+                <img
+                    class="ma-hero-shape-1"
+                    src="<?php echo esc_url($od_hero_banner_shape_image_1['url'], 'ordainit-toolkit'); ?>" alt="">
+                <img
+                    class="ma-hero-shape-2"
+                    src="<?php echo esc_url($od_hero_banner_shape_image_2['url'], 'ordainit-toolkit'); ?>" alt="">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-7 col-lg-7">
+                            <div class="ma-hero-content">
+                                <span class="ma-hero-subtitle mb-10 it_text_reveal_anim"><?php echo esc_html($od_hero_banner_subtitle, 'ordainit-toolkit'); ?></span>
+                                <h1 class="ma-hero-title mb-10 it_text_reveal_anim"><?php echo od_kses($od_hero_banner_title, 'ordainit-toolkit'); ?></h1>
+                                <div class="ma-hero-text it-fade-anim" data-delay=".5">
+                                    <p class="mb-35"><?php echo od_kses($od_hero_banner_description, 'ordainit-toolkit'); ?></p>
+                                </div>
+                                <div class="mb-40 d-flex flex-wrap it-fade-anim" data-delay=".7">
+                                    <?php echo do_shortcode('[contact-form-7  id="' . $od_hero_contact_form_list . '"]'); ?>
+                                </div>
+
+
+                                <?php if (!empty($od_hero_banner_info_switcher)): ?>
+                                    <div class="ma-hero-info it-fade-anim" data-delay=".9">
+
+                                        <?php foreach ($od_hero_banner_info_lists as $od_hero_banner_info_list): ?>
+                                            <span>
+                                                <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M8.39265 17.4113C8.09113 17.4113 7.78961 17.2959 7.55992 17.0662L0.345515 9.85159C-0.115172 9.39112 -0.115172 8.6466 0.345515 8.18613C0.805986 7.72566 1.55029 7.72566 2.01097 8.18613L8.39265 14.5678L21.9892 0.971513C22.4496 0.511042 23.1939 0.511042 23.6546 0.971513C24.1151 1.4322 24.1151 2.1765 23.6546 2.63719L9.22559 17.0662C8.9959 17.2959 8.69416 17.4113 8.39265 17.4113Z" fill="#1FE290" />
+                                                </svg>
+                                                <?php echo od_kses($od_hero_banner_info_list['od_hero_banner_info_list_title'], 'ordainit-toolkit'); ?>
+                                            </span>
+                                        <?php endforeach; ?>
+
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="ma-hero-thumb-box p-relative it-fade-anim" data-fade-from="right" data-delay=".5" data-ease="bounce">
+                                <div class="ma-hero-thumb">
+                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image['url'], 'ordainit-toolkit'); ?>" alt="">
+                                </div>
+                                <div class="ma-hero-thumb-sm">
+                                    <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_2['url'], 'ordainit-toolkit'); ?>" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         <?php elseif ($settings['od_design_style']  == 'layout-7'):
 
             //Set attributes for Button
@@ -507,39 +685,41 @@ class OD_Hero_Banner extends Widget_Base
                 </div>
 
                 <!-- brand-area-start -->
-                <div class="it-brand-area dt-brand-style pt-165">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="it-brand-top-box text-center mb-65">
-                                    <span><?php echo esc_html($od_hero_brand_title, 'ordainit-toolkit'); ?></span>
+                <?php if (!empty($od_hero_brand_slider_switcher)) : ?>
+                    <div class="it-brand-area dt-brand-style pt-165">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="it-brand-top-box text-center mb-65">
+                                        <span><?php echo esc_html($od_hero_brand_title, 'ordainit-toolkit'); ?></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="it-brand-wrap">
-                                    <div class="swiper-container it-brand-active">
-                                        <div class="swiper-wrapper slider-transtion">
-                                            <?php foreach ($od_hero_brand_lists as $od_hero_brand_list):
-                                                $brand_thumbnail = $od_hero_brand_list['od_hero_brand_list_thumbnail'];
-                                            ?>
-                                                <div class="swiper-slide">
-                                                    <div
-                                                        class="it-brand-item text-center text-xxl-start">
-                                                        <img
-                                                            src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit') ?>"
-                                                            alt="" />
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="it-brand-wrap">
+                                        <div class="swiper-container it-brand-active">
+                                            <div class="swiper-wrapper slider-transtion">
+                                                <?php foreach ($od_hero_brand_lists as $od_hero_brand_list):
+                                                    $brand_thumbnail = $od_hero_brand_list['od_hero_brand_list_thumbnail'];
+                                                ?>
+                                                    <div class="swiper-slide">
+                                                        <div
+                                                            class="it-brand-item text-center text-xxl-start">
+                                                            <img
+                                                                src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit') ?>"
+                                                                alt="" />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            <?php endforeach; ?>
+                                                <?php endforeach; ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                <?php endif; ?>
                 <!-- brand-area-end -->
             </div>
 
@@ -608,6 +788,7 @@ class OD_Hero_Banner extends Widget_Base
         <script>
             jQuery(document).ready(function($) {
                 const sliderAutoplay = <?php echo $od_hero_brand_slider_autoplay ? 'true' : 'false'; ?>;
+                const sliderAutoplay2 = <?php echo $od_hero_brand_slider_autoplay ? 'true' : 'false'; ?>;
 
                 // Hero Layout 2 brand slider 
                 var cr_brand_slider = new Swiper(".it-brand-active", {
@@ -620,6 +801,36 @@ class OD_Hero_Banner extends Widget_Base
                     speed: 2500,
                     autoplay: sliderAutoplay ? {
                         delay: 3000,
+                        disableOnInteraction: true,
+                    } : false,
+                });
+
+                // Hero Layout 9 brand slider-1 
+                var cr_brand_slider = new Swiper(".ss-brand-active", {
+                    loop: true,
+                    freemode: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 100,
+                    centeredSlides: true,
+                    allowTouchMove: false,
+                    speed: 2500,
+                    autoplay: sliderAutoplay2 ? {
+                        delay: 1,
+                        disableOnInteraction: true,
+                    } : false,
+                });
+
+                // Hero Layout 9 brand slider-2 
+                var cr_brand_slider = new Swiper(".ss-brand-active-2", {
+                    loop: true,
+                    freemode: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 100,
+                    centeredSlides: true,
+                    allowTouchMove: false,
+                    speed: 2500,
+                    autoplay: sliderAutoplay2 ? {
+                        delay: 1,
                         disableOnInteraction: true,
                     } : false,
                 });

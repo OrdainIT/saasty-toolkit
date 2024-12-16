@@ -37,7 +37,7 @@ $this->start_controls_section(
     [
         'label' => __('Background Image', 'ordainit-toolkit'),
         'condition' => [
-            'od_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6', 'layout-7']
+            'od_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6', 'layout-7', 'layout-8', 'layout-9']
         ],
     ]
 
@@ -84,7 +84,7 @@ $this->add_control(
         'placeholder' => esc_html__('Type subtitle here', 'ordainit-toolkit'),
         'label_block' => true,
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-8']
         ],
     ]
 );
@@ -315,7 +315,50 @@ $this->add_control(
             ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/hero/hero-6-2.jpg',
         ],
         'condition' => [
-            'od_design_style' => ['layout-6']
+            'od_design_style' => ['layout-6', 'layout-8', 'layout-9']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_thumbnail_image_3',
+    [
+        'label' => esc_html__('Choose Thumbnail Image 3', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+            'url' =>
+            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/hero/thumb-9-3.jpg',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-9']
+        ],
+    ]
+);
+$this->add_control(
+    'od_hero_banner_thumbnail_image_4',
+    [
+        'label' => esc_html__('Choose Thumbnail Image 4', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+            'url' =>
+            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/hero/thumb-9-4.jpg',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-9']
+        ],
+    ]
+);
+$this->add_control(
+    'od_hero_banner_thumbnail_image_5',
+    [
+        'label' => esc_html__('Choose Thumbnail Image 5', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+            'url' =>
+            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/hero/thumb-9-5.jpg',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-9']
         ],
     ]
 );
@@ -351,10 +394,11 @@ $this->add_control(
             ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/hero-1-3.png',
         ],
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-7']
+            'od_design_style' => ['layout-1', 'layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-7', 'layout-8']
         ],
     ]
 );
+
 $this->add_control(
     'od_hero_banner_shape_image_3',
     [
@@ -369,6 +413,7 @@ $this->add_control(
         ],
     ]
 );
+
 $this->add_control(
     'od_hero_banner_shape_image_4',
     [
@@ -422,7 +467,7 @@ $this->start_controls_section(
     [
         'label' => __('Contact Form', 'ordainit-toolkit'),
         'condition' => [
-            'od_design_style' => ['layout-2', 'layout-3', 'layout-6']
+            'od_design_style' => ['layout-2', 'layout-3', 'layout-6', 'layout-8', 'layout-9']
         ],
     ]
 );
@@ -445,7 +490,8 @@ $this->start_controls_section(
     [
         'label' => __('Brand Content', 'ordainit-toolkit'),
         'condition' => [
-            'od_design_style' => ['layout-2']
+            'od_design_style' => ['layout-2', 'layout-9'],
+            'od_hero_brand_slider_switcher' => 'yes',
         ],
     ]
 );
@@ -465,7 +511,7 @@ $this->add_control(
 $this->add_control(
     'od_hero_brand_lists',
     [
-        'label' => esc_html__('Testimonial List', 'ordainit-toolkit'),
+        'label' => esc_html__('Brand List', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::REPEATER,
         'fields' => [
             [
@@ -479,8 +525,56 @@ $this->add_control(
 
             ],
         ],
+        'default' => [
+            [
+                'od_hero_brand_list_thumbnail' => esc_url('od_hero_brand_list_thumbnail', 'ordainit-toolkit'),
+            ],
 
+        ],
         'title_field' => 'Brand',
+    ]
+);
+
+$this->end_controls_section();
+// Brand Area 2 Starts
+$this->start_controls_section(
+    'od_hero_brand_section_2',
+    [
+        'label' => __('Brand Content 2', 'ordainit-toolkit'),
+        'condition' => [
+            'od_design_style' => ['layout-9'],
+            'od_hero_brand_slider_switcher' => 'yes',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_hero_brand_2_lists',
+    [
+        'label' => esc_html__('Brand 2 List', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::REPEATER,
+        'fields' => [
+            [
+                'name' => 'od_hero_brand_2_list_thumbnail',
+                'label' => esc_html__('Choose Brand Image', 'ordainit-toolkit'),
+                'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' =>
+                    ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/brand/brand-9-6.png',
+                ],
+
+
+            ],
+        ],
+
+        'default' => [
+            [
+                'od_hero_brand_2_list_thumbnail' => esc_url('od_hero_brand_2_list_thumbnail', 'ordainit-toolkit'),
+            ],
+
+        ],
+
+        'title_field' => 'Brand_2',
     ]
 );
 
@@ -492,8 +586,20 @@ $this->start_controls_section(
     [
         'label' => __('Brand Slider Settings', 'ordainit-toolkit'),
         'condition' => [
-            'od_design_style' => ['layout-2']
+            'od_design_style' => ['layout-2', 'layout-9']
         ],
+    ]
+);
+
+$this->add_control(
+    'od_hero_brand_slider_switcher',
+    [
+        'label' => esc_html__('Show Brand Slider', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__('Show', 'ordainit-toolkit'),
+        'label_off' => esc_html__('Hide', 'ordainit-toolkit'),
+        'return_value' => 'yes',
+        'default' => 'yes',
     ]
 );
 
@@ -506,10 +612,72 @@ $this->add_control(
         'label_off' => esc_html__('Off', 'ordainit-toolkit'),
         'return_value' => 'yes',
         'default' => 'yes',
+        'condition' => [
+            'od_hero_brand_slider_switcher' => 'yes',
+        ]
     ]
 );
 
 $this->end_controls_section();
+
+// Info Section
+$this->start_controls_section(
+    'od_hero_banner_info',
+    [
+        'label' => __('Banner Info', 'ordainit-toolkit'),
+        'condition' => [
+            'od_design_style' => ['layout-8']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_info_switcher',
+    [
+        'label' => esc_html__('Show Banner Info', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__('Show', 'ordainit-toolkit'),
+        'label_off' => esc_html__('Hide', 'ordainit-toolkit'),
+        'return_value' => 'yes',
+        'default' => 'yes',
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_info_lists',
+    [
+        'label' => esc_html__('Info List', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::REPEATER,
+        'fields' => [
+            [
+                'name' => 'od_hero_banner_info_list_title',
+                'label' => esc_html__('Title', 'ordainit-toolkit'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('List Title', 'ordainit-toolkit'),
+                'label_block' => true,
+            ],
+
+        ],
+        'default' => [
+            [
+                'od_hero_banner_info_list_title' => esc_html__('Title #1', 'ordainit-toolkit'),
+            ],
+            [
+                'od_hero_banner_info_list_title' => esc_html__('Title #2', 'ordainit-toolkit'),
+            ],
+            [
+                'od_hero_banner_info_list_title' => esc_html__('Title #2', 'ordainit-toolkit'),
+            ],
+        ],
+        'title_field' => '{{{ od_hero_banner_info_list_title }}}',
+        'condition' => [
+            'od_hero_banner_info_switcher' => 'yes',
+        ],
+    ]
+);
+
+$this->end_controls_section();
+
 
 // Style Starts
 
@@ -562,6 +730,7 @@ $this->add_control(
             '{{WRAPPER}} .ss-hero-title' => 'color: {{VALUE}}',
             '{{WRAPPER}} .ai-hero-title' => 'color: {{VALUE}}',
             '{{WRAPPER}} .seo-hero-title' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ma-hero-title' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -590,7 +759,8 @@ $this->add_group_control(
             {{WRAPPER}} .cr-hero-title,
             {{WRAPPER}} .ss-hero-title,
             {{WRAPPER}} .ai-hero-title,
-            {{WRAPPER}} .seo-hero-title
+            {{WRAPPER}} .seo-hero-title,
+            {{WRAPPER}} .ma-hero-title
         ',
     ]
 );
@@ -605,9 +775,10 @@ $this->add_control(
             '{{WRAPPER}} .it-hero-subtitle' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-subtitle' => 'color: {{VALUE}}',
             '{{WRAPPER}} .cr-hero-subtitle' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ma-hero-subtitle' => 'color: {{VALUE}}',
         ],
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-8']
         ],
     ]
 );
@@ -632,10 +803,11 @@ $this->add_group_control(
         'selector' => '
             {{WRAPPER}} .it-hero-subtitle, 
             {{WRAPPER}} .pg-hero-subtitle,
-            {{WRAPPER}} .cr-hero-subtitle
+            {{WRAPPER}} .cr-hero-subtitle,
+            {{WRAPPER}} .ma-hero-subtitle
         ',
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-8']
         ],
     ]
 );
@@ -654,6 +826,7 @@ $this->add_control(
             '{{WRAPPER}} .ss-hero-text p' => 'color: {{VALUE}}',
             '{{WRAPPER}} .ai-hero-content p' => 'color: {{VALUE}}',
             '{{WRAPPER}} .seo-hero-text p' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ma-hero-text p' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -670,7 +843,8 @@ $this->add_group_control(
             {{WRAPPER}} .cr-hero-text p,
             {{WRAPPER}} .ss-hero-text p,
             {{WRAPPER}} .ai-hero-content p,
-            {{WRAPPER}} .seo-hero-text p
+            {{WRAPPER}} .seo-hero-text p,
+            {{WRAPPER}} .ma-hero-text p
         ',
     ]
 );
@@ -880,7 +1054,7 @@ $this->start_controls_section(
         'label' => __('Contact Form Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_design_style' => ['layout-2', 'layout-3', 'layout-6']
+            'od_design_style' => ['layout-2', 'layout-3', 'layout-6', 'layout-8']
         ],
     ]
 );
@@ -893,6 +1067,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .dt-hero-input-box form input' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-box form input' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ma-hero-style .pg-hero-input-box input' => 'background-color: {{VALUE}}',
         ],
     ]
 );
@@ -905,6 +1080,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .dt-hero-input-box form input:focus' => 'border-color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-box form input:focus' => 'border-color: {{VALUE}}',
+            '{{WRAPPER}} .ma-hero-style .pg-hero-input-box input:focus' => 'border-color: {{VALUE}}',
         ],
     ]
 );
@@ -918,6 +1094,7 @@ $this->add_control(
             '{{WRAPPER}} .dt-hero-input-box form input::placeholder' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-box form input::placeholder' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-icon svg path' => 'stroke: {{VALUE}}',
+            '{{WRAPPER}} .ma-hero-style .pg-hero-input-box input::placeholder' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -930,6 +1107,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .dt-hero-input-box form input' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-box form input' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ma-hero-style .pg-hero-input-box input' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -962,6 +1140,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .it-btn' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn.green-bg' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .cr-btn' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -973,6 +1152,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .it-btn' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn.green-bg' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .cr-btn' => 'background-color: {{VALUE}}',
         ],
     ]
 );
@@ -996,6 +1176,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .it-btn:hover' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn:hover' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .cr-btn:hover' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -1007,6 +1188,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .it-btn::after' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn::after' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .cr-btn::after' => 'background-color: {{VALUE}}',
         ],
     ]
 );
@@ -1020,7 +1202,11 @@ $this->add_group_control(
     [
         'label' => esc_html__('Button Typography', 'ordainit-toolkit'),
         'name' => 'od_hero_banner_contact_form_btn_typography',
-        'selector' => '{{WRAPPER}} .it-btn, {{WRAPPER}} .pg-btn',
+        'selector' => '
+        {{WRAPPER}} .it-btn, 
+        {{WRAPPER}} .pg-btn,
+        {{WRAPPER}} .cr-btn
+        ',
     ]
 );
 
@@ -1074,6 +1260,51 @@ $this->add_group_control(
         'label' => esc_html__('Button Typography', 'ordainit-toolkit'),
         'name' => 'od_hero_brand_title_typography',
         'selector' => '{{WRAPPER}} .it-brand-top-box span',
+    ]
+);
+
+$this->end_controls_section();
+
+// Banner Info Style
+$this->start_controls_section(
+    'od_hero_banner_info_style',
+    [
+        'label' => __('Banner Info Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_design_style' => ['layout-8']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_info_icon_color',
+    [
+        'label' => esc_html__('Icon Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ma-hero-info span svg path' => 'fill: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_info_title_color',
+    [
+        'label' => esc_html__('Info Title Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ma-hero-info span' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Info Title Typography', 'ordainit-toolkit'),
+        'name' => 'od_hero_banner_info_title_typography',
+        'selector' => '{{WRAPPER}} .ma-hero-info span',
     ]
 );
 
