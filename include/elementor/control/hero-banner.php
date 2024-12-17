@@ -93,7 +93,7 @@ $this->add_control(
     'od_hero_banner_description',
     [
         'label' => __('Description', 'ordainit-toolkit'),
-        'type' => Controls_Manager::TEXT,
+        'type' => Controls_Manager::TEXTAREA,
         'default' => esc_html__('OD Description', 'ordainit-toolkit'),
         'placeholder' => esc_html__('Type Description here', 'ordainit-toolkit'),
         'label_block' => true,
