@@ -202,6 +202,7 @@ class OD_Core_Plugin
 			'hero-banner',
 			'button',
 			'title-box',
+			'cta',
 		];
 	}
 

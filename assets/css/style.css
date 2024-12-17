@@ -1,6 +1,9 @@
+/* Hero Banner layout-1 Img */
 .elementor-widget-container .it-hero-thumb img {
   max-width: inherit;
 }
+
+/* Hero Banner contact from button */
 .pg-hero-input-box button {
   right: 83px !important;
 }
@@ -9,6 +12,12 @@
   right: 80px !important;
 }
 
+/* Hero Banner layout-5 */
 .elementor-widget-container .ss-hero-explore a {
   text-decoration: underline;
+}
+
+/* Cta layout-1 */
+.elementor-widget-container .it-cta-wrap {
+  margin-top: 0;
 }

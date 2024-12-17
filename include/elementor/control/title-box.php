@@ -109,22 +109,34 @@ $this->end_controls_section();
 
 
 $this->start_controls_section(
-    'od_title_box_Animation',
+    'od_title_box_animation',
     [
         'label' => __('Title Box Animation', 'ordainit-toolkit'),
     ]
 );
 
+$this->add_control(
+    'od_title_box_animation_split_in',
+    [
+        'label' => __('Title Split In', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'options' => [
+            'right' => __('Right', 'ordainit-toolkit'),
+            'left' => __('Left', 'ordainit-toolkit'),
+            'up' => __('Top', 'ordainit-toolkit'),
+            'down' => __('Bottom', 'ordainit-toolkit'),
+        ],
+        'default' => 'right',
+        'label_block' => true,
+    ]
+);
+
 $this->end_controls_section();
-
-
-
-
 
 $this->start_controls_section(
     'od_title_box_style',
     [
-        'label' => __('Heading Style', 'ordainit-toolkit'),
+        'label' => __('Title Box Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
     ]
 );
@@ -145,6 +157,25 @@ $this->add_group_control(
         'label' => esc_html__('Title Typography', 'ordainit-toolkit'),
         'name' => 'od_title_box_title_typography',
         'selector' => '{{WRAPPER}} .it-section-title',
+    ]
+);
+
+$this->add_control(
+    'od_title_box_description_color',
+    [
+        'label' => esc_html__('Description Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-section-title-box p' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Description Typography', 'ordainit-toolkit'),
+        'name' => 'od_title_box_description_typography',
+        'selector' => '{{WRAPPER}} .it-section-title-box p',
     ]
 );
 

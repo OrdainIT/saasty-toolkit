@@ -127,7 +127,9 @@ class OD_Title_Box extends Widget_Base
         $this->add_render_attribute('section_title_box_args', 'class', 'it-section-title-box it-text-anim');
         $this->add_render_attribute('section_title_box_args', 'style', 'text-align: ' . $od_heading_title_alignment . ';');
 
-        $this->add_render_attribute('heading_title_args', 'class', 'it-section-title it-split-text it-split-in-right');
+        $split_direction = !empty($settings['od_title_box_animation_split_in']) ? esc_attr($settings['od_title_box_animation_split_in']) : 'right';
+        $split_class = ' it-split-in-' . $split_direction;
+        $this->add_render_attribute('heading_title_args', 'class', 'it-section-title it-split-text' . $split_class);
 
         $link_attributes = "";
         $link_settings = $settings['od_title_box_title_link'];
