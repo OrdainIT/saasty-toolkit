@@ -688,7 +688,7 @@ $this->start_controls_section(
         'label' => __('Banner Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_design_style' => ['layout-4', 'layout-5']
+            'od_design_style' => ['layout-4', 'layout-5', 'layout-9']
         ],
     ]
 );
@@ -701,6 +701,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .cr-hero-ptb' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .blue-bg' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .black-2-bg' => 'background-color: {{VALUE}}',
         ],
 
     ]
@@ -731,6 +732,7 @@ $this->add_control(
             '{{WRAPPER}} .ai-hero-title' => 'color: {{VALUE}}',
             '{{WRAPPER}} .seo-hero-title' => 'color: {{VALUE}}',
             '{{WRAPPER}} .ma-hero-title' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-hero-title' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -747,6 +749,25 @@ $this->add_control(
         ],
     ]
 );
+
+$this->add_control(
+    'od_hero_banner_title_span_gradient',
+    [
+        'label' => esc_html__('Title Span Gradient', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::TEXTAREA,
+        'rows' => '3',
+        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'selectors' => [
+            '{{WRAPPER}} .ag-hero-title span' => 'background: {{VALUE}}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;',
+        ],
+        'label_block' => true,
+        'condition' => [
+            'od_design_style' => ['layout-9'],
+        ],
+    ]
+);
+
+
 $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
@@ -760,7 +781,8 @@ $this->add_group_control(
             {{WRAPPER}} .ss-hero-title,
             {{WRAPPER}} .ai-hero-title,
             {{WRAPPER}} .seo-hero-title,
-            {{WRAPPER}} .ma-hero-title
+            {{WRAPPER}} .ma-hero-title,
+            {{WRAPPER}} .ag-hero-title
         ',
     ]
 );
@@ -827,6 +849,7 @@ $this->add_control(
             '{{WRAPPER}} .ai-hero-content p' => 'color: {{VALUE}}',
             '{{WRAPPER}} .seo-hero-text p' => 'color: {{VALUE}}',
             '{{WRAPPER}} .ma-hero-text p' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-hero-text p' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -844,7 +867,8 @@ $this->add_group_control(
             {{WRAPPER}} .ss-hero-text p,
             {{WRAPPER}} .ai-hero-content p,
             {{WRAPPER}} .seo-hero-text p,
-            {{WRAPPER}} .ma-hero-text p
+            {{WRAPPER}} .ma-hero-text p,
+            {{WRAPPER}} .ag-hero-text p
         ',
     ]
 );
@@ -1054,7 +1078,7 @@ $this->start_controls_section(
         'label' => __('Contact Form Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_design_style' => ['layout-2', 'layout-3', 'layout-6', 'layout-8']
+            'od_design_style' => ['layout-2', 'layout-3', 'layout-6', 'layout-8', 'layout-9']
         ],
     ]
 );
@@ -1068,6 +1092,7 @@ $this->add_control(
             '{{WRAPPER}} .dt-hero-input-box form input' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-box form input' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .ma-hero-style .pg-hero-input-box input' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ag-hero-ptb .dt-hero-input-box form input' => 'background-color: {{VALUE}}',
         ],
     ]
 );
@@ -1081,6 +1106,7 @@ $this->add_control(
             '{{WRAPPER}} .dt-hero-input-box form input:focus' => 'border-color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-box form input:focus' => 'border-color: {{VALUE}}',
             '{{WRAPPER}} .ma-hero-style .pg-hero-input-box input:focus' => 'border-color: {{VALUE}}',
+            '{{WRAPPER}} .ag-hero-ptb .dt-hero-input-box form input:focus' => 'border-color: {{VALUE}}',
         ],
     ]
 );
@@ -1095,6 +1121,7 @@ $this->add_control(
             '{{WRAPPER}} .pg-hero-input-box form input::placeholder' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-icon svg path' => 'stroke: {{VALUE}}',
             '{{WRAPPER}} .ma-hero-style .pg-hero-input-box input::placeholder' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-hero-ptb .dt-hero-input-box form input::placeholder' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -1108,6 +1135,7 @@ $this->add_control(
             '{{WRAPPER}} .dt-hero-input-box form input' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-hero-input-box form input' => 'color: {{VALUE}}',
             '{{WRAPPER}} .ma-hero-style .pg-hero-input-box input' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-hero-ptb .dt-hero-input-box form input' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -1141,9 +1169,11 @@ $this->add_control(
             '{{WRAPPER}} .it-btn' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn.green-bg' => 'color: {{VALUE}}',
             '{{WRAPPER}} .cr-btn' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-btn' => 'color: {{VALUE}}',
         ],
     ]
 );
+
 $this->add_control(
     'od_hero_banner_contact_form_btn_style_normal_bgcolor',
     [
@@ -1153,6 +1183,7 @@ $this->add_control(
             '{{WRAPPER}} .it-btn' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn.green-bg' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .cr-btn' => 'background-color: {{VALUE}}',
+
         ],
     ]
 );
@@ -1177,6 +1208,7 @@ $this->add_control(
             '{{WRAPPER}} .it-btn:hover' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn:hover' => 'color: {{VALUE}}',
             '{{WRAPPER}} .cr-btn:hover' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-btn:hover' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -1196,6 +1228,28 @@ $this->add_control(
 $this->end_controls_tab();
 $this->end_controls_tabs();
 
+$this->add_control(
+    'hr_2',
+    [
+        'type' => \Elementor\Controls_Manager::DIVIDER,
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_contact_form_btn_bg_gradient',
+    [
+        'label' => esc_html__('Button BG Gradient', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::TEXTAREA,
+        'rows' => '3',
+        'description' => 'It will works only for layout-9',
+        'default' => 'linear-gradient(90deg, #0bcf77, #69d619, #69d619, #0bcf77)',
+        'selectors' => [
+            '{{WRAPPER}} .ag-btn' => 'background-image: {{VALUE}}',
+        ],
+        'label_block' => true,
+    ]
+);
+
 // Button Typography
 $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
@@ -1205,7 +1259,8 @@ $this->add_group_control(
         'selector' => '
         {{WRAPPER}} .it-btn, 
         {{WRAPPER}} .pg-btn,
-        {{WRAPPER}} .cr-btn
+        {{WRAPPER}} .cr-btn,
+        {{WRAPPER}} .ag-btn
         ',
     ]
 );
