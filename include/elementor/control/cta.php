@@ -33,7 +33,7 @@ $this->start_controls_section(
     [
         'label' => __('Background Image', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-1']
+            'od_cta_design_style' => ['layout-1', 'layout-2', 'layout-4']
         ],
     ]
 
@@ -74,10 +74,47 @@ $this->add_control(
 $this->add_control(
     'od_cta_section_description',
     [
-        'label' => __('Desvription', 'ordainit-toolkit'),
-        'type' => Controls_Manager::TEXT,
+        'label' => __('Description', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXTAREA,
         'default' => esc_html__('OD Cta Description', 'ordainit-toolkit'),
         'placeholder' => esc_html__('Type description here', 'ordainit-toolkit'),
+        'label_block' => true,
+        'condition' => [
+            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4']
+        ],
+    ]
+);
+
+$this->end_controls_section();
+
+// Cta Button Content
+$this->start_controls_section(
+    'od_cta_btn_content',
+    [
+        'label' => __('Cta Button', 'ordainit-toolkit'),
+        'condition' => [
+            'od_cta_design_style' => ['layout-2', 'layout-3']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_btn_text',
+    [
+        'label' => __('Btn Text', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXT,
+        'default' => esc_html__('Button Text', 'ordainit-toolkit'),
+        'placeholder' => esc_html__('Type btn text here', 'ordainit-toolkit'),
+        'label_block' => true,
+    ]
+);
+$this->add_control(
+    'od_cta_btn_url',
+    [
+        'label' => __('Btn Url', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXT,
+        'default' => esc_html__('#', 'ordainit-toolkit'),
+        'placeholder' => esc_html__('Type btn url here', 'ordainit-toolkit'),
         'label_block' => true,
     ]
 );
@@ -90,7 +127,7 @@ $this->start_controls_section(
     [
         'label' => __('Cta Form', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-1']
+            'od_cta_design_style' => ['layout-1', 'layout-4']
         ],
     ]
 );
@@ -107,13 +144,13 @@ $this->add_control(
 
 $this->end_controls_section();
 
-// Cta Form
+// Cta Link Content
 $this->start_controls_section(
     'od_cta_link_content',
     [
         'label' => __('Cta Link Content', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-1']
+            'od_cta_design_style' => ['layout-1', 'layout-4']
         ],
     ]
 );
@@ -149,17 +186,464 @@ $this->add_control(
     ]
 );
 
+$this->end_controls_section();
+
+// Cta Shape
+$this->start_controls_section(
+    'od_cta_shape',
+    [
+        'label' => __('Cta Shape', 'ordainit-toolkit'),
+        'condition' => [
+            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-4']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_shape_image_1',
+    [
+        'label' => esc_html__('Choose Shape Image 1', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+            'url' =>
+            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-2-1.png',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_shape_image_2',
+    [
+        'label' => esc_html__('Choose Shape Image 2', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+            'url' =>
+            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-2-2.png',
+        ],
+    ]
+);
+
 
 $this->end_controls_section();
 
+
+
+// Style Starts
+
+// CTA Title & Content Starts
 $this->start_controls_section(
-    'section_style',
+    'od_cta_style',
     [
-        'label' => __('Style', 'ordainit-toolkit'),
+        'label' => __('Cta Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_cta_design_style' => ['layout-2', 'layout-3']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_bg_color',
+    [
+        'label' => esc_html__('Cta BG Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .gray-bg' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .pg-cta-wrap' => 'background-color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->end_controls_section();
+
+// CTA Title & Content Starts
+$this->start_controls_section(
+    'od_cta_content_style',
+    [
+        'label' => __('Cta Content Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
     ]
 );
 
+$this->add_control(
+    'od_cta_title_color',
+    [
+        'label' => esc_html__('Title Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-section-title-2' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .it-section-title' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .pg-section-title' => 'color: {{VALUE}}',
+        ],
+
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Title Typography', 'ordainit-toolkit'),
+        'name' => 'od_cta_title_typography',
+        'selector' => '
+            {{WRAPPER}} .it-section-title-2, 
+            {{WRAPPER}} .it-section-title,
+            {{WRAPPER}} .pg-section-title
+        ',
+    ]
+);
+
+$this->add_control(
+    'od_cta_description_color',
+    [
+        'label' => esc_html__('Description Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-section-title-box p' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .pg-section-title-box p' => 'color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4']
+        ],
+
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Description Typography', 'ordainit-toolkit'),
+        'name' => 'od_cta_description_typography',
+        'selector' => '
+            {{WRAPPER}} .it-section-title-box p,
+            {{WRAPPER}} .pg-section-title-box p
+        ',
+        'condition' => [
+            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4']
+        ],
+    ]
+);
+
+$this->end_controls_section();
+
+
+// Contact Form Style
+$this->start_controls_section(
+    'od_cta_contact_form_style',
+    [
+        'label' => __('Contact Form Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_cta_design_style' => ['layout-1', 'layout-4']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_contact_form_bg_color',
+    [
+        'label' => esc_html__('Form Bg Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-cta-input-box form input' => 'background-color: {{VALUE}}',
+
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_contact_form_focus_color',
+    [
+        'label' => esc_html__('Focus Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-cta-input-box form input:focus' => 'border-color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_contact_form_placeholder_color',
+    [
+        'label' => esc_html__('Placeholder Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-cta-input-box form input::placeholder' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_contact_form_text_color',
+    [
+        'label' => esc_html__('Input Text Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-cta-input-box form input' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'hr',
+    [
+        'type' => \Elementor\Controls_Manager::DIVIDER,
+    ]
+);
+
+// Button
+$this->start_controls_tabs(
+    'od_cta_contact_form_style_tabs'
+);
+
+// Normal
+$this->start_controls_tab(
+    'od_cta_contact_form_btn_style_normal_tab',
+    [
+        'label' => esc_html__('Normal', 'ordainit-toolkit'),
+    ]
+);
+
+$this->add_control(
+    'od_cta_contact_form_btn_style_normal_color',
+    [
+        'label' => esc_html__('Button Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-btn' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_contact_form_btn_style_normal_bgcolor',
+    [
+        'label' => esc_html__('Button BG Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-btn' => 'background-color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->end_controls_tab();
+
+// Hover
+
+$this->start_controls_tab(
+    'od_cta_contact_form_btn_style_hover_tab',
+    [
+        'label' => esc_html__('Hover', 'ordainit-toolkit'),
+    ]
+);
+
+$this->add_control(
+    'od_cta_contact_form_btn_style_hover_color',
+    [
+        'label' => esc_html__('Button hover Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-btn:hover' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+$this->add_control(
+    'od_cta_contact_form_btn_style_hover_bgcolor',
+    [
+        'label' => esc_html__('Button Hover BG Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-btn::after' => 'background-color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->end_controls_tab();
+$this->end_controls_tabs();
+
+$this->add_control(
+    'hr_2',
+    [
+        'type' => \Elementor\Controls_Manager::DIVIDER,
+    ]
+);
+
+// Button Typography
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Button Typography', 'ordainit-toolkit'),
+        'name' => 'od_cta_contact_form_btn_typography',
+        'selector' => '{{WRAPPER}} .it-btn',
+    ]
+);
+
+$this->end_controls_section();
+
+
+
+
+// Cta Button Style
+$this->start_controls_section(
+    'od_cta_btn_style',
+    [
+        'label' => __('Button Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_cta_design_style' => ['layout-2', 'layout-3']
+        ],
+    ]
+);
+
+// Button
+$this->start_controls_tabs(
+    'od_cta_btn_style_tabs'
+);
+
+// Normal
+$this->start_controls_tab(
+    'od_cta_btn_style_normal_tab',
+    [
+        'label' => esc_html__('Normal', 'ordainit-toolkit'),
+    ]
+);
+
+$this->add_control(
+    'od_cta_btn_style_normal_color',
+    [
+        'label' => esc_html__('Button Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-btn' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .pg-btn.green-bg' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_btn_style_normal_bg_color',
+    [
+        'label' => esc_html__('Button BG Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-btn' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .pg-btn.green-bg' => 'background-color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->end_controls_tab();
+
+// Hover
+
+$this->start_controls_tab(
+    'od_cta_btn_style_hover_tab',
+    [
+        'label' => esc_html__('Hover', 'ordainit-toolkit'),
+    ]
+);
+
+$this->add_control(
+    'od_cta_btn_style_hover_color',
+    [
+        'label' => esc_html__('Button hover Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-btn:hover' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .pg-btn:hover' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+$this->add_control(
+    'od_cta_btn_style_hover_bgcolor',
+    [
+        'label' => esc_html__('Button Hover BG Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-btn::after' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .pg-btn::after' => 'background-color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->end_controls_tab();
+$this->end_controls_tabs();
+
+$this->add_control(
+    'hr_3',
+    [
+        'type' => \Elementor\Controls_Manager::DIVIDER,
+    ]
+);
+
+// Button Typography
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Button Typography', 'ordainit-toolkit'),
+        'name' => 'od_cta_btn_typography',
+        'selector' => '
+        {{WRAPPER}} .it-btn,
+        {{WRAPPER}} .pg-btn
+        ',
+    ]
+);
+
+
+$this->end_controls_section();
+
+// Cta Link Style
+$this->start_controls_section(
+    'od_cta_link_content_style',
+    [
+        'label' => __('Link Content Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_cta_design_style' => ['layout-1', 'layout-4']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_cta_link_title_color',
+    [
+        'label' => esc_html__('Title Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-cta-link a' => 'color: {{VALUE}}',
+        ],
+
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Title Typography', 'ordainit-toolkit'),
+        'name' => 'od_cta_link_title_typography',
+        'selector' => '{{WRAPPER}} .it-cta-link a',
+    ]
+);
+
+$this->add_control(
+    'od_cta_link_subtitle_color',
+    [
+        'label' => esc_html__('Title Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-cta-link a:last-child' => 'color: {{VALUE}}',
+        ],
+
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Title Typography', 'ordainit-toolkit'),
+        'name' => 'od_cta_link_subtitle_typography',
+        'selector' => '{{WRAPPER}} .it-cta-link a:last-child',
+    ]
+);
 
 
 $this->end_controls_section();

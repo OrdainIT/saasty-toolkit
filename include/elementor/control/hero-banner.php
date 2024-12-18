@@ -382,6 +382,9 @@ $this->add_control(
             'url' =>
             ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/hero-1-1.png',
         ],
+        'condition' => [
+            'od_design_style' => ['layout-1', 'layout-2', 'layout-3', 'layout-5', 'layout-6', 'layout-7', 'layout-8', 'layout-9']
+        ],
     ]
 );
 $this->add_control(
@@ -394,7 +397,7 @@ $this->add_control(
             ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/hero-1-3.png',
         ],
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-7', 'layout-8']
+            'od_design_style' => ['layout-1', 'layout-2', 'layout-3', 'layout-5', 'layout-7', 'layout-8']
         ],
     ]
 );
@@ -409,7 +412,7 @@ $this->add_control(
             ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/hero/hero-1-2.png',
         ],
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-2', 'layout-3', 'layout-4', 'layout-5']
+            'od_design_style' => ['layout-1', 'layout-2', 'layout-3', 'layout-5']
         ],
     ]
 );
