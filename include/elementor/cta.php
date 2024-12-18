@@ -143,6 +143,7 @@ class OD_Cta extends Widget_Base
         $od_cta_design_style = $settings['od_cta_design_style'];
         $od_cta_background_image = $settings['od_cta_background_image'];
         $od_cta_section_title = $settings['od_cta_section_title'];
+        $od_cta_section_subtitle = $settings['od_cta_section_subtitle'];
         $od_cta_section_description = $settings['od_cta_section_description'];
         $od_cta_form_list = $settings['od_cta_form_list'];
         $od_cta_link_title = $settings['od_cta_link_title'];
@@ -150,12 +151,135 @@ class OD_Cta extends Widget_Base
         $od_cta_link_url = $settings['od_cta_link_url'];
         $od_cta_shape_image_1 = $settings['od_cta_shape_image_1'];
         $od_cta_shape_image_2 = $settings['od_cta_shape_image_2'];
+        $od_cta_shape_image_3 = $settings['od_cta_shape_image_3'];
+        $od_cta_shape_image_4 = $settings['od_cta_shape_image_4'];
         $od_cta_btn_text = $settings['od_cta_btn_text'];
         $od_cta_btn_url = $settings['od_cta_btn_url'];
+        $od_cta_btn_2_text = $settings['od_cta_btn_2_text'];
+        $od_cta_btn_2_url = $settings['od_cta_btn_2_url'];
+        $od_cta_info_switcher = $settings['od_cta_info_switcher'];
+        $od_cta_info_lists = $settings['od_cta_info_lists'];
 ?>
 
 
-        <?php if ($settings['od_cta_design_style']  == 'layout-5'): ?>
+        <?php if ($settings['od_cta_design_style']  == 'layout-7'): ?>
+
+        <?php elseif ($settings['od_cta_design_style']  == 'layout-6'): ?>
+
+            <div class="it-cta-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div
+                                class="ai-cta-wrap it-cta-wrap z-index-3 fix p-relative text-center section-bg"
+                                style="background-image: url('<?php echo esc_url($od_cta_background_image['url'], 'ordainit-toolkit'); ?>');">
+                                <img
+                                    class="ai-cta-shape-1 d-none d-lg-block"
+                                    src="<?php echo esc_url($od_cta_shape_image_1['url'], 'ordainit-toolkit'); ?>"
+                                    alt="" />
+                                <img
+                                    class="ai-cta-shape-2 d-none d-lg-block"
+                                    src="<?php echo esc_url($od_cta_shape_image_2['url'], 'ordainit-toolkit'); ?>"
+                                    alt="" />
+                                <div class="it-section-title-box mb-30">
+                                    <span class="it-section-subtitle d-block mb-10">
+                                        <?php echo esc_html($od_cta_section_subtitle, 'ordainit-toolkit'); ?>
+                                    </span>
+                                    <h4 class="it-section-title-2 mb-15">
+                                        <?php echo od_kses($od_cta_section_title, 'ordainit-toolkit'); ?>
+                                    </h4>
+                                    <p>
+                                        <?php echo od_kses($od_cta_section_description, 'ordainit-toolkit'); ?>
+                                    </p>
+                                </div>
+                                <a class="it-btn white-bg mb-40"
+                                    href="<?php echo esc_url($od_cta_btn_url, 'ordainit-toolkit'); ?>">
+                                    <?php echo esc_html($od_cta_btn_text, 'ordainit-toolkit'); ?>
+                                </a>
+
+                                <?php if (!empty($od_cta_info_switcher)): ?>
+                                    <div class="it-cta-info">
+                                        <?php foreach ($od_cta_info_lists as $od_cta_info_list): ?>
+                                            <span>
+                                                <svg
+                                                    width="25"
+                                                    height="26"
+                                                    viewBox="0 0 25 26"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <circle
+                                                        opacity="0.2"
+                                                        cx="12.5"
+                                                        cy="12.5654"
+                                                        r="12.5"
+                                                        fill="white" />
+                                                    <circle cx="13" cy="13.0654" r="3" fill="white" />
+                                                </svg>
+                                                <?php echo esc_html($od_cta_info_list['od_cta_info_list_title'], 'ordainit-toolkit'); ?>
+                                            </span>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php elseif ($settings['od_cta_design_style']  == 'layout-5'): ?>
+
+            <div
+                class="ss-cta-area ss-cta-ptb z-index-1 p-relative blue-bg"
+                style="background-image: url('<?php echo esc_url($od_cta_background_image['url'], 'ordainit-toolkit'); ?>');">
+                <img
+                    class="ss-cta-shape-1 zoom-anim"
+                    src="<?php echo esc_url($od_cta_shape_image_1['url'], 'ordainit-toolkit'); ?>"
+                    alt="" />
+                <img
+                    class="ss-cta-shape-2 zoom-anim"
+                    src="<?php echo esc_url($od_cta_shape_image_2['url'], 'ordainit-toolkit'); ?>"
+                    alt="" />
+                <img
+                    class="ss-cta-shape-3 zoom-anim"
+                    src="<?php echo esc_url($od_cta_shape_image_3['url'], 'ordainit-toolkit'); ?>"
+                    alt="" />
+                <img
+                    class="ss-cta-shape-4 zoom-anim"
+                    src="<?php echo esc_url($od_cta_shape_image_4['url'], 'ordainit-toolkit'); ?>"
+                    alt="" />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="ss-cta-content text-center">
+                                <h4 class="ss-cta-title it_text_reveal_anim">
+                                    <?php echo od_kses($od_cta_section_title, 'ordainit-toolkit'); ?>
+                                </h4>
+                                <div
+                                    class="d-inline-block it-fade-anim"
+                                    data-fade-from="top"
+                                    data-ease="bounce"
+                                    data-delay=".5">
+                                    <a class="ss-btn mr-30"
+                                        href="<?php echo esc_url($od_cta_btn_url, 'ordainit-toolkit'); ?>">
+                                        <?php echo esc_html($od_cta_btn_text, 'ordainit-toolkit'); ?>
+                                    </a>
+                                </div>
+                                <div
+                                    class="d-inline-block it-fade-anim"
+                                    data-fade-from="top"
+                                    data-ease="bounce"
+                                    data-delay=".7">
+                                    <a
+                                        class="ss-btn border-btn"
+                                        href="<?php echo esc_url($od_cta_btn_2_url, 'ordainit-toolkit'); ?>">
+                                        <?php echo esc_html($od_cta_btn_2_text, 'ordainit-toolkit'); ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <?php elseif ($settings['od_cta_design_style']  == 'layout-4'): ?>
 
@@ -184,7 +308,7 @@ class OD_Cta extends Widget_Base
                                         class="it-fade-anim"
                                         data-fade-from="bottom"
                                         data-delay=".5">
-                                        <p class="text-black pb-15">
+                                        <p class="pb-15">
                                             <?php echo od_kses($od_cta_section_description, 'ordainit-toolkit'); ?>
                                         </p>
                                     </div>
