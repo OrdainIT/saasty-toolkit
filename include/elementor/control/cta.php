@@ -22,6 +22,7 @@ $this->add_control(
             'layout-5' => esc_html__('Layout 5', 'ordainit-toolkit'),
             'layout-6' => esc_html__('Layout 6', 'ordainit-toolkit'),
             'layout-7' => esc_html__('Layout 7', 'ordainit-toolkit'),
+            'layout-8' => esc_html__('Layout 8', 'ordainit-toolkit'),
         ],
         'default' => 'layout-1',
     ]
@@ -35,10 +36,9 @@ $this->start_controls_section(
     [
         'label' => __('Background Image', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-2', 'layout-4', 'layout-5', 'layout-6']
+            'od_cta_design_style' => ['layout-1', 'layout-2', 'layout-4', 'layout-5', 'layout-6', 'layout-7']
         ],
     ]
-
 );
 
 $this->add_control(
@@ -109,7 +109,7 @@ $this->start_controls_section(
     [
         'label' => __('Cta Button', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-5', 'layout-6']
+            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-5', 'layout-6', 'layout-7', 'layout-8']
         ],
     ]
 );
@@ -244,7 +244,7 @@ $this->start_controls_section(
     [
         'label' => __('Cta Shape', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6']
+            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6', 'layout-7', 'layout-8']
         ],
     ]
 );
@@ -278,7 +278,7 @@ $this->add_control(
     [
         'label' => esc_html__('Choose Shape Image 3', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
-        'description' => 'It will works only for layout-5',
+        'description' => 'It will works only for layout-5 & layout-8',
         'default' => [
             'url' =>
             ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-5-4.png',
@@ -373,7 +373,7 @@ $this->start_controls_section(
         'label' => __('Cta Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-5']
+            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-5', 'layout-8']
         ],
     ]
 );
@@ -387,7 +387,37 @@ $this->add_control(
             '{{WRAPPER}} .gray-bg' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .pg-cta-wrap' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .blue-bg' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .black-2-bg' => 'background-color: {{VALUE}}',
         ],
+    ]
+);
+
+$this->end_controls_section();
+
+// CTA Wrap style Starts
+$this->start_controls_section(
+    'od_cta_wrap_style',
+    [
+        'label' => __('Cta Wrap Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_cta_design_style' => ['layout-8']
+        ],
+    ]
+);
+
+
+$this->add_control(
+    'od_cta_wrap_bg_gradient',
+    [
+        'label' => esc_html__('Cta Wrap BG Gradient', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::TEXTAREA,
+        'rows' => '3',
+        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'selectors' => [
+            '{{WRAPPER}} .ag-cta-style .ai-cta-wrap' => 'background: {{VALUE}}',
+        ],
+        'label_block' => true,
     ]
 );
 
@@ -413,6 +443,7 @@ $this->add_control(
             '{{WRAPPER}} .pg-section-title' => 'color: {{VALUE}}',
             '{{WRAPPER}} .cr-section-title' => 'color: {{VALUE}}',
             '{{WRAPPER}} .ss-cta-title' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-section-title' => 'color: {{VALUE}}',
         ],
 
     ]
@@ -428,7 +459,8 @@ $this->add_group_control(
             {{WRAPPER}} .it-section-title,
             {{WRAPPER}} .pg-section-title,
             {{WRAPPER}} .cr-section-title,
-            {{WRAPPER}} .ss-cta-title
+            {{WRAPPER}} .ss-cta-title,
+            {{WRAPPER}} .ag-section-title
         ',
     ]
 );
@@ -659,7 +691,7 @@ $this->start_controls_section(
         'label' => __('Button Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-5', 'layout-6']
+            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-5', 'layout-6', 'layout-7', 'layout-8']
         ],
     ]
 );
@@ -687,6 +719,8 @@ $this->add_control(
             '{{WRAPPER}} .pg-btn.green-bg' => 'color: {{VALUE}}',
             '{{WRAPPER}} .ss-btn' => 'color: {{VALUE}}',
             '{{WRAPPER}} .it-btn.white-bg' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .cr-btn' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-btn.white-bg' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -701,6 +735,8 @@ $this->add_control(
             '{{WRAPPER}} .pg-btn.green-bg' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .ss-btn' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .it-btn.white-bg' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .cr-btn' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ag-btn.white-bg' => 'background-color: {{VALUE}}',
         ],
     ]
 );
@@ -725,6 +761,8 @@ $this->add_control(
             '{{WRAPPER}} .it-btn:hover' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn:hover' => 'color: {{VALUE}}',
             '{{WRAPPER}} .ss-btn:hover' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .cr-btn:hover' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-btn:hover' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -737,6 +775,8 @@ $this->add_control(
             '{{WRAPPER}} .it-btn::after' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .pg-btn::after' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .ss-btn::after' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .cr-btn::after' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ag-btn::after' => 'background-color: {{VALUE}}',
         ],
     ]
 );
@@ -760,7 +800,9 @@ $this->add_group_control(
         'selector' => '
         {{WRAPPER}} .it-btn,
         {{WRAPPER}} .pg-btn,
-        {{WRAPPER}} .ss-btn
+        {{WRAPPER}} .ss-btn,
+        {{WRAPPER}} .cr-btn,
+        {{WRAPPER}} .ag-btn
         ',
     ]
 );
