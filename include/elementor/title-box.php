@@ -122,6 +122,7 @@ class OD_Title_Box extends Widget_Base
         $od_heading_title = $settings['od_title_box_title'];
         $od_heading_description = $settings['od_title_box_description'];
         $od_heading_title_alignment = $settings['od_title_box_alignment'];
+        $od_title_box_description_show = $settings['od_title_box_description_show'];
 
         // Add render attribute for the parent div alignment
         $this->add_render_attribute('section_title_box_args', 'class', 'it-section-title-box it-text-anim');
@@ -160,8 +161,9 @@ class OD_Title_Box extends Widget_Base
 
             echo "<{$heading_tag} {$heading_attributes}>{$heading_content}</{$heading_tag}>";
             ?>
-
-            <p><?php echo od_kses($od_heading_description, 'ordainit-toolkit'); ?></p>
+            <?php if (!empty($od_title_box_description_show)): ?>
+                <p><?php echo od_kses($od_heading_description, 'ordainit-toolkit'); ?></p>
+            <?php endif; ?>
         </div>
 
 

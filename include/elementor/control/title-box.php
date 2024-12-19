@@ -34,6 +34,14 @@ $this->add_control(
 );
 
 $this->add_control(
+    'hr',
+    [
+        'type' => \Elementor\Controls_Manager::DIVIDER,
+    ]
+);
+
+
+$this->add_control(
     'od_title_box_title_tag',
     [
         'label' => esc_html__('Title HTML Tag', 'tvcore'),
@@ -95,6 +103,25 @@ $this->add_control(
 );
 
 $this->add_control(
+    'hr_2',
+    [
+        'type' => \Elementor\Controls_Manager::DIVIDER,
+    ]
+);
+
+$this->add_control(
+    'od_title_box_description_show',
+    [
+        'label' => esc_html__('Show Description', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__('Show', 'ordainit-toolkit'),
+        'label_off' => esc_html__('Hide', 'ordainit-toolkit'),
+        'return_value' => 'yes',
+        'default' => 'yes',
+    ]
+);
+
+$this->add_control(
     'od_title_box_description',
     [
         'label' => __('Description', 'ordainit-toolkit'),
@@ -102,10 +129,14 @@ $this->add_control(
         'default' => esc_html__('OD Description', 'ordainit-toolkit'),
         'placeholder' => esc_html__('Type description here', 'ordainit-toolkit'),
         'label_block' => true,
+        'condition' => [
+            'od_title_box_description_show' => 'yes',
+        ]
     ]
 );
 
 $this->end_controls_section();
+
 
 
 $this->start_controls_section(
@@ -133,10 +164,11 @@ $this->add_control(
 
 $this->end_controls_section();
 
+// Style Starts
 $this->start_controls_section(
-    'od_title_box_style',
+    'od_title_box_titel_style',
     [
-        'label' => __('Title Box Style', 'ordainit-toolkit'),
+        'label' => __('Title Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
     ]
 );
@@ -161,6 +193,45 @@ $this->add_group_control(
 );
 
 $this->add_control(
+    'od_title_box_title_margin',
+    [
+        'label' => esc_html__('Title Margin', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .it-section-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_title_box_title_padding',
+    [
+        'label' => esc_html__('Title Padding', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .it-section-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
+
+$this->end_controls_section();
+
+// Description Style Starts
+$this->start_controls_section(
+    'od_title_box_description_style',
+    [
+        'label' => __('Description Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_title_box_description_show' => 'yes',
+        ]
+    ]
+);
+
+// Description style
+$this->add_control(
     'od_title_box_description_color',
     [
         'label' => esc_html__('Description Color', 'ordainit-toolkit'),
@@ -179,5 +250,28 @@ $this->add_group_control(
     ]
 );
 
+$this->add_control(
+    'od_title_box_description_margin',
+    [
+        'label' => esc_html__('Description Margin', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .it-section-title-box p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_title_box_description_padding',
+    [
+        'label' => esc_html__('Description Padding', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .it-section-title-box p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
 
 $this->end_controls_section();

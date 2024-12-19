@@ -203,6 +203,7 @@ class OD_Core_Plugin
 			'button',
 			'title-box',
 			'cta',
+			'brand-slider',
 		];
 	}
 
