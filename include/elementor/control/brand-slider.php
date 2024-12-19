@@ -69,9 +69,6 @@ $this->start_controls_section(
     'od_brand_section',
     [
         'label' => __('Brand Content', 'ordainit-toolkit'),
-        'condition' => [
-            'od_design_style' => ['layout-1', 'layout-2'],
-        ],
     ]
 );
 
@@ -151,7 +148,7 @@ $this->end_controls_section();
 
 // Brand Slider settings
 $this->start_controls_section(
-    'od_brand_settings',
+    'od_brand_slider_settings',
     [
         'label' => __('Brand Slider Settings', 'ordainit-toolkit'),
     ]
@@ -178,9 +175,6 @@ $this->start_controls_section(
     [
         'label' => __('Brand Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
-        'condition' => [
-            'od_design_style' => ['layout-1']
-        ],
     ]
 );
 
@@ -191,9 +185,24 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .gray-bg' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .blue-bg' => 'background-color: {{VALUE}}',
         ],
     ]
 );
+
+$this->add_control(
+    'od_brand_padding',
+    [
+        'label' => esc_html__('Brand Padding', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .it-brand-ptb' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ss-brand-ptb' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
+
 
 $this->end_controls_section();
 

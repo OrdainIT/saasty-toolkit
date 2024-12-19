@@ -204,6 +204,7 @@ class OD_Core_Plugin
 			'title-box',
 			'cta',
 			'brand-slider',
+			'brand-slider-full',
 		];
 	}
 

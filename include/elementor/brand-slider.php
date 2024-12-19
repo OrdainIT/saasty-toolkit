@@ -123,11 +123,95 @@ class OD_Brand_Slider extends Widget_Base
         $od_brand_title = $settings['od_brand_title'];
         $od_brand_slider_autoplay = $settings['od_brand_slider_autoplay'];
         $od_brand_title_show = $settings['od_brand_title_show'];
+        $od_brand_2_lists = $settings['od_brand_2_lists'];
 ?>
 
         <?php if ($settings['od_design_style']  == 'layout-3'): ?>
 
+            <div class="ma-brand-style ss-brand-area gray-bg ss-brand-ptb">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="ss-brand-wrap mb-30">
+                                <div class="swiper-container ss-brand-active" dir="rtl">
+                                    <div class="swiper-wrapper slider-transtion d-flex align-items-center">
+
+                                        <?php foreach ($od_brand_lists as $od_brand_list):
+                                            $brand_thumbnail = $od_brand_list['od_brand_list_thumbnail'];
+                                        ?>
+                                            <div class="swiper-slide">
+                                                <div
+                                                    class="ss-brand-item text-center">
+                                                    <img
+                                                        src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit') ?>"
+                                                        alt="" />
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="ss-brand-wrap">
+                                <div class="swiper-container ss-brand-active-2">
+                                    <div class="swiper-wrapper slider-transtion d-flex align-items-center">
+
+                                        <?php foreach ($od_brand_2_lists as $od_brand_2_list):
+                                            $brand_thumbnail = $od_brand_2_list['od_brand_2_list_thumbnail'];
+                                        ?>
+                                            <div class="swiper-slide">
+                                                <div
+                                                    class="ss-brand-item text-center">
+                                                    <img
+                                                        src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit') ?>"
+                                                        alt="" />
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         <?php elseif ($settings['od_design_style']  == 'layout-2'): ?>
+
+            <div class="ss-brand-area ss-brand-ptb blue-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="ss-brand-wrap">
+                                <div class="swiper-container ss-brand-active">
+                                    <div
+                                        class="swiper-wrapper slider-transtion d-flex align-items-center">
+
+                                        <?php foreach ($od_brand_lists as $od_brand_list):
+                                            $brand_thumbnail = $od_brand_list['od_brand_list_thumbnail'];
+                                        ?>
+                                            <div class="swiper-slide">
+                                                <div
+                                                    class="ss-brand-item text-center">
+                                                    <img
+                                                        src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit') ?>"
+                                                        alt="" />
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <?php else: ?>
             <div class="it-brand-area it-brand-ptb gray-bg">
@@ -173,7 +257,10 @@ class OD_Brand_Slider extends Widget_Base
             jQuery(document).ready(function($) {
 
                 const sliderAutoplay = <?php echo $od_brand_slider_autoplay ? 'true' : 'false'; ?>;
+                const sliderAutoplay2 = <?php echo $od_brand_slider_autoplay ? 'true' : 'false'; ?>;
+                const sliderAutoplay3 = <?php echo $od_brand_slider_autoplay ? 'true' : 'false'; ?>;
 
+                // Layout-1
                 var cr_brand_slider = new Swiper(".it-brand-active", {
                     loop: true,
                     freemode: true,
@@ -183,6 +270,36 @@ class OD_Brand_Slider extends Widget_Base
                     allowTouchMove: false,
                     speed: 2500,
                     autoplay: sliderAutoplay ? {
+                        delay: 3000,
+                        disableOnInteraction: true,
+                    } : false,
+                });
+
+                // Layout 2
+                var cr_brand_slider = new Swiper(".ss-brand-active", {
+                    loop: true,
+                    freemode: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 100,
+                    centeredSlides: true,
+                    allowTouchMove: false,
+                    speed: 2500,
+                    autoplay: sliderAutoplay2 ? {
+                        delay: 3000,
+                        disableOnInteraction: true,
+                    } : false,
+                });
+
+                // layout -3
+                var cr_brand_slider = new Swiper(".ss-brand-active-2", {
+                    loop: true,
+                    freemode: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 100,
+                    centeredSlides: true,
+                    allowTouchMove: false,
+                    speed: 2500,
+                    autoplay: sliderAutoplay3 ? {
                         delay: 3000,
                         disableOnInteraction: true,
                     } : false,
