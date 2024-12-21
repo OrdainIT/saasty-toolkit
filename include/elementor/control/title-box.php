@@ -110,6 +110,39 @@ $this->add_control(
 );
 
 $this->add_control(
+    'od_title_box_subtitle_show',
+    [
+        'label' => esc_html__('Show Subtitle', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SWITCHER,
+        'label_on' => esc_html__('Show', 'ordainit-toolkit'),
+        'label_off' => esc_html__('Hide', 'ordainit-toolkit'),
+        'return_value' => 'yes',
+        'default' => 'yes',
+    ]
+);
+
+$this->add_control(
+    'od_title_box_subtitle',
+    [
+        'label' => __('Heading Subtitle', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXT,
+        'default' => esc_html__('OD Heading Subtitle', 'ordainit-toolkit'),
+        'placeholder' => esc_html__('Type subtitle here', 'ordainit-toolkit'),
+        'label_block' => true,
+        'condition' => [
+            'od_title_box_subtitle_show' => 'yes',
+        ]
+    ]
+);
+
+$this->add_control(
+    'hr_3',
+    [
+        'type' => \Elementor\Controls_Manager::DIVIDER,
+    ]
+);
+
+$this->add_control(
     'od_title_box_description_show',
     [
         'label' => esc_html__('Show Description', 'ordainit-toolkit'),
@@ -138,7 +171,7 @@ $this->add_control(
 $this->end_controls_section();
 
 
-
+// Title Box Animation
 $this->start_controls_section(
     'od_title_box_animation',
     [
