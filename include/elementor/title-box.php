@@ -125,6 +125,9 @@ class OD_Title_Box extends Widget_Base
         $od_title_box_description_show = $settings['od_title_box_description_show'];
         $od_title_box_subtitle_show = $settings['od_title_box_subtitle_show'];
         $od_heading_subtitle = $settings['od_title_box_subtitle'];
+        $od_title_box_subtitle_anim = $settings['od_title_box_subtitle_anim'];
+        $od_title_box_subtitle_fade_from = $settings['od_title_box_subtitle_fade_from'];
+        $od_title_box_subtitle_data_delay = $settings['od_title_box_subtitle_data_delay'];
 
         // Add render attribute for the parent div alignment
         $this->add_render_attribute('section_title_box_args', 'class', 'it-section-title-box it-text-anim');
@@ -152,8 +155,14 @@ class OD_Title_Box extends Widget_Base
 
         <div <?php echo $this->get_render_attribute_string('section_title_box_args'); ?>>
 
-            <?php if (!empty($od_title_box_description_show)): ?>
-                <span class="dt-section-subtitle it_text_reveal_anim"><?php echo esc_html($od_heading_subtitle, 'ordainit-toolkit'); ?></span>
+            <?php if (!empty($od_title_box_subtitle_show)): ?>
+                <span
+                    class="seo-section-subtitle <?php echo esc_attr($od_title_box_subtitle_anim, 'ordainit-toolkit') ?>"
+                    <?php if (!empty($od_title_box_subtitle_fade_from)): ?>data-fade-from="<?php echo esc_attr($od_title_box_subtitle_fade_from); ?>" <?php endif; ?>
+
+                    <?php if (!empty($od_title_box_subtitle_data_delay)): ?>data-delay="<?php echo esc_attr($od_title_box_subtitle_data_delay); ?>" <?php endif; ?>>
+                    <?php echo esc_html($od_heading_subtitle, 'ordainit-toolkit'); ?>
+                </span>
             <?php endif; ?>
 
             <?php

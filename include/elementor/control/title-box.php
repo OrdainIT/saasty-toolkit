@@ -195,6 +195,72 @@ $this->add_control(
     ]
 );
 
+$this->add_control(
+    'od_title_box_subtitle_anim_heading',
+    [
+        'label' => esc_html__('Subtitle Animation', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::HEADING,
+        'separator' => 'before',
+        'condition' => [
+            'od_title_box_subtitle_show' => 'yes',
+        ]
+    ]
+);
+
+// Subtitle 
+$this->add_control(
+    'od_title_box_subtitle_anim',
+    [
+        'label' => __('Subtitle Anim', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'options' => [
+            'it-fade-anim' => __('Fade', 'ordainit-toolkit'),
+            'it_text_reveal_anim' => __('Reveal', 'ordainit-toolkit'),
+        ],
+        'default' => 'it-fade-anim',
+        'label_block' => true,
+        'condition' => [
+            'od_title_box_subtitle_show' => 'yes',
+        ]
+    ]
+);
+
+
+$this->add_control(
+    'od_title_box_subtitle_fade_from',
+    [
+        'label' => __('Data Fade From', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'options' => [
+            'right' => __('Right', 'ordainit-toolkit'),
+            'left' => __('Left', 'ordainit-toolkit'),
+            'top' => __('Top', 'ordainit-toolkit'),
+            'bottom' => __('Bottom', 'ordainit-toolkit'),
+        ],
+        'default' => 'top',
+        'label_block' => true,
+        'condition' => [
+            'od_title_box_subtitle_anim' => 'it-fade-anim',
+            'od_title_box_subtitle_show' => 'yes',
+        ]
+    ]
+);
+
+$this->add_control(
+    'od_title_box_subtitle_data_delay',
+    [
+        'label' => __('Data Delay', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXT,
+        'default' => esc_html__('.3', 'ordainit-toolkit'),
+        'placeholder' => esc_html__('Type delay in s here', 'ordainit-toolkit'),
+        'label_block' => true,
+        'condition' => [
+            'od_title_box_subtitle_anim' => 'it-fade-anim',
+            'od_title_box_subtitle_show' => 'yes',
+        ]
+    ]
+);
+
 $this->end_controls_section();
 
 // Style Starts
@@ -248,6 +314,88 @@ $this->add_control(
         ],
     ]
 );
+
+$this->end_controls_section();
+
+
+// Subtitle Style Starts
+$this->start_controls_section(
+    'od_title_box_subtitle_style',
+    [
+        'label' => __('Subtitle Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_title_box_subtitle_show' => 'yes',
+        ]
+    ]
+);
+
+$this->add_control(
+    'od_title_box_subtitle_color',
+    [
+        'label' => esc_html__('Subtitle Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .seo-section-subtitle' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_title_box_subtitle_bg_color',
+    [
+        'label' => esc_html__('Subtitle BG Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .seo-section-subtitle' => 'background-color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_title_box_subtitle_border_color',
+    [
+        'label' => esc_html__('Subtitle Border Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .seo-section-subtitle' => 'border-color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Subtitle Typography', 'ordainit-toolkit'),
+        'name' => 'od_title_box_subtitle_typography',
+        'selector' => '{{WRAPPER}} .seo-section-subtitle',
+    ]
+);
+
+$this->add_control(
+    'od_title_box_subtitle_margin',
+    [
+        'label' => esc_html__('Subtitle Margin', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .seo-section-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_title_box_subtitle_padding',
+    [
+        'label' => esc_html__('Subtitle Padding', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .seo-section-subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
+
 
 $this->end_controls_section();
 
