@@ -636,6 +636,23 @@ if (!function_exists('etn_after_single_event_meta_add_to_calendar')) {
 }
 
 
+// Function to get all categories
+function od_get_all_categories()
+{
+    $categories = get_categories([
+        'hide_empty' => false,
+    ]);
+
+    $category_options = [];
+    foreach ($categories as $category) {
+        $category_options[$category->term_id] = $category->name;
+    }
+
+    return $category_options;
+}
+
+
+
 
 
 
