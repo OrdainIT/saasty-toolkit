@@ -324,10 +324,21 @@ $this->add_control(
         'label' => esc_html__('Sub Title Color', 'textdomain'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .it-section-title-box p' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-section-subtitle' => 'color: {{VALUE}}',
         ],
         'condition' => [
-            'od_design_style' => ['layout-1'],
+            'od_design_style' => ['layout-2'],
+        ],
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'name' => 'od_blog_section_subtitle_typo',
+        'selector' => '{{WRAPPER}} .ss-section-subtitle',
+        'condition' => [
+            'od_design_style' => ['layout-2'],
         ],
     ]
 );
@@ -377,6 +388,22 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .it-blog-item' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ss-blog-item' => 'background-color: {{VALUE}}',
+        ],
+    ]
+);
+
+
+$this->add_control(
+    'od_blog_post_bg_hover_color',
+    [
+        'label' => esc_html__('BG Hover Color', 'textdomain'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ss-blog-item:hover' => 'background-color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-1'],
         ],
     ]
 );
@@ -409,6 +436,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .it-blog-title' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-blog-title' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -433,6 +461,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .it-blog-title .title-hover:hover' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-blog-title:hover' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -446,7 +475,7 @@ $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
         'name' => 'od_blog_post_title_typo',
-        'selector' => '{{WRAPPER}} .it-blog-title',
+        'selector' => '{{WRAPPER}} .it-blog-title, {{WRAPPER}}  .ss-blog-title',
     ]
 );
 
@@ -459,6 +488,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .it-blog-content p' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-blog-content p' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -468,7 +498,7 @@ $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
         'name' => 'od_blog_post_description_typo',
-        'selector' => '{{WRAPPER}} .it-blog-content p',
+        'selector' => '{{WRAPPER}} .it-blog-content p, {{WRAPPER}} .ss-blog-content p',
     ]
 );
 
@@ -494,12 +524,27 @@ $this->start_controls_tab(
 );
 
 $this->add_control(
+    'od_blog_post_btn__nromal_bg_color',
+    [
+        'label' => esc_html__('BG Color', 'textdomain'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ss-btn' => 'background-color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-2'],
+        ],
+    ]
+);
+
+$this->add_control(
     'od_blog_post_btn__nromal_color',
     [
         'label' => esc_html__('Text Color', 'textdomain'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .it-blog-link' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-btn' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -515,15 +560,32 @@ $this->start_controls_tab(
 );
 
 $this->add_control(
+    'od_blog_post_btn__hover_bg_color',
+    [
+        'label' => esc_html__('BG Color', 'textdomain'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ss-blog-item:hover .ss-btn' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ss-btn::after' => 'background-color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-2'],
+        ],
+    ]
+);
+
+$this->add_control(
     'od_blog_post_btn__hover_color',
     [
         'label' => esc_html__('Text Color', 'textdomain'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .it-blog-link:hover' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-blog-item:hover .ss-btn' => 'color: {{VALUE}}',
         ],
     ]
 );
+
 
 $this->end_controls_tab();
 
@@ -533,7 +595,7 @@ $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
         'name' => 'od_blog_post_btn__typo',
-        'selector' => '{{WRAPPER}} .it-blog-link',
+        'selector' => '{{WRAPPER}} .it-blog-link, {{WRAPPER}} .ss-btn',
     ]
 );
 
@@ -548,12 +610,27 @@ $this->add_control(
 );
 
 $this->add_control(
+    'od_blog_post_date_bg_color',
+    [
+        'label' => esc_html__('Date BG Color', 'textdomain'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ss-blog-date' => 'background-color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-2'],
+        ],
+    ]
+);
+
+$this->add_control(
     'od_blog_post_date_color',
     [
         'label' => esc_html__('Date Color', 'textdomain'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .it-blog-meta span' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-blog-date i' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -562,7 +639,29 @@ $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
         'name' => 'od_blog_post_date_typo',
-        'selector' => '{{WRAPPER}}  .it-blog-meta span',
+        'selector' => '{{WRAPPER}}  .it-blog-meta span, {{WRAPPER}}  .ss-blog-date i ',
+    ]
+);
+
+$this->add_control(
+    'od_blog_post_month_year_color',
+    [
+        'label' => esc_html__('Month Year Color', 'textdomain'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ss-blog-date span' => 'color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-2'],
+        ],
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'name' => 'od_blog_post_month_year_typo',
+        'selector' => '{{WRAPPER}}  .ss-blog-date span ',
     ]
 );
 $this->add_control(

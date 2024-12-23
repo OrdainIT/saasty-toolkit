@@ -155,6 +155,36 @@ class Od_Blog_Post extends Widget_Base
         $od_btn_link = $settings['od_btn_link'];
         $od_btn_page_link = $settings['od_btn_page_link'];
 
+        // Post Query
+
+        // Check if category is selected
+        if (!empty($od_category_select)) {
+            // If categories are selected, add tax_query
+            $args = array(
+                'post_type'      => 'post', // Fetch blog posts
+                'posts_per_page' => $od_blog_section_blog_post_per_page, // Number of posts to display
+                'order'          => $od_blog_post_orderby, // Order of posts
+                'tax_query'      => array(
+                    array(
+                        'taxonomy' => 'category', // Taxonomy to filter by
+                        'field'    => 'term_id',  // Field type ('term_id', 'slug', or 'name')
+                        'terms'    => $od_category_select, // Selected category IDs (single or multiple)
+                        'operator' => 'IN', // Show posts matching any of the selected categories
+                    ),
+                ),
+            );
+        } else {
+            // If no category is selected, show all posts
+            $args = array(
+                'post_type'      => 'post', // Fetch blog posts
+                'posts_per_page' => $od_blog_section_blog_post_per_page, // Number of posts to display
+                'order'          => $od_blog_post_orderby, // Order of posts
+            );
+        }
+
+
+        $blog_query = new \WP_Query($args);
+
 
 ?>
 
@@ -188,33 +218,7 @@ class Od_Blog_Post extends Widget_Base
                     <div class="row">
 
                         <?php
-                        // Check if category is selected
-                        if (!empty($od_category_select)) {
-                            // If categories are selected, add tax_query
-                            $args = array(
-                                'post_type'      => 'post', // Fetch blog posts
-                                'posts_per_page' => $od_blog_section_blog_post_per_page, // Number of posts to display
-                                'order'          => $od_blog_post_orderby, // Order of posts
-                                'tax_query'      => array(
-                                    array(
-                                        'taxonomy' => 'category', // Taxonomy to filter by
-                                        'field'    => 'term_id',  // Field type ('term_id', 'slug', or 'name')
-                                        'terms'    => $od_category_select, // Selected category IDs (single or multiple)
-                                        'operator' => 'IN', // Show posts matching any of the selected categories
-                                    ),
-                                ),
-                            );
-                        } else {
-                            // If no category is selected, show all posts
-                            $args = array(
-                                'post_type'      => 'post', // Fetch blog posts
-                                'posts_per_page' => $od_blog_section_blog_post_per_page, // Number of posts to display
-                                'order'          => $od_blog_post_orderby, // Order of posts
-                            );
-                        }
 
-
-                        $blog_query = new \WP_Query($args);
 
                         if ($blog_query->have_posts()) :
                             while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
@@ -298,73 +302,53 @@ class Od_Blog_Post extends Widget_Base
                         <div class="row">
 
                             <?php
-                            // Check if category is selected
-                            if (!empty($od_category_select)) {
-                                // If categories are selected, add tax_query
-                                $args = array(
-                                    'post_type'      => 'post', // Fetch blog posts
-                                    'posts_per_page' => $od_blog_section_blog_post_per_page, // Number of posts to display
-                                    'order'          => $od_blog_post_orderby, // Order of posts
-                                    'tax_query'      => array(
-                                        array(
-                                            'taxonomy' => 'category', // Taxonomy to filter by
-                                            'field'    => 'term_id',  // Field type ('term_id', 'slug', or 'name')
-                                            'terms'    => $od_category_select, // Selected category IDs (single or multiple)
-                                            'operator' => 'IN', // Show posts matching any of the selected categories
-                                        ),
-                                    ),
-                                );
-                            } else {
-                                // If no category is selected, show all posts
-                                $args = array(
-                                    'post_type'      => 'post', // Fetch blog posts
-                                    'posts_per_page' => $od_blog_section_blog_post_per_page, // Number of posts to display
-                                    'order'          => $od_blog_post_orderby, // Order of posts
-                                );
-                            }
 
 
-                            $blog_query = new \WP_Query($args);
 
                             if ($blog_query->have_posts()) :
                                 while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
                                     <div class="col-xl-4 col-lg-6 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay=".3">
                                         <div class="it-blog-item zoom white-bg mb-30">
-                                            <?php if (has_post_thumbnail()): ?>
+                                            <?php if (has_post_thumbnail()) : ?>
                                                 <div class="it-blog-thumb img-zoom">
                                                     <a href="<?php the_permalink(); ?>">
-                                                        <img class="w-100" src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="<?php the_title(); ?>">
-                                                    </a>
-                                                <?php endif; ?>
-                                                </div>
-                                                <div class="it-blog-content">
-                                                    <div class="it-blog-meta mb-25">
-                                                        <span><?php echo get_the_date('F d, Y'); ?></span>
-                                                        <i><?php echo get_the_category_list(', '); ?></i>
-                                                    </div>
-                                                    <h4 class="it-blog-title mb-20">
-                                                        <a class="border-line-theme title-hover" href="<?php the_permalink(); ?>">
-                                                            <?php the_title(); ?>
-                                                        </a>
-                                                    </h4>
-                                                    <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
-                                                    <a class="it-blog-link border-line-theme title-hover" href="<?php the_permalink(); ?>">
-                                                        <?php echo esc_html($od_blog_section_blog_btn, 'ordainit-toolkit'); ?>
-                                                        <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M20.5303 6.53033C20.8232 6.23744 20.8232 5.76256 20.5303 5.46967L15.7574 0.696699C15.4645 0.403806 14.9896 0.403806 14.6967 0.696699C14.4038 0.989593 14.4038 1.46447 14.6967 1.75736L18.9393 6L14.6967 10.2426C14.4038 10.5355 14.4038 11.0104 14.6967 11.3033C14.9896 11.5962 15.4645 11.5962 15.7574 11.3033L20.5303 6.53033ZM0 6.75H20V5.25H0V6.75Z" fill="currentcolor" />
-                                                        </svg>
+
+                                                        <img class="w-100" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title_attribute(); ?>">
+
                                                     </a>
                                                 </div>
+                                            <?php endif; ?>
+                                            <div class="it-blog-content">
+                                                <div class="it-blog-meta mb-25">
+                                                    <span><?php echo get_the_date('F d, Y'); ?></span>
+                                                    <?php
+                                                    $categories = get_the_category();
+                                                    if (!empty($categories)) : ?>
+                                                        <i><?php echo esc_html($categories[0]->name); ?></i>
+                                                    <?php endif; ?>
+                                                </div>
+                                                <h4 class="it-blog-title mb-20">
+                                                    <a class="border-line-theme title-hover" href="<?php the_permalink(); ?>">
+                                                        <?php the_title(); ?>
+                                                    </a>
+                                                </h4>
+                                                <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+                                                <a class="it-blog-link border-line-theme title-hover" href="<?php the_permalink(); ?>">
+                                                    <?php echo esc_html($od_blog_section_blog_btn, 'ordainit-toolkit'); ?>
+                                                    <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20.5303 6.53033C20.8232 6.23744 20.8232 5.76256 20.5303 5.46967L15.7574 0.696699C15.4645 0.403806 14.9896 0.403806 14.6967 0.696699C14.4038 0.989593 14.4038 1.46447 14.6967 1.75736L18.9393 6L14.6967 10.2426C14.4038 10.5355 14.4038 11.0104 14.6967 11.3033C14.9896 11.5962 15.4645 11.5962 15.7574 11.3033L20.5303 6.53033ZM0 6.75H20V5.25H0V6.75Z" fill="currentcolor"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                <?php endwhile;
-                                wp_reset_postdata(); // Reset the query to avoid conflicts
-                            else : ?>
-                                <p>No posts found.</p>
-                            <?php endif; ?>
+                            <?php endwhile;
+                                wp_reset_postdata();
+                            endif; ?>
 
 
                         </div>
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="it-blog-button text-center mt-30 it-fade-anim" data-fade-from="top" data-ease="bounce" data-delay=".5">

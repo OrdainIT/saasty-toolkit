@@ -206,6 +206,7 @@ class OD_Core_Plugin
 			'brand-slider-full',
 			'testimonial-slider',
 			'blog',
+			'service',
 		];
 	}
 

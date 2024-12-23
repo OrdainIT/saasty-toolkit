@@ -3,7 +3,7 @@
 /**
  * 
  */
-class OdEventPost
+class OdServicePost
 {
 
 	function __construct()
@@ -11,13 +11,13 @@ class OdEventPost
 
 		add_action('init', array($this, 'register_custom_post_type'));
 		add_action('init', array($this, 'create_cat'));
-		add_filter('template_include', array($this, 'event_template_include'));
+		add_filter('template_include', array($this, 'service_template_include'));
 	}
 
-	public function event_template_include($template)
+	public function service_template_include($template)
 	{
-		if (is_singular('events')) {
-			return $this->get_template('single-events.php');
+		if (is_singular('service')) {
+			return $this->get_template('single-service.php');
 		}
 		return $template;
 	}
@@ -38,14 +38,14 @@ class OdEventPost
 	public function register_custom_post_type()
 	{
 		$labels = array(
-			'name'                  => esc_html_x('Events', 'Post Type General Name', 'ordainit-toolkit'),
-			'singular_name'         => esc_html_x('Event', 'Post Type Singular Name', 'ordainit-toolkit'),
-			'menu_name'             => esc_html__('Event', 'ordainit-toolkit'),
-			'name_admin_bar'        => esc_html__('Event', 'ordainit-toolkit'),
+			'name'                  => esc_html_x('Services', 'Post Type General Name', 'ordainit-toolkit'),
+			'singular_name'         => esc_html_x('Service', 'Post Type Singular Name', 'ordainit-toolkit'),
+			'menu_name'             => esc_html__('Service', 'ordainit-toolkit'),
+			'name_admin_bar'        => esc_html__('Service', 'ordainit-toolkit'),
 			'archives'              => esc_html__('Item Archives', 'ordainit-toolkit'),
 			'parent_item_colon'     => esc_html__('Parent Item:', 'ordainit-toolkit'),
 			'all_items'             => esc_html__('All Items', 'ordainit-toolkit'),
-			'add_new_item'          => esc_html__('Add New Event', 'ordainit-toolkit'),
+			'add_new_item'          => esc_html__('Add New Service', 'ordainit-toolkit'),
 			'add_new'               => esc_html__('Add New', 'ordainit-toolkit'),
 			'new_item'              => esc_html__('New Item', 'ordainit-toolkit'),
 			'edit_item'             => esc_html__('Edit Item', 'ordainit-toolkit'),
@@ -66,7 +66,7 @@ class OdEventPost
 		);
 
 		$args = array(
-			'label'                 => esc_html__('Event', 'ordainit-toolkit'),
+			'label'                 => esc_html__('Service', 'ordainit-toolkit'),
 			'labels'                => $labels,
 			'supports'              => array('title', 'editor', 'excerpt', 'thumbnail'),
 			'hierarchical'          => false,
@@ -85,32 +85,32 @@ class OdEventPost
 			'show_in_rest'          => true,
 		);
 
-		register_post_type('events', $args);
+		register_post_type('service', $args);
 	}
 
 	public function create_cat()
 	{
 		$labels = array(
-			'name'                       => esc_html_x('Event Categories', 'Taxonomy General Name', 'ordainit-toolkit'),
-			'singular_name'              => esc_html_x('Event Categories', 'Taxonomy Singular Name', 'ordainit-toolkit'),
-			'menu_name'                  => esc_html__('Event Categories', 'ordainit-toolkit'),
-			'all_items'                  => esc_html__('All Event Category', 'ordainit-toolkit'),
+			'name'                       => esc_html_x('Service Categories', 'Taxonomy General Name', 'ordainit-toolkit'),
+			'singular_name'              => esc_html_x('Service Categories', 'Taxonomy Singular Name', 'ordainit-toolkit'),
+			'menu_name'                  => esc_html__('Service Categories', 'ordainit-toolkit'),
+			'all_items'                  => esc_html__('All Service Category', 'ordainit-toolkit'),
 			'parent_item'                => esc_html__('Parent Item', 'ordainit-toolkit'),
 			'parent_item_colon'          => esc_html__('Parent Item:', 'ordainit-toolkit'),
-			'new_item_name'              => esc_html__('New Event Category Name', 'ordainit-toolkit'),
-			'add_new_item'               => esc_html__('Add New Event Category', 'ordainit-toolkit'),
-			'edit_item'                  => esc_html__('Edit Event Category', 'ordainit-toolkit'),
-			'update_item'                => esc_html__('Update Event Category', 'ordainit-toolkit'),
-			'view_item'                  => esc_html__('View Event Category', 'ordainit-toolkit'),
+			'new_item_name'              => esc_html__('New Service Category Name', 'ordainit-toolkit'),
+			'add_new_item'               => esc_html__('Add New Service Category', 'ordainit-toolkit'),
+			'edit_item'                  => esc_html__('Edit Service Category', 'ordainit-toolkit'),
+			'update_item'                => esc_html__('Update Service Category', 'ordainit-toolkit'),
+			'view_item'                  => esc_html__('View Service Category', 'ordainit-toolkit'),
 			'separate_items_with_commas' => esc_html__('Separate items with commas', 'ordainit-toolkit'),
 			'add_or_remove_items'        => esc_html__('Add or remove items', 'ordainit-toolkit'),
 			'choose_from_most_used'      => esc_html__('Choose from the most used', 'ordainit-toolkit'),
-			'popular_items'              => esc_html__('Popular Event Category', 'ordainit-toolkit'),
-			'search_items'               => esc_html__('Search Event Category', 'ordainit-toolkit'),
+			'popular_items'              => esc_html__('Popular Service Category', 'ordainit-toolkit'),
+			'search_items'               => esc_html__('Search Service Category', 'ordainit-toolkit'),
 			'not_found'                  => esc_html__('Not Found', 'ordainit-toolkit'),
-			'no_terms'                   => esc_html__('No Event Category', 'ordainit-toolkit'),
-			'items_list'                 => esc_html__('Event Category list', 'ordainit-toolkit'),
-			'items_list_navigation'      => esc_html__('Event Category list navigation', 'ordainit-toolkit'),
+			'no_terms'                   => esc_html__('No Service Category', 'ordainit-toolkit'),
+			'items_list'                 => esc_html__('Service Category list', 'ordainit-toolkit'),
+			'items_list_navigation'      => esc_html__('Service Category list navigation', 'ordainit-toolkit'),
 		);
 
 		$args = array(
@@ -124,8 +124,8 @@ class OdEventPost
 			'show_in_rest'               => true,
 		);
 
-		register_taxonomy('event-cat', 'events', $args);
+		register_taxonomy('service-cat', 'service', $args);
 	}
 }
 
-new OdEventPost();
+new OdServicePost();

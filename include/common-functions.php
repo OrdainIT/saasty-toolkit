@@ -652,6 +652,23 @@ function od_get_all_categories()
 }
 
 
+// Function to get all categories for the 'service' post type
+function od_get_all_categories_for_service()
+{
+    $categories = get_categories([
+        'taxonomy'   => 'service-cat', // Replace 'category' with your custom taxonomy if needed
+        'hide_empty' => false,
+        'object_type' => ['service'], // Target the 'service' post type
+    ]);
+
+    $category_options = [];
+    foreach ($categories as $category) {
+        $category_options[$category->term_id] = $category->name;
+    }
+
+    return $category_options;
+}
+
 
 
 
@@ -667,9 +684,9 @@ function od_service_init()
         'name'          => esc_html__('Service Sidebar', 'ordainit-toolkit'),
         'id'            => 'service-sidebar',
         'description'          => esc_html__('Set Your Service Widget', 'ordainit-toolkit'),
-        'before_widget' => '<div id="%1$s" class="it-common-sidebar-widget it-blog-sidebar-widget service mb-55 %2$s">',
+        'before_widget' => '<div id="%1$s" class="it-common-sidebar-widget it-sv-sidebar-widget-box mb-50 %2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<h4 class="it-blog-sidebar-title mb-35">',
+        'before_title'  => '<h4 class="it-sv-sidebar-widget-title">',
         'after_title'   => '</h4>',
     ]);
 }
