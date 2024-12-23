@@ -19,6 +19,7 @@ $this->add_control(
             'layout-3' => esc_html__('Layout 3', 'ordainit-toolkit'),
             'layout-4' => esc_html__('Layout 4', 'ordainit-toolkit'),
             'layout-5' => esc_html__('Layout 5', 'ordainit-toolkit'),
+            'layout-6' => esc_html__('Layout 6', 'ordainit-toolkit'),
         ],
         'default' => 'layout-1',
     ]
@@ -79,7 +80,7 @@ $this->add_control(
         'placeholder' => esc_html__('Type Subtitle title here', 'ordainit-toolkit'),
         'label_block' => true,
         'condition' => [
-            'od_design_style' => ['layout-2', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6']
         ],
     ]
 );
@@ -200,7 +201,7 @@ $this->start_controls_section(
     [
         'label' => __('Thumbnail', 'ordainit-toolkit'),
         'condition' => [
-            'od_design_style' => ['layout-1']
+            'od_design_style' => ['layout-1', 'layout-6']
         ],
     ]
 );
@@ -239,7 +240,7 @@ $this->add_control(
             ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/testimonial-shape-1-3.png',
         ],
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-2']
+            'od_design_style' => ['layout-1', 'layout-2', 'layout-6']
         ],
     ]
 );
@@ -366,7 +367,7 @@ $this->start_controls_section(
     [
         'label' => __('Rating Star Switcher', 'ordainit-toolkit'),
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-5', 'layout-6']
         ],
     ]
 );
@@ -417,7 +418,7 @@ $this->start_controls_section(
     [
         'label' => __('Testimonial Arrow Switcher', 'ordainit-toolkit'),
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-5', 'layout-6']
         ],
     ]
 );
@@ -550,7 +551,7 @@ $this->start_controls_section(
         'label' => __('Testimonial Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_design_style' => ['layout-3', 'layout-4']
+            'od_design_style' => ['layout-3', 'layout-4', 'layout-5', 'layout-6']
         ],
     ]
 );
@@ -563,6 +564,8 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .pg-testimonial-area.green-bg' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .cr-testimonial-style.dark-green-bg' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ss-testimonial-style.blue-bg' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ag-testimonial-style.black-2-bg' => 'background-color: {{VALUE}}',
         ],
     ]
 );
@@ -591,9 +594,30 @@ $this->add_control(
             '{{WRAPPER}} .dt-section-title-2' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-section-title' => 'color: {{VALUE}}',
             '{{WRAPPER}} .cr-section-title' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-section-title' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-section-title' => 'color: {{VALUE}}',
         ],
     ]
 );
+
+
+$this->add_control(
+    'od_testimonial_slider_heading_title_span_gradient',
+    [
+        'label' => esc_html__('Title Span Gradient', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::TEXTAREA,
+        'rows' => '3',
+        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'selectors' => [
+            '{{WRAPPER}} .ag-section-title span' => 'background: {{VALUE}}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;',
+        ],
+        'label_block' => true,
+        'condition' => [
+            'od_design_style' => ['layout-6'],
+        ],
+    ]
+);
+
 $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
@@ -603,7 +627,9 @@ $this->add_group_control(
             {{WRAPPER}} .it-section-title,
             {{WRAPPER}} .dt-section-title-2,
             {{WRAPPER}} .pg-section-title,
-            {{WRAPPER}} .cr-section-title
+            {{WRAPPER}} .cr-section-title,
+            {{WRAPPER}} .ss-section-title,
+            {{WRAPPER}} .ag-section-title
         ',
     ]
 );
@@ -618,9 +644,11 @@ $this->add_control(
             '{{WRAPPER}} .dt-section-subtitle' => 'color: {{VALUE}}',
             '{{WRAPPER}} .pg-section-subtitle' => 'color: {{VALUE}}',
             '{{WRAPPER}} .cr-section-subtitle' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ss-section-subtitle' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-section-subtitle' => 'color: {{VALUE}}',
         ],
         'condition' => [
-            'od_design_style' => ['layout-2', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6']
         ],
     ]
 );
@@ -647,10 +675,12 @@ $this->add_group_control(
         'selector' => '
             {{WRAPPER}} .dt-section-subtitle,
             {{WRAPPER}} .pg-section-subtitle,
-            {{WRAPPER}} .cr-section-subtitle
+            {{WRAPPER}} .cr-section-subtitle,
+            {{WRAPPER}} .ss-section-subtitle,
+            {{WRAPPER}} .ag-section-subtitle,
         ',
         'condition' => [
-            'od_design_style' => ['layout-2', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6']
         ],
     ]
 );
@@ -734,17 +764,32 @@ $this->add_control(
             '{{WRAPPER}} .pg-testimonial-item' => 'background-color: {{VALUE}}',
         ],
         'condition' => [
-            'od_design_style' => ['layout-3', 'layout-4']
+            'od_design_style' => ['layout-3', 'layout-4', 'layout-5']
         ],
     ]
 );
+
+$this->add_control(
+    'od_testimonial_slider_content_border_color',
+    [
+        'label' => esc_html__('Content Border Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ss-testimonial-style .pg-testimonial-item' => 'border-color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-5']
+        ],
+    ]
+);
+
 
 $this->add_control(
     'hr_3',
     [
         'type' => \Elementor\Controls_Manager::DIVIDER,
         'condition' => [
-            'od_design_style' => ['layout-3', 'layout-4']
+            'od_design_style' => ['layout-3', 'layout-4', 'layout-5']
         ],
     ]
 );
@@ -784,8 +829,29 @@ $this->add_control(
             '{{WRAPPER}} .it-testimonial-author-info span' => 'color: {{VALUE}}',
             '{{WRAPPER}} .dt-testimonial-author-info span' => 'color: {{VALUE}}',
         ],
+        'condition' => [
+            'od_design_style' => ['layout-1', 'layout-2', 'layout-3', 'layout-4', 'layout-5']
+        ],
     ]
 );
+
+$this->add_control(
+    'od_testimonial_slider_designation_gradient',
+    [
+        'label' => esc_html__('Designation Gradient', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::TEXTAREA,
+        'rows' => '3',
+        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'selectors' => [
+            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-author-info span' => 'background: {{VALUE}}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;',
+        ],
+        'label_block' => true,
+        'condition' => [
+            'od_design_style' => ['layout-6'],
+        ],
+    ]
+);
+
 $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
@@ -793,7 +859,8 @@ $this->add_group_control(
         'name' => 'od_testimonial_slider_designation_typography',
         'selector' => '
             {{WRAPPER}} .it-testimonial-author-info span,
-            {{WRAPPER}} .dt-testimonial-author-info span
+            {{WRAPPER}} .dt-testimonial-author-info span,
+            {{WRAPPER}} .ag-testimonial-style .it-testimonial-author-info span
         ',
     ]
 );
@@ -829,7 +896,7 @@ $this->add_control(
     [
         'type' => \Elementor\Controls_Manager::DIVIDER,
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-3', 'layout-4']
+            'od_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-5', 'layout-6']
         ],
     ]
 );
@@ -844,7 +911,7 @@ $this->add_control(
             '{{WRAPPER}} .it-testimonial-ratting span svg path' => 'fill: {{VALUE}}',
         ],
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-3', 'layout-4'],
+            'od_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-5', 'layout-6'],
             'od_testimonial_slider_star_switcher' => 'yes'
         ],
     ]
@@ -890,7 +957,7 @@ $this->start_controls_section(
         'label' => __('Testimonial Arrow Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_design_style' => ['layout-1', 'layout-3', 'layout-4'],
+            'od_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-5'],
             'od_testimonial_slider_arrow_switcher' => 'yes'
         ],
     ]
@@ -931,15 +998,24 @@ $this->add_control(
     ]
 );
 
+$this->add_control(
+    'od_testimonial_slider_arrow_style_normal_border_color',
+    [
+        'label' => esc_html__('Arrow Border Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'description' => esc_html__('It works for layout - 5'),
+        'selectors' => [
+            '{{WRAPPER}} .pg-testimonial-arrow-box button span' => 'border-color: {{VALUE}}',
+        ],
+    ]
+);
+
 $this->end_controls_tab();
 
 $this->start_controls_tab(
     'od_testimonial_slider_arrow_style_active_tab',
     [
         'label' => esc_html__('Active', 'ordainit-toolkit'),
-        'condition' => [
-            'od_design_style' => ['layout-1'],
-        ],
     ]
 );
 
@@ -948,6 +1024,7 @@ $this->add_control(
     [
         'label' => esc_html__('Arrow Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
+        'description' => esc_html__('It works for layout - 1'),
         'selectors' => [
             '{{WRAPPER}} .it-testimonial-arrow-box button.active span' => 'color: {{VALUE}}',
         ],
@@ -959,6 +1036,7 @@ $this->add_control(
     [
         'label' => esc_html__('Arrow BG Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
+        'description' => esc_html__('It works for layout - 1'),
         'selectors' => [
             '{{WRAPPER}} .it-testimonial-arrow-box button.active span' => 'background-color: {{VALUE}}',
         ],
@@ -995,8 +1073,106 @@ $this->add_control(
     ]
 );
 
+$this->add_control(
+    'od_testimonial_slider_arrow_style_hover_border_color',
+    [
+        'label' => esc_html__('Arrow Border Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'description' => esc_html__('It works for layout - 5'),
+        'selectors' => [
+            '{{WRAPPER}} .pg-testimonial-arrow-box button:hover span' => 'border-color: {{VALUE}}',
+        ],
+    ]
+);
+
 $this->end_controls_tab();
 
 $this->end_controls_tabs();
+
+$this->end_controls_section();
+
+
+// Funfact Style
+$this->start_controls_section(
+    'od_testimonial_funfact_style',
+    [
+        'label' => __('Testimonial Funfact Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_design_style' => ['layout-4'],
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_funfact_number_color',
+    [
+        'label' => esc_html__('Number Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .dt-funfact-item h5' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_funfact_description_color',
+    [
+        'label' => esc_html__('Description Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .dt-funfact-item p' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Description Typography', 'ordainit-toolkit'),
+        'name' => 'od_testimonial_funfact_description__typography',
+        'selector' => '{{WRAPPER}} .dt-funfact-item p',
+    ]
+);
+
+$this->end_controls_section();
+
+// Arrow Style
+$this->start_controls_section(
+    'od_testimonial_slider_arrow_style_2',
+    [
+        'label' => __('Testimonial Arrow Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_design_style' => ['layout-6'],
+            'od_testimonial_slider_arrow_switcher' => 'yes'
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_slider_arrow_color_2',
+    [
+        'label' => esc_html__('Arrow Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-arrow-box button span' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_slider_arrow_bg_gradient',
+    [
+        'label' => esc_html__('Arrow BG Gradient', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::TEXTAREA,
+        'rows' => '3',
+        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'selectors' => [
+            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-arrow-box button span' => 'background: {{VALUE}};',
+        ],
+        'label_block' => true,
+    ]
+);
 
 $this->end_controls_section();
