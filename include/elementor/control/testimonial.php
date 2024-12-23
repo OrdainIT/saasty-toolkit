@@ -123,6 +123,45 @@ $this->add_control(
 $this->end_controls_section();
 
 
+// Animation Section
+$this->start_controls_section(
+    'od_testimonial_single_animation',
+    [
+        'label' => __('Testimonial Animation', 'ordainit-toolkit'),
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_single_animation_fade_from',
+    [
+        'label' => __('Fade From', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'options' => [
+            'top' => __('Top', 'ordainit-toolkit'),
+            'bottom' => __('Bottom', 'ordainit-toolkit'),
+            'left' => __('Left', 'ordainit-toolkit'),
+            'right' => __('Right', 'ordainit-toolkit'),
+        ],
+        'default' => 'top',
+        'label_block' => true,
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_single_animation_delay',
+    [
+        'label' => esc_html__('Animation Delay', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXT,
+        'default' => esc_html__('0.3', 'ordainit-toolkit'),
+        'title' => esc_html__('enter delay in s', 'ordainit-toolkit'),
+        'label_block' => true,
+    ]
+);
+
+$this->end_controls_section();
+
+
+
 // Style starts
 $this->start_controls_section(
     'od_testimonial_single_style',

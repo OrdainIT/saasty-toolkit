@@ -126,9 +126,13 @@ class OD_Testimonial extends Widget_Base
         $od_testimonial_single_star_switcher = $settings['od_testimonial_single_star_switcher'];
         $od_testimonial_single_star = $settings['od_testimonial_single_star'];
         $od_testimonial_single_quote_switcher = $settings['od_testimonial_single_quote_switcher'];
+        $od_testimonial_single_animation_fade_from = $settings['od_testimonial_single_animation_fade_from'];
+        $od_testimonial_single_animation_delay = $settings['od_testimonial_single_animation_delay'];
 ?>
         <div class="it-testimonial-inner-style-2">
-            <div class="it-fade-anim" data-fade-from="bottom" data-delay=".3">
+            <div class="it-fade-anim"
+                data-fade-from="<?php echo esc_attr($od_testimonial_single_animation_fade_from, 'ordainit-toolkit'); ?>"
+                data-delay="<?php echo esc_attr($od_testimonial_single_animation_delay, 'ordainit-toolkit'); ?>">
 
                 <div class="pg-testimonial-item mb-35">
                     <div class="pg-testimonial-top mb-30 d-flex justify-content-between align-items-center">

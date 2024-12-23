@@ -701,6 +701,7 @@ $this->add_control(
         ],
     ]
 );
+
 $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
