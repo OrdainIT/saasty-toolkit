@@ -141,7 +141,185 @@ class OD_Testimonial_Slider extends Widget_Base
 ?>
 
 
-        <?php if ($settings['od_design_style']  == 'layout-5'): ?>
+        <?php if ($settings['od_design_style']  == 'layout-6'): ?>
+
+            <div class="ag-testimonial-style it-testimonial-area p-relative black-2-bg">
+                <div class="ag-testimonial-thumb it-img-anim-wrap">
+                    <div class="it-img-anim"
+                        data-displacement="<?php echo esc_url($od_testimonial_slider_thumbnail_image['url'], 'ordainit-toolkit'); ?>"
+                        data-intensity="0.6"
+                        data-speedin="1"
+                        data-speedout="1">
+                        <img src="<?php echo esc_url($od_testimonial_slider_thumbnail_image['url'], 'ordainit-toolkit'); ?>" alt="">
+                    </div>
+                </div>
+                <img class="it-testimonial-shape-11" src="<?php echo esc_url($od_testimonial_slider_shape_image_1['url'], 'ordainit-toolkit'); ?>" alt="">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="offset-xl-5 offset-lg-5 col-xl-7 col-lg-7">
+                            <div class="ag-testimonial-right-box p-relative">
+                                <div class="ag-section-title-box mb-65">
+                                    <span class="ag-section-subtitle it-fade-anim" data-fade-from="bottom" data-delay=".3">
+                                        <?php echo esc_html($od_testimonial_slider_heading_subtitle, 'ordainit-toolkit'); ?>
+                                    </span>
+                                    <div class="it-fade-anim" data-fade-from="bottom" data-delay=".5">
+                                        <h4 class="ag-section-title mb-15">
+                                            <?php echo od_kses($od_testimonial_slider_heading_title, 'ordainit-toolkit'); ?>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <?php if (!empty($od_testimonial_slider_arrow_switcher)): ?>
+                                    <div class="it-testimonial-arrow-box d-none d-lg-block">
+                                        <button class="slider-prev active">
+                                            <span>
+                                                <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0.469669 5.46967C0.176777 5.76256 0.176777 6.23743 0.469669 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46446 6.59619 0.989591 6.3033 0.696697C6.01041 0.403804 5.53553 0.403804 5.24264 0.696697L0.469669 5.46967ZM26 5.25L1 5.25L1 6.75L26 6.75L26 5.25Z" fill="currentcolor" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="slider-next">
+                                            <span>
+                                                <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M25.5303 5.46967C25.8232 5.76256 25.8232 6.23743 25.5303 6.53033L20.7574 11.3033C20.4645 11.5962 19.9896 11.5962 19.6967 11.3033C19.4038 11.0104 19.4038 10.5355 19.6967 10.2426L23.9393 6L19.6967 1.75736C19.4038 1.46446 19.4038 0.989591 19.6967 0.696697C19.9896 0.403804 20.4645 0.403804 20.7574 0.696697L25.5303 5.46967ZM-6.55672e-08 5.25L25 5.25L25 6.75L6.55672e-08 6.75L-6.55672e-08 5.25Z" fill="currentcolor" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                <?php endif; ?>
+
+                                <div class="swiper-container ag-testimonial-active">
+                                    <div class="swiper-wrapper d-flex align-items-center">
+                                        <?php foreach ($od_testimonial_slider_lists as $od_testimonial_slider_list):
+                                            $testimonial_rating_star = $od_testimonial_slider_list['od_testimonial_slider_list_rating'];
+                                        ?>
+                                            <div class="swiper-slide">
+                                                <div class="it-testimonial-item">
+                                                    <?php if (!empty($od_testimonial_slider_star_switcher)): ?>
+                                                        <div class="it-testimonial-ratting mb-30">
+                                                            <?php
+                                                            $rating = intval($testimonial_rating_star);
+                                                            for ($i = 1; $i <= $rating; $i++) : ?>
+                                                                <span>
+                                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M20 7.72742L12.7329 7.24965L9.99602 0.374023L7.25918 7.24965L0 7.72742L5.56773 12.455L3.7407 19.6264L9.99602 15.6725L16.2514 19.6264L14.4243 12.455L20 7.72742Z" fill="#F59E0B" />
+                                                                    </svg>
+                                                                </span>
+                                                            <?php endfor; ?>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                    <p class="it-testimonial-text">
+                                                        "<?php echo od_kses($od_testimonial_slider_list['od_testimonial_slider_list_description'], 'orsdainit-toolkit'); ?>"
+                                                    </p>
+                                                    <div class="it-testimonial-author-wrap d-flex align-items-center">
+                                                        <img class="mr-20" src="<?php echo esc_url($od_testimonial_slider_list['od_testimonial_slider_list_avatar']['url'], 'ordainit-toolkit'); ?>" alt="">
+                                                        <div class="it-testimonial-author-info">
+                                                            <h5><?php echo esc_html($od_testimonial_slider_list['od_testimonial_slider_list_author'], 'ordainit-toolkit'); ?></h5>
+                                                            <span><?php echo esc_html($od_testimonial_slider_list['od_testimonial_slider_list_designation'], 'ordainit-toolkit'); ?></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php elseif ($settings['od_design_style']  == 'layout-5'): ?>
+
+            <div class="pg-testimonial-area ss-testimonial-style blue-bg">
+                <div class="container">
+                    <div class="pg-testimonial-top-wrap mb-50">
+                        <div class="row align-items-center">
+                            <div class="col-xl-7 col-lg-6">
+                                <div class="ss-section-title-box">
+                                    <span class="ss-section-subtitle it_text_reveal_anim">
+                                        <?php echo esc_html($od_testimonial_slider_heading_subtitle, 'ordainit-toolkit'); ?>
+                                    </span>
+                                    <h4 class="ss-section-title pb-15 it_text_reveal_anim">
+                                        <?php echo od_kses($od_testimonial_slider_heading_title, 'ordainit-toolkit'); ?>
+                                    </h4>
+                                </div>
+                            </div>
+
+                            <?php if (!empty($od_testimonial_slider_arrow_switcher)): ?>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="pg-testimonial-arrow-box text-lg-end">
+                                        <button class="slider-prev mr-25">
+                                            <span>
+                                                <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M0.469669 5.46967C0.176777 5.76256 0.176777 6.23743 0.469669 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46446 6.59619 0.989591 6.3033 0.696697C6.01041 0.403804 5.53553 0.403804 5.24264 0.696697L0.469669 5.46967ZM26 5.25L1 5.25L1 6.75L26 6.75L26 5.25Z" fill="currentcolor" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                        <button class="slider-next active">
+                                            <span>
+                                                <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M25.5303 5.46967C25.8232 5.76256 25.8232 6.23743 25.5303 6.53033L20.7574 11.3033C20.4645 11.5962 19.9896 11.5962 19.6967 11.3033C19.4038 11.0104 19.4038 10.5355 19.6967 10.2426L23.9393 6L19.6967 1.75736C19.4038 1.46446 19.4038 0.989591 19.6967 0.696697C19.9896 0.403804 20.4645 0.403804 20.7574 0.696697L25.5303 5.46967ZM-6.55672e-08 5.25L25 5.25L25 6.75L6.55672e-08 6.75L-6.55672e-08 5.25Z" fill="currentcolor" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="pg-testimonial-right">
+                                <div class="swiper-container pg-testimonial-active-2">
+                                    <div class="swiper-wrapper d-flex align-items-center">
+                                        <?php foreach ($od_testimonial_slider_lists as $od_testimonial_slider_list):
+                                            $testimonial_rating_star = $od_testimonial_slider_list['od_testimonial_slider_list_rating']; ?>
+
+                                            <div class="swiper-slide">
+                                                <div class="pg-testimonial-item">
+                                                    <div class="pg-testimonial-top mb-30 d-flex justify-content-between">
+                                                        <div class="dt-testimonial-author-wrap d-flex align-items-center">
+                                                            <div class="dt-testimonial-avatar mr-15">
+                                                                <img src="<?php echo esc_url($od_testimonial_slider_list['od_testimonial_slider_list_avatar']['url'], 'ordainit-toolkit'); ?>" alt="">
+                                                            </div>
+                                                            <div class="dt-testimonial-author-info">
+                                                                <h5 class="mb-10"><?php echo esc_html($od_testimonial_slider_list['od_testimonial_slider_list_author'], 'ordainit-toolkit'); ?></h5>
+                                                                <span><?php echo esc_html($od_testimonial_slider_list['od_testimonial_slider_list_designation'], 'ordainit-toolkit'); ?></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="pg-testimonial-text mb-25">
+                                                        <p>“<?php echo od_kses($od_testimonial_slider_list['od_testimonial_slider_list_description'], 'orsdainit-toolkit'); ?>”</p>
+                                                    </div>
+
+                                                    <?php if (!empty($od_testimonial_slider_star_switcher)): ?>
+                                                        <div class="it-testimonial-ratting">
+
+                                                            <?php
+                                                            $rating = intval($testimonial_rating_star);
+                                                            for ($i = 1; $i <= $rating; $i++) : ?>
+                                                                <span>
+                                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M16 6.18155L10.1863 5.79933L7.99681 0.298828L5.80734 5.79933L0 6.18155L4.45419 9.96361L2.99256 15.7008L7.99681 12.5376L13.0011 15.7008L11.5395 9.96361L16 6.18155Z" fill="#F59E0B" />
+                                                                    </svg>
+                                                                </span>
+                                                            <?php endfor; ?>
+
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
 
         <?php elseif ($settings['od_design_style']  == 'layout-4'): ?>
 
@@ -257,13 +435,13 @@ class OD_Testimonial_Slider extends Widget_Base
                                         $total_items = count($od_testimonial_funfact_lists);
                                         $current_index = 0;
                                         foreach ($od_testimonial_funfact_lists as $od_testimonial_funfact_list) :
-                                            $current_index++; // Increment the index counter
+                                            $current_index++;
                                             $is_last = ($current_index === $total_items);
                                         ?>
                                             <div class="col-lg-3 col-md-3 col-sm-6">
                                                 <div class="dt-funfact-item <?php
                                                                             echo esc_attr($od_testimonial_funfact_list['od_testimonial_funfact_style'], 'ordainit-toolkit');
-                                                                            echo $is_last ? ' text-md-end' : '';
+                                                                            echo esc_attr($is_last ? ' text-md-end' : '');
                                                                             ?>">
                                                     <div>
                                                         <h5 class="mb-10"><span class="purecounter" data-purecounter-duration="1"
@@ -632,7 +810,10 @@ class OD_Testimonial_Slider extends Widget_Base
 
                 const sliderAutoplay = <?php echo $od_testimonial_slider_autoplay ? 'true' : 'false'; ?>;
                 const sliderAutoplay2 = <?php echo $od_testimonial_slider_autoplay ? 'true' : 'false'; ?>;
+                const sliderAutoplay3 = <?php echo $od_testimonial_slider_autoplay ? 'true' : 'false'; ?>;
+                const sliderAutoplay4 = <?php echo $od_testimonial_slider_autoplay ? 'true' : 'false'; ?>;
 
+                // Layout- 1 & 2
                 const testimonialswiper = new Swiper('.it-testimonial-active', {
                     // Optional parameters
                     speed: 1500,
@@ -669,7 +850,7 @@ class OD_Testimonial_Slider extends Widget_Base
 
                 });
 
-                // Slider Option layout-3
+                // Slider Option layout-3 & 4
                 const pgtestimonialswiper = new Swiper('.pg-testimonial-active', {
                     // Optional parameters
                     speed: 1500,
@@ -691,6 +872,80 @@ class OD_Testimonial_Slider extends Widget_Base
                         },
                         '768': {
                             slidesPerView: 2,
+                        },
+                        '576': {
+                            slidesPerView: 1,
+                        },
+                        '0': {
+                            slidesPerView: 1,
+                        },
+                    },
+                    navigation: {
+                        prevEl: '.slider-prev',
+                        nextEl: '.slider-next',
+                    },
+
+                });
+
+                //Layout-5
+                const pgtestimonial2swiper = new Swiper('.pg-testimonial-active-2', {
+                    // Optional parameters
+                    speed: 1500,
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 35,
+                    autoplay: sliderAutoplay ? {
+                        delay: 3000
+                    } : false,
+                    breakpoints: {
+                        '1400': {
+                            slidesPerView: 3,
+                        },
+                        '1200': {
+                            slidesPerView: 2,
+                        },
+                        '992': {
+                            slidesPerView: 2,
+                        },
+                        '768': {
+                            slidesPerView: 2,
+                        },
+                        '576': {
+                            slidesPerView: 1,
+                        },
+                        '0': {
+                            slidesPerView: 1,
+                        },
+                    },
+                    navigation: {
+                        prevEl: '.slider-prev',
+                        nextEl: '.slider-next',
+                    },
+
+                });
+
+                //Layout-6
+                const agtestimonialswiper = new Swiper('.ag-testimonial-active', {
+                    // Optional parameters
+                    speed: 1500,
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 40,
+                    autoplay: sliderAutoplay ? {
+                        delay: 3000
+                    } : false,
+                    breakpoints: {
+                        '1400': {
+                            slidesPerView: 1,
+                        },
+                        '1200': {
+                            slidesPerView: 1,
+                        },
+                        '992': {
+                            slidesPerView: 1,
+                        },
+                        '768': {
+                            slidesPerView: 1,
                         },
                         '576': {
                             slidesPerView: 1,

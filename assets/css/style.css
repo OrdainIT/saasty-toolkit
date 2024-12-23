@@ -21,3 +21,11 @@
 .elementor-widget-container .it-cta-wrap {
   margin-top: 0;
 }
+
+/* Testimonial-layout-6 */
+.elementor-widget-container .it-testimonial-shape-11 {
+  position: absolute;
+  top: 15%;
+  right: 9%;
+  z-index: 0;
+}
