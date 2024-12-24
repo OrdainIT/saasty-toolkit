@@ -228,7 +228,7 @@ $this->add_control(
     ]
 );
 $this->add_control(
-    'od_btn_style_normal_bgcolor',
+    'od_btn_style_normal_bg_color',
     [
         'label' => esc_html__('Button BG Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
@@ -258,7 +258,7 @@ $this->add_control(
     ]
 );
 $this->add_control(
-    'od_btn_style_hover_bgcolor',
+    'od_btn_style_hover_bg_color',
     [
         'label' => esc_html__('Button Hover BG Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,

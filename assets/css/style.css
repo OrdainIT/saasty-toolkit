@@ -4,11 +4,15 @@
 }
 
 /* Hero Banner contact from button */
-.pg-hero-input-box button {
+.elementor-widget-container .pg-hero-input-box button {
   right: 83px !important;
 }
 
-.dt-hero-input-box button {
+.elementor-widget-container .dt-hero-input-box button {
+  right: 80px !important;
+}
+
+.elementor-widget-container .it-cta-input-box button {
   right: 80px !important;
 }
 
@@ -30,6 +34,21 @@
   z-index: 0;
 }
 
+<<<<<<< HEAD
 .it-price-shap_anim img {
   animation: itswing 1s forwards infinite alternate;
+=======
+/* Feature box img */
+.elementor-widget-container .it-feature-icon img {
+  height: 110px;
+}
+.elementor-widget-container .dt-feature-icon img {
+  height: 59px;
+}
+.elementor-widget-container .pg-feature-icon img {
+  height: 82px;
+}
+.elementor-widget-container .ss-feature-icon img {
+  height: 140px;
+>>>>>>> origin/rasel
 }

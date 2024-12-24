@@ -58,7 +58,7 @@ $this->end_controls_section();
 $this->start_controls_section(
     'od_cta_section_content',
     [
-        'label' => __('Cta Title & Content', 'ordainit-toolkit'),
+        'label' => __('CTA Title & Content', 'ordainit-toolkit'),
     ]
 );
 
@@ -67,7 +67,7 @@ $this->add_control(
     [
         'label' => __('Title', 'ordainit-toolkit'),
         'type' => Controls_Manager::TEXT,
-        'default' => esc_html__('OD Cta Title', 'ordainit-toolkit'),
+        'default' => esc_html__('OD CTA Title', 'ordainit-toolkit'),
         'placeholder' => esc_html__('Type title here', 'ordainit-toolkit'),
         'label_block' => true,
     ]
@@ -78,7 +78,7 @@ $this->add_control(
     [
         'label' => __('Subtitle', 'ordainit-toolkit'),
         'type' => Controls_Manager::TEXT,
-        'default' => esc_html__('OD Cta Subtitle', 'ordainit-toolkit'),
+        'default' => esc_html__('OD CTA Subtitle', 'ordainit-toolkit'),
         'placeholder' => esc_html__('Type subtitle here', 'ordainit-toolkit'),
         'label_block' => true,
         'condition' => [
@@ -92,7 +92,7 @@ $this->add_control(
     [
         'label' => __('Description', 'ordainit-toolkit'),
         'type' => Controls_Manager::TEXTAREA,
-        'default' => esc_html__('OD Cta Description', 'ordainit-toolkit'),
+        'default' => esc_html__('OD CTA Description', 'ordainit-toolkit'),
         'placeholder' => esc_html__('Type description here', 'ordainit-toolkit'),
         'label_block' => true,
         'condition' => [
@@ -103,11 +103,11 @@ $this->add_control(
 
 $this->end_controls_section();
 
-// Cta Button Content
+// CTA Button Content
 $this->start_controls_section(
     'od_cta_btn_content',
     [
-        'label' => __('Cta Button', 'ordainit-toolkit'),
+        'label' => __('CTA Button', 'ordainit-toolkit'),
         'condition' => [
             'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-5', 'layout-6', 'layout-7', 'layout-8']
         ],
@@ -137,11 +137,11 @@ $this->add_control(
 
 $this->end_controls_section();
 
-// Cta Button 2 Content
+// CTA Button 2 Content
 $this->start_controls_section(
     'od_cta_btn_2_content',
     [
-        'label' => __('Cta Button 2', 'ordainit-toolkit'),
+        'label' => __('CTA Button 2', 'ordainit-toolkit'),
         'condition' => [
             'od_cta_design_style' => ['layout-5']
         ],
@@ -171,11 +171,11 @@ $this->add_control(
 
 $this->end_controls_section();
 
-// Cta Form
+// CTA Form
 $this->start_controls_section(
     'od_cta_form',
     [
-        'label' => __('Cta Form', 'ordainit-toolkit'),
+        'label' => __('CTA Form', 'ordainit-toolkit'),
         'condition' => [
             'od_cta_design_style' => ['layout-1', 'layout-4']
         ],
@@ -194,11 +194,11 @@ $this->add_control(
 
 $this->end_controls_section();
 
-// Cta Link Content
+// CTA Link Content
 $this->start_controls_section(
     'od_cta_link_content',
     [
-        'label' => __('Cta Link Content', 'ordainit-toolkit'),
+        'label' => __('CTA Link Content', 'ordainit-toolkit'),
         'condition' => [
             'od_cta_design_style' => ['layout-1', 'layout-4']
         ],
@@ -238,11 +238,11 @@ $this->add_control(
 
 $this->end_controls_section();
 
-// Cta Shape
+// CTA Shape
 $this->start_controls_section(
     'od_cta_shape',
     [
-        'label' => __('Cta Shape', 'ordainit-toolkit'),
+        'label' => __('CTA Shape', 'ordainit-toolkit'),
         'condition' => [
             'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6', 'layout-7', 'layout-8']
         ],
@@ -303,7 +303,7 @@ $this->add_control(
 $this->end_controls_section();
 
 
-// Cta Info Section
+// CTA Info Section
 $this->start_controls_section(
     'od_cta_info',
     [
@@ -317,7 +317,7 @@ $this->start_controls_section(
 $this->add_control(
     'od_cta_info_switcher',
     [
-        'label' => esc_html__('Show Cta Info', 'ordainit-toolkit'),
+        'label' => esc_html__('Show CTA Info', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::SWITCHER,
         'label_on' => esc_html__('Show', 'ordainit-toolkit'),
         'label_off' => esc_html__('Hide', 'ordainit-toolkit'),
@@ -370,7 +370,7 @@ $this->end_controls_section();
 $this->start_controls_section(
     'od_cta_style',
     [
-        'label' => __('Cta Style', 'ordainit-toolkit'),
+        'label' => __('CTA Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
             'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-5', 'layout-8']
@@ -381,7 +381,7 @@ $this->start_controls_section(
 $this->add_control(
     'od_cta_bg_color',
     [
-        'label' => esc_html__('Cta BG Color', 'ordainit-toolkit'),
+        'label' => esc_html__('CTA BG Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .gray-bg' => 'background-color: {{VALUE}}',
@@ -398,7 +398,7 @@ $this->end_controls_section();
 $this->start_controls_section(
     'od_cta_wrap_style',
     [
-        'label' => __('Cta Wrap Style', 'ordainit-toolkit'),
+        'label' => __('CTA Wrap Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
             'od_cta_design_style' => ['layout-8']
@@ -410,7 +410,7 @@ $this->start_controls_section(
 $this->add_control(
     'od_cta_wrap_bg_gradient',
     [
-        'label' => esc_html__('Cta Wrap BG Gradient', 'ordainit-toolkit'),
+        'label' => esc_html__('CTA Wrap BG Gradient', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::TEXTAREA,
         'rows' => '3',
         'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
@@ -427,7 +427,7 @@ $this->end_controls_section();
 $this->start_controls_section(
     'od_cta_content_style',
     [
-        'label' => __('Cta Content Style', 'ordainit-toolkit'),
+        'label' => __('CTA Content Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
     ]
 );
@@ -684,7 +684,7 @@ $this->end_controls_section();
 
 
 
-// Cta Button Style
+// CTA Button Style
 $this->start_controls_section(
     'od_cta_btn_style',
     [
@@ -809,7 +809,7 @@ $this->add_group_control(
 
 $this->end_controls_section();
 
-// Cta Button 2 Style
+// CTA Button 2 Style
 $this->start_controls_section(
     'od_cta_btn_2_style',
     [
@@ -935,7 +935,7 @@ $this->add_group_control(
 
 $this->end_controls_section();
 
-// Cta Link Style
+// CTA Link Style
 $this->start_controls_section(
     'od_cta_link_content_style',
     [
@@ -991,7 +991,7 @@ $this->add_group_control(
 
 $this->end_controls_section();
 
-// Cta Link Style
+// CTA Link Style
 $this->start_controls_section(
     'od_cta_info_style',
     [

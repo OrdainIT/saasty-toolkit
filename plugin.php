@@ -209,6 +209,9 @@ class OD_Core_Plugin
 			'service',
 			'team',
 			'price-box',
+			'testimonial',
+			'feature-box',
+			'image-box',
 		];
 	}
 
