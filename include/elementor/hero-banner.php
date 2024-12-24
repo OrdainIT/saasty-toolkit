@@ -217,7 +217,11 @@ class OD_Hero_Banner extends Widget_Base
                         <div class="row gx-35">
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-35">
                                 <div class="ag-hero-thumb-box it-img-anim-wrap p-relative">
-                                    <div class="ag-hero-thumb it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                    <div class="ag-hero-thumb it-img-anim"
+                                        data-displacement="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/webgl/pattern-1.jpg'; ?>"
+                                        data-intensity="0.6"
+                                        data-speedin="1"
+                                        data-speedout="1">
                                         <img src="<?php echo esc_url($od_hero_banner_thumbnail_image['url'], 'ordainit-toolkit'); ?>" alt="">
                                     </div>
                                 </div>
@@ -227,21 +231,33 @@ class OD_Hero_Banner extends Widget_Base
                                     <div class="row gx-35">
                                         <div class="col-12">
                                             <div class="it-img-anim-wrap p-relative">
-                                                <div class="ag-hero-thumb mb-35 it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                                <div class="ag-hero-thumb mb-35 it-img-anim"
+                                                    data-displacement="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/webgl/pattern-1.jpg'; ?>"
+                                                    data-intensity="0.6"
+                                                    data-speedin="1"
+                                                    data-speedout="1">
                                                     <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_2['url'], 'ordainit-toolkit'); ?>" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="it-img-anim-wrap p-relative">
-                                                <div class="ag-hero-thumb it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                                <div class="ag-hero-thumb it-img-anim"
+                                                    data-displacement="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/webgl/pattern-1.jpg'; ?>"
+                                                    data-intensity="0.6"
+                                                    data-speedin="1"
+                                                    data-speedout="1">
                                                     <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_3['url'], 'ordainit-toolkit'); ?>" alt="">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="it-img-anim-wrap p-relative">
-                                                <div class="ag-hero-thumb it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                                <div class="ag-hero-thumb it-img-anim"
+                                                    data-displacement="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/webgl/pattern-1.jpg'; ?>"
+                                                    data-intensity="0.6"
+                                                    data-speedin="1"
+                                                    data-speedout="1">
                                                     <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_4['url'], 'ordainit-toolkit'); ?>" alt="">
                                                 </div>
                                             </div>
@@ -251,7 +267,11 @@ class OD_Hero_Banner extends Widget_Base
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 order-0 order-lg-1 mb-35">
                                 <div class="ag-hero-thumb-box it-img-anim-wrap p-relative">
-                                    <div class="ag-hero-thumb it-img-anim" data-displacement="assets/img/webgl/pattern-1.jpg" data-intensity="0.6" data-speedin="1" data-speedout="1">
+                                    <div class="ag-hero-thumb it-img-anim"
+                                        data-displacement="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/webgl/pattern-1.jpg'; ?>"
+                                        data-intensity="0.6"
+                                        data-speedin="1"
+                                        data-speedout="1">
                                         <img src="<?php echo esc_url($od_hero_banner_thumbnail_image_5['url'], 'ordainit-toolkit'); ?>" alt="">
                                     </div>
                                 </div>

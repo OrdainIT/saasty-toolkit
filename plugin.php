@@ -207,6 +207,8 @@ class OD_Core_Plugin
 			'testimonial-slider',
 			'blog',
 			'testimonial',
+			'feature-box',
+			'image-box',
 		];
 	}
 

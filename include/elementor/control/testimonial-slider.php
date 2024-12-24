@@ -126,11 +126,11 @@ $this->add_control(
             [
                 'name' => 'od_testimonial_slider_list_avatar',
                 'label' => esc_html__('Choose Avatar', 'ordainit-toolkit'),
-                'description' => esc_html__('It works for layout - 2'),
+                'description' => esc_html__('It works for layout - 2 to 6'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
                     'url' =>
-                    ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy//testimonial/avatar.png',
+                    ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/testimonial/avatar.png',
                 ],
 
             ],

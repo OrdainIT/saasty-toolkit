@@ -232,7 +232,7 @@ class OD_Testimonial_Slider extends Widget_Base
 
         <?php elseif ($settings['od_design_style']  == 'layout-5'): ?>
 
-            <div class="pg-testimonial-area ss-testimonial-style blue-bg">
+            <div class="pg-testimonial-area ss-testimonial-style blue-bg pt-155 pb-160">
                 <div class="container">
                     <div class="pg-testimonial-top-wrap mb-50">
                         <div class="row align-items-center">
@@ -573,7 +573,7 @@ class OD_Testimonial_Slider extends Widget_Base
         <?php elseif ($settings['od_design_style']  == 'layout-2'): ?>
 
             <div
-                class="dt-testimonial-area z-index-1 p-relative p-relative">
+                class="dt-testimonial-area z-index-1 p-relative p-relative pt-130 pb-195">
                 <img
                     class="dt-testimonial-shape-2 zoom-anim d-none d-lg-block"
                     src="<?php echo esc_url($od_testimonial_slider_shape_image_1['url'], 'ordainit-toolkit'); ?>"
