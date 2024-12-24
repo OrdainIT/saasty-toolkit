@@ -669,6 +669,22 @@ function od_get_all_categories_for_service()
     return $category_options;
 }
 
+function od_get_all_categories_for_team()
+{
+    $categories = get_categories([
+        'taxonomy'   => 'team-cat', // Replace 'category' with your custom taxonomy if needed
+        'hide_empty' => false,
+        'object_type' => ['team'], // Target the 'service' post type
+    ]);
+
+    $category_options = [];
+    foreach ($categories as $category) {
+        $category_options[$category->term_id] = $category->name;
+    }
+
+    return $category_options;
+}
+
 
 
 

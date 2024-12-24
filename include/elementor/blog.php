@@ -218,11 +218,15 @@ class Od_Blog_Post extends Widget_Base
                     <div class="row">
 
                         <?php
-
+                        $i = -1;
 
                         if ($blog_query->have_posts()) :
-                            while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-                                <div class="col-xl-4 col-xl-4 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay=".3">
+                            while ($blog_query->have_posts()) : $blog_query->the_post();
+
+                                $i++;
+
+                        ?>
+                                <div class="col-xl-4 col-xl-4 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay="<?php echo esc_attr(.3 + $i * .2); ?>">
                                     <div class="ss-blog-item mb-30">
                                         <div class="ss-blog-thumb p-relative mb-85">
                                             <a href="<?php the_permalink(); ?>">
@@ -304,10 +308,12 @@ class Od_Blog_Post extends Widget_Base
                             <?php
 
 
-
+                            $i = -1;
                             if ($blog_query->have_posts()) :
-                                while ($blog_query->have_posts()) : $blog_query->the_post(); ?>
-                                    <div class="col-xl-4 col-lg-6 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay=".3">
+                                while ($blog_query->have_posts()) : $blog_query->the_post();
+                                    $i++;
+                            ?>
+                                    <div class="col-xl-4 col-lg-6 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay="<?php echo esc_attr(.3 + $i * .2); ?>">
                                         <div class="it-blog-item zoom white-bg mb-30">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <div class="it-blog-thumb img-zoom">

@@ -169,10 +169,11 @@ class Od_Service extends Widget_Base
             <div class="container">
                 <div class="row">
                     <?php
-
+                    $i = -1;
 
                     if ($service_query->have_posts()) :
                         while ($service_query->have_posts()) : $service_query->the_post();
+                            $i++;
 
                             $service_meta_thumbnail = get_post_meta(get_the_ID(), 'saasty_service_meta_side', true);
 
@@ -180,7 +181,7 @@ class Od_Service extends Widget_Base
                             $service_thumbnail_image = isset($service_meta_thumbnail['service_thumbnail_image']) ? $service_meta_thumbnail['service_thumbnail_image']['url'] : '';
 
                     ?>
-                            <div class="col-xl-4 col-lg-6 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay=".3">
+                            <div class="col-xl-4 col-lg-6 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay="<?php echo esc_attr(.3 + $i * .2); ?>">
                                 <div class="dt-service-item mb-30">
                                     <?php if (!empty($service_thumbnail_image)): ?>
                                         <span class="dt-service-icon mb-40 d-block"><img src="<?php echo esc_url($service_thumbnail_image, 'ordainit-toolkit') ?>" alt=""></span>

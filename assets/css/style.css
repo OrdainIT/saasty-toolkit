@@ -29,3 +29,7 @@
   right: 9%;
   z-index: 0;
 }
+
+.it-price-shap_anim img {
+  animation: itswing 1s forwards infinite alternate;
+}
