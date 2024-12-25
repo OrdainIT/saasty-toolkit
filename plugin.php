@@ -212,6 +212,11 @@ class OD_Core_Plugin
 			'testimonial',
 			'feature-box',
 			'image-box',
+			'single-price-box',
+			'tab',
+			'portfolio-box',
+			'list-item',
+			'faq',
 		];
 	}
 

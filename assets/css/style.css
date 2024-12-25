@@ -34,10 +34,14 @@
   z-index: 0;
 }
 
-<<<<<<< HEAD
 .it-price-shap_anim img {
   animation: itswing 1s forwards infinite alternate;
-=======
+}
+
+/* pricing box area css none */
+.elementor-widget-container .ma-price-style.ai-price-style {
+  background: none;
+}
 /* Feature box img */
 .elementor-widget-container .it-feature-icon img {
   height: 110px;
@@ -50,5 +54,16 @@
 }
 .elementor-widget-container .ss-feature-icon img {
   height: 140px;
->>>>>>> origin/rasel
+}
+
+.elementor-widget-container .it-price-value-icon img {
+  max-width: 84px;
+}
+
+/* list item css */
+
+.od-list-item.it-software-item-list ul li i {
+  position: absolute;
+  top: 3px;
+  left: 0;
 }
