@@ -34,10 +34,10 @@
   z-index: 0;
 }
 
-<<<<<<< HEAD
 .it-price-shap_anim img {
   animation: itswing 1s forwards infinite alternate;
-=======
+}
+
 /* Feature box img */
 .elementor-widget-container .it-feature-icon img {
   height: 110px;
@@ -50,5 +50,13 @@
 }
 .elementor-widget-container .ss-feature-icon img {
   height: 140px;
->>>>>>> origin/rasel
+}
+.elementor-widget-container .ai-service-icon img {
+  height: 87px;
+}
+.elementor-widget-container .cr-platform-icon img {
+  height: 57px;
+}
+.elementor-widget-container .img-box-style-3 .ai-service-icon img {
+  height: 64px;
 }
