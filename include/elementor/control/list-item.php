@@ -3,6 +3,29 @@
 use Elementor\Controls_Manager;
 
 $this->start_controls_section(
+    'od_layout',
+    [
+        'label' => esc_html__('Design Layout', 'ordainit-toolkit'),
+    ]
+);
+$this->add_control(
+    'od_design_style',
+    [
+        'label' => esc_html__('Select Layout', 'ordainit-toolkit'),
+        'type' => Controls_Manager::SELECT,
+        'options' => [
+            'layout-1' => esc_html__('Layout 1', 'ordainit-toolkit'),
+            'layout-2' => esc_html__('Layout 2', 'ordainit-toolkit'),
+        ],
+        'default' => 'layout-1',
+    ]
+);
+
+$this->end_controls_section();
+
+
+
+$this->start_controls_section(
     'od_list_item_section',
     [
         'label' => __('List Item', 'ordainit-toolkit'),
@@ -24,6 +47,16 @@ $this->add_control(
                 'label' => esc_html__('Title', 'ordainit-toolkit'),
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'default' => esc_html__('List Item Title', 'ordainit-toolkit'),
+                'label_block' => true,
+            ],
+
+            // list item description
+            [
+                'name' => 'list_description',
+                'label' => esc_html__('Description', 'ordainit-toolkit'),
+                'description' => esc_html__('Only for style 2', 'ordainit-toolkit'),
+                'type' => \Elementor\Controls_Manager::TEXTAREA,
+                'default' => esc_html__('List Item Description', 'ordainit-toolkit'),
                 'label_block' => true,
             ],
 

@@ -126,23 +126,51 @@ class Od_List_Item extends Widget_Base
 
 ?>
 
-        <div class=" od-list-item it-software-item-list <?php echo esc_attr($list_fade_animation_switcher === 'yes' ? 'it-fade-anim' : ''); ?>  d-inline-block" data-delay="<?php echo esc_attr($list_fade_delay, 'ordainit-toolkit'); ?>" data-fade-from="<?php echo esc_attr($list_fade_animation, 'ordainit-toolkit'); ?>">
-            <ul>
-                <?php foreach ($list_item_repeater as $list_item) : ?>
-                    <li>
-                        <?php if ('icon' == $list_item['list_item_icon_type']) : ?>
-                            <i class="<?php echo esc_attr($list_item['list_item_icon']['value']); ?>"></i>
-                        <?php else : ?>
-                            <?php echo $list_item['list_item_svg']; ?>
-                        <?php endif; ?>
-                        <span>
-                            <?php echo esc_html($list_item['list_title']); ?>
-                        </span>
-                    </li>
-                <?php endforeach; ?>
+        <?php if ($settings['od_design_style']  == 'layout-2'): ?>
+            <div class="it-software-item-list" data-fade-from="<?php echo esc_attr($list_fade_animation, 'ordainit-toolkit'); ?>" data-delay="<?php echo esc_attr($list_fade_delay, 'ordainit-toolkit'); ?>">
 
-            </ul>
-        </div>
+                <ul>
+
+
+                    <?php foreach ($list_item_repeater as $list_item) : ?>
+
+                        <li>
+                            <?php if ('icon' == $list_item['list_item_icon_type']) : ?>
+                                <i class="<?php echo esc_attr($list_item['list_item_icon']['value']); ?>"></i>
+                            <?php else : ?>
+                                <?php echo $list_item['list_item_svg']; ?>
+                            <?php endif; ?>
+                            <span>
+                                <?php echo esc_html($list_item['list_title']); ?>
+                            </span>
+                            <p> <?php echo od_kses($list_item['list_description']); ?></p>
+                        </li>
+                    <?php endforeach; ?>
+
+                </ul>
+
+            </div>
+        <?php else : ?>
+
+            <div class=" od-list-item it-software-item-list <?php echo esc_attr($list_fade_animation_switcher === 'yes' ? 'it-fade-anim' : ''); ?> d-inline-block" data-delay="<?php echo esc_attr($list_fade_delay, 'ordainit-toolkit'); ?>" data-fade-from="<?php echo esc_attr($list_fade_animation, 'ordainit-toolkit'); ?>">
+                <ul>
+                    <?php foreach ($list_item_repeater as $list_item) : ?>
+                        <li>
+                            <?php if ('icon' == $list_item['list_item_icon_type']) : ?>
+                                <i class="<?php echo esc_attr($list_item['list_item_icon']['value']); ?>"></i>
+                            <?php else : ?>
+                                <?php echo $list_item['list_item_svg']; ?>
+                            <?php endif; ?>
+                            <span>
+                                <?php echo esc_html($list_item['list_title']); ?>
+                            </span>
+                        </li>
+                    <?php endforeach; ?>
+
+                </ul>
+            </div>
+
+        <?php endif; ?>
 
 
 

@@ -124,37 +124,74 @@ class Od_Faq extends Widget_Base
 
 
         <?php if ($settings['od_design_style']  == 'layout-2'): ?>
-        <?php else: ?>
-            <div class="it-custom-accordion">
-                <div class="accordion" id="accordionExample">
-
-
+            <div class="od-custom-accordion2 pg-custom-accordion">
+                <?php
+                $accordion_id = 'accordion-' . uniqid(); // Unique ID for each accordion instance
+                ?>
+                <div class="accordion" id="<?php echo esc_attr($accordion_id); ?>">
 
                     <?php $i = -1;
                     foreach ($od_faq_items as $item) : $i++; ?>
                         <div class="accordion-items it-fade-anim" data-delay="<?php echo esc_attr(0.3 + $i * 0.2); ?>">
-                            <h2 class="accordion-header" id="heading<?php echo esc_attr($i); ?>">
-                                <button class="accordion-buttons <?php echo esc_attr($i === 0 ? 'collapsed' : ''); ?>"
+                            <h2 class="accordion-header" id="heading<?php echo esc_attr($accordion_id . '-' . $i); ?>">
+                                <button class="accordion-buttons <?php echo esc_attr($i === 0 ? '' : 'collapsed'); ?>"
                                     type="button"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#collapse<?php echo esc_attr($i); ?>"
+                                    data-bs-target="#collapse<?php echo esc_attr($accordion_id . '-' . $i); ?>"
                                     aria-expanded="<?php echo esc_attr($i === 0 ? 'true' : 'false'); ?>"
-                                    aria-controls="collapse<?php echo esc_attr($i); ?>">
+                                    aria-controls="collapse<?php echo esc_attr($accordion_id . '-' . $i); ?>">
                                     <?php echo esc_html($item['od_faq_title']); ?>
                                 </button>
                             </h2>
-                            <div id="collapse<?php echo esc_attr($i); ?>"
+                            <div id="collapse<?php echo esc_attr($accordion_id . '-' . $i); ?>"
                                 class="accordion-collapse collapse <?php echo esc_attr($i === 0 ? 'show' : ''); ?>"
-                                aria-labelledby="heading<?php echo esc_attr($i); ?>"
-                                data-bs-parent="#accordionExample">
+                                aria-labelledby="heading<?php echo esc_attr($accordion_id . '-' . $i); ?>"
+                                data-bs-parent="#<?php echo esc_attr($accordion_id); ?>">
                                 <div class="accordion-body d-flex align-items-center">
                                     <p class="mb-0"><?php echo od_kses($item['od_faq_content']); ?></p>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
+
                 </div>
             </div>
+
+        <?php else: ?>
+            <div class="it-custom-accordion">
+                <?php
+                // Generate a unique ID for the accordion instance
+                $accordion_id = 'accordion-' . uniqid();
+                ?>
+                <div class="accordion" id="<?php echo esc_attr($accordion_id); ?>">
+
+                    <?php $i = -1;
+                    foreach ($od_faq_items as $item) : $i++; ?>
+                        <div class="accordion-items it-fade-anim" data-delay="<?php echo esc_attr(0.3 + $i * 0.2); ?>">
+                            <h2 class="accordion-header" id="heading<?php echo esc_attr($accordion_id . '-' . $i); ?>">
+                                <button class="accordion-buttons <?php echo esc_attr($i === 0 ? '' : 'collapsed'); ?>"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse<?php echo esc_attr($accordion_id . '-' . $i); ?>"
+                                    aria-expanded="<?php echo esc_attr($i === 0 ? 'true' : 'false'); ?>"
+                                    aria-controls="collapse<?php echo esc_attr($accordion_id . '-' . $i); ?>">
+                                    <?php echo esc_html($item['od_faq_title']); ?>
+                                </button>
+                            </h2>
+                            <div id="collapse<?php echo esc_attr($accordion_id . '-' . $i); ?>"
+                                class="accordion-collapse collapse <?php echo esc_attr($i === 0 ? 'show' : ''); ?>"
+                                aria-labelledby="heading<?php echo esc_attr($accordion_id . '-' . $i); ?>"
+                                data-bs-parent="#<?php echo esc_attr($accordion_id); ?>">
+                                <div class="accordion-body d-flex align-items-center">
+                                    <p class="mb-0"><?php echo od_kses($item['od_faq_content']); ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+
+                </div>
+            </div>
+
 
 
 

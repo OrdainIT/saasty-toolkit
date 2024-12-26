@@ -67,3 +67,9 @@
   top: 3px;
   left: 0;
 }
+
+/* accordion css*/
+
+.od-custom-accordion2.pg-custom-accordion {
+  margin-left: 0 !important;
+}
