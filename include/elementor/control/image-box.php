@@ -45,6 +45,20 @@ $this->add_control(
 );
 
 $this->add_control(
+    'od_image_box_number',
+    [
+        'label' => __('Number', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXT,
+        'default' => esc_html__('01', 'ordainit-toolkit'),
+        'placeholder' => esc_html__('Type Number here', 'ordainit-toolkit'),
+        'label_block' => true,
+        'condition' => [
+            'od_design_style' => ['layout-3'],
+        ],
+    ]
+);
+
+$this->add_control(
     'od_image_box_url',
     [
         'label' => __('URL', 'ordainit-toolkit'),
@@ -55,7 +69,7 @@ $this->add_control(
             'url' => '#',
         ],
         'condition' => [
-            'od_design_style' => 'layout-1',
+            'od_design_style' => ['layout-1', 'layout-3'],
         ],
     ]
 );

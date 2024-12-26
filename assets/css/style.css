@@ -60,3 +60,14 @@
 .elementor-widget-container .img-box-style-3 .ai-service-icon img {
   height: 64px;
 }
+
+/*  Video Popup */
+.elementor-widget-container .it-video-inner-thumb img {
+  border-radius: 30px;
+}
+
+/*  Video btn - l:2 */
+.elementor-widget-container .cr-video-btn-layout-2 {
+  position: inherit;
+  transform: none;
+}

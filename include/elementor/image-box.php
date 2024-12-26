@@ -125,6 +125,7 @@ class OD_Image_Box extends Widget_Base
         $od_image_box_animation_fade_from = $settings['od_image_box_animation_fade_from'];
         $od_image_box_animation_delay = $settings['od_image_box_animation_delay'];
         $od_image_box_thumbnail_image = $settings['od_image_box_thumbnail_image'];
+        $od_image_box_number = $settings['od_image_box_number'];
 ?>
 
 
@@ -138,7 +139,7 @@ class OD_Image_Box extends Widget_Base
                         <img src="<?php echo esc_url($od_image_box_thumbnail_image['url'], 'ordainit-toolkit'); ?>"
                             alt="image">
                     </span>
-                    <i class="ai-service-number">01</i>
+                    <i class="ai-service-number"><?php echo esc_html($od_image_box_number, 'ordainit-toolkit') ?></i>
                     <div class="ai-service-content">
                         <h4 class="dt-service-title mb-25">
                             <a class="border-line-black"

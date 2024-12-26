@@ -212,6 +212,9 @@ class OD_Core_Plugin
 			'testimonial',
 			'feature-box',
 			'image-box',
+			'single-service',
+			'video-popup',
+			'video-button',
 		];
 	}
 
