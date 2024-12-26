@@ -218,6 +218,9 @@ class OD_Core_Plugin
 			'list-item',
 			'faq',
 			'tab-accordion'
+			'single-service',
+			'video-popup',
+			'video-button',
 		];
 	}
 

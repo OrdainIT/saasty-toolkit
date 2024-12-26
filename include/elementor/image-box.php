@@ -125,12 +125,52 @@ class OD_Image_Box extends Widget_Base
         $od_image_box_animation_fade_from = $settings['od_image_box_animation_fade_from'];
         $od_image_box_animation_delay = $settings['od_image_box_animation_delay'];
         $od_image_box_thumbnail_image = $settings['od_image_box_thumbnail_image'];
+        $od_image_box_number = $settings['od_image_box_number'];
 ?>
 
 
         <?php if ($settings['od_design_style']  == 'layout-3'): ?>
 
+            <div class="it-fade-anim img-box-style-3"
+                data-fade-from="<?php echo esc_attr($od_image_box_animation_fade_from, 'ordainit-toolkit'); ?>"
+                data-delay="<?php echo esc_attr($od_image_box_animation_delay, 'ordainit-toolkit'); ?>">
+                <div class="ai-service-item p-relative z-index-1 mb-30">
+                    <span class="ai-service-icon mb-30 d-block">
+                        <img src="<?php echo esc_url($od_image_box_thumbnail_image['url'], 'ordainit-toolkit'); ?>"
+                            alt="image">
+                    </span>
+                    <i class="ai-service-number"><?php echo esc_html($od_image_box_number, 'ordainit-toolkit') ?></i>
+                    <div class="ai-service-content">
+                        <h4 class="dt-service-title mb-25">
+                            <a class="border-line-black"
+                                href="<?php echo esc_url($od_image_box_url['url'], 'ordainit-toolkit'); ?>">
+                                <?php echo od_kses($od_image_box_title, 'ordainit-toolkit'); ?>
+                        </h4>
+                        <p class="mb-0">
+                            <?php echo od_kses($od_image_box_description, 'ordainit-toolkit'); ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         <?php elseif ($settings['od_design_style']  == 'layout-2'): ?>
+
+            <div class="it-fade-anim"
+                data-fade-from="<?php echo esc_attr($od_image_box_animation_fade_from, 'ordainit-toolkit'); ?>"
+                data-delay="<?php echo esc_attr($od_image_box_animation_delay, 'ordainit-toolkit'); ?>">
+                <div class="cr-platform-item text-center mb-30">
+                    <span class="cr-platform-icon d-block mb-35">
+                        <img src="<?php echo esc_url($od_image_box_thumbnail_image['url'], 'ordainit-toolkit'); ?>"
+                            alt="image">
+                    </span>
+                    <h4 class="cr-platform-title mb-25">
+                        <?php echo od_kses($od_image_box_title, 'ordainit-toolkit'); ?>
+                    </h4>
+                    <p>
+                        <?php echo od_kses($od_image_box_description, 'ordainit-toolkit'); ?>
+                    </p>
+                </div>
+            </div>
 
         <?php else: ?>
 

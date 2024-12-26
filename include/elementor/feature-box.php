@@ -136,7 +136,7 @@ class OD_Feature_Box extends Widget_Base
 
             <div class="it-fade-anim"
                 data-fade-from="<?php echo esc_attr($od_feature_animation_fade_from, 'ordainit-toolkit'); ?>"
-                data-delay="<?php echo esc_attr($od_feature_animation_fade_from, 'ordainit-toolkit'); ?>">
+                data-delay="<?php echo esc_attr($od_feature_animation_delay, 'ordainit-toolkit'); ?>">
                 <div class="ss-feature-item-wrap">
                     <div class="ss-feature-item text-center">
                         <div>
