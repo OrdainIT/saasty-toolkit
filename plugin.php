@@ -217,7 +217,7 @@ class OD_Core_Plugin
 			'portfolio-box',
 			'list-item',
 			'faq',
-			'tab-accordion'
+			'tab-accordion',
 			'single-service',
 			'video-popup',
 			'video-button',
