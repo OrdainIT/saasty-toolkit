@@ -41,6 +41,16 @@ include_once(ORDAINIT_TOOLKIT_ADDONS_DIR . '/include/allow-svg.php');
 
 include_once(ORDAINIT_TOOLKIT_ADDONS_DIR . '/lib/codestar-framework/codestar-framework.php');
 
+// custom container control
+
+function load_custom_container_control()
+{
+	// Check if Elementor is active
+	if (did_action('elementor/loaded')) {
+		include_once(ORDAINIT_TOOLKIT_ADDONS_DIR . '/include/custom-container-control.php');
+	}
+}
+add_action('plugins_loaded', 'load_custom_container_control');
 
 /**
  * OD Custom Widget
@@ -174,7 +184,7 @@ final class OD_Core
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
 			esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'ordainit-toolkit'),
-			'<strong>' . esc_html__('OD Core', 'ordainit-toolkit') . '</strong>',
+			'<strong>' . esc_html__('Ordainit Toolkit', 'ordainit-toolkit') . '</strong>',
 			'<strong>' . esc_html__('Elementor', 'ordainit-toolkit') . '</strong>'
 		);
 

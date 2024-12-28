@@ -701,7 +701,7 @@ $this->add_control(
 );
 
 $this->add_control(
-    'od_price_box_button_hover_color',
+    'od_price_box_button_normal_color',
     [
         'label' => __('Text Hover Color', 'ordainit-toolkit'),
         'type' => Controls_Manager::COLOR,
