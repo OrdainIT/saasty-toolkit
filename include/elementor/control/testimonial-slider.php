@@ -600,18 +600,32 @@ $this->add_control(
     ]
 );
 
+$this->add_control(
+    'od_testimonial_slider_heading_title_span_gradient_start_color',
+    [
+        'label' => esc_html__('Title Gradient Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-section-title span' => 'background: linear-gradient(90deg, {{VALUE}} 0%, {{od_testimonial_slider_heading_title_span_gradient_end_color.VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-6'],
+        ],
+    ]
+);
 
 $this->add_control(
-    'od_testimonial_slider_heading_title_span_gradient',
+    'od_testimonial_slider_heading_title_span_gradient_end_color',
     [
-        'label' => esc_html__('Title Span Gradient', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::TEXTAREA,
-        'rows' => '3',
-        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'label' => esc_html__('Title Gradient End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .ag-section-title span' => 'background: {{VALUE}}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;',
+            '{{WRAPPER}} .ag-section-title span' => 'background: linear-gradient(90deg, {{od_testimonial_slider_heading_title_span_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
         ],
-        'label_block' => true,
         'condition' => [
             'od_design_style' => ['layout-6'],
         ],
@@ -836,17 +850,33 @@ $this->add_control(
     ]
 );
 
+
 $this->add_control(
-    'od_testimonial_slider_designation_gradient',
+    'od_testimonial_slider_designation_gradient_start_color',
     [
-        'label' => esc_html__('Designation Gradient', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::TEXTAREA,
-        'rows' => '3',
-        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'label' => esc_html__('Designation Gradient Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-author-info span' => 'background: {{VALUE}}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;',
+            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-author-info span' => 'background: linear-gradient(90deg, {{VALUE}} 0%, {{od_testimonial_slider_designation_gradient_end_color.VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
         ],
-        'label_block' => true,
+        'condition' => [
+            'od_design_style' => ['layout-6'],
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_slider_designation_gradient_end_color',
+    [
+        'label' => esc_html__('Designation Gradient End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-author-info span' => 'background: linear-gradient(90deg, {{od_testimonial_slider_designation_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
+        ],
         'condition' => [
             'od_design_style' => ['layout-6'],
         ],
@@ -1163,16 +1193,26 @@ $this->add_control(
 );
 
 $this->add_control(
-    'od_testimonial_slider_arrow_bg_gradient',
+    'od_testimonial_slider_arrow_bg_gradient_start_color',
     [
-        'label' => esc_html__('Arrow BG Gradient', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::TEXTAREA,
-        'rows' => '3',
-        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'label' => esc_html__('Gradient BG Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#0bcf77',
         'selectors' => [
-            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-arrow-box button span' => 'background: {{VALUE}};',
+            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-arrow-box button span' => 'background: linear-gradient(90deg, {{VALUE}} 0%, {{od_testimonial_slider_arrow_bg_gradient_end_color.VALUE}} 100%);',
         ],
-        'label_block' => true,
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_slider_arrow_bg_gradient_end_color',
+    [
+        'label' => esc_html__('Gradient BG End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#69d619',
+        'selectors' => [
+            '{{WRAPPER}} .ag-testimonial-style .it-testimonial-arrow-box button span' => 'background: linear-gradient(90deg, {{od_testimonial_slider_arrow_bg_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);',
+        ],
     ]
 );
 

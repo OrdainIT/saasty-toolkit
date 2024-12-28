@@ -962,6 +962,17 @@ class OD_Testimonial_Slider extends Widget_Base
 
                 });
 
+
+                // Counter Js
+                if ($(".purecounter").length) {
+                    new PureCounter({
+                        filesizing: true,
+                        selector: ".filesizecount",
+                        pulse: 2,
+                    });
+                    new PureCounter();
+                }
+
             });
         </script>
 <?php

@@ -753,17 +753,33 @@ $this->add_control(
     ]
 );
 
+
 $this->add_control(
-    'od_hero_banner_title_span_gradient',
+    'od_hero_banner_title_span_gradient_start_color',
     [
-        'label' => esc_html__('Title Span Gradient', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::TEXTAREA,
-        'rows' => '3',
-        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'label' => esc_html__('Title Gradient Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .ag-hero-title span' => 'background: {{VALUE}}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;',
+            '{{WRAPPER}} .ag-hero-title span' => 'background: linear-gradient(90deg, {{VALUE}} 0%, {{od_hero_banner_title_span_gradient_end_color.VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
         ],
-        'label_block' => true,
+        'condition' => [
+            'od_design_style' => ['layout-9'],
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_title_span_gradient_end_color',
+    [
+        'label' => esc_html__('Title Gradient End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-hero-title span' => 'background: linear-gradient(90deg, {{od_hero_banner_title_span_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
+        ],
         'condition' => [
             'od_design_style' => ['layout-9'],
         ],
@@ -1232,24 +1248,58 @@ $this->end_controls_tab();
 $this->end_controls_tabs();
 
 $this->add_control(
-    'hr_2',
+    'od_hero_banner_contact_form_btn_bg_gradient_heading',
     [
-        'type' => \Elementor\Controls_Manager::DIVIDER,
+        'label' => esc_html__('Button Bg Gradient Layout - 9', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::HEADING,
+        'separator' => 'before',
     ]
 );
 
 $this->add_control(
-    'od_hero_banner_contact_form_btn_bg_gradient',
+    'od_hero_banner_contact_form_btn_bg_gradient_color_1',
     [
-        'label' => esc_html__('Button BG Gradient', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::TEXTAREA,
-        'rows' => '3',
-        'description' => 'It will works only for layout-9',
-        'default' => 'linear-gradient(90deg, #0bcf77, #69d619, #69d619, #0bcf77)',
+        'label' => esc_html__('Button Gradient Bg Color 1', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#0bcf77',
         'selectors' => [
-            '{{WRAPPER}} .ag-btn' => 'background-image: {{VALUE}}',
+            '{{WRAPPER}} .ag-btn' => 'background-image: linear-gradient(90deg, {{VALUE}}, {{od_hero_banner_contact_form_btn_bg_gradient_color_2.VALUE}}, {{od_hero_banner_contact_form_btn_bg_gradient_color_3.VALUE}}, {{od_hero_banner_contact_form_btn_bg_gradient_color_4.VALUE}});',
         ],
-        'label_block' => true,
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_contact_form_btn_bg_gradient_color_2',
+    [
+        'label' => esc_html__('Button Gradient Bg Color 2', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#69d619',
+        'selectors' => [
+            '{{WRAPPER}} .ag-btn' => 'background-image: linear-gradient(90deg, {{od_hero_banner_contact_form_btn_bg_gradient_color_1.VALUE}}, {{VALUE}} , {{od_hero_banner_contact_form_btn_bg_gradient_color_3.VALUE}}, {{od_hero_banner_contact_form_btn_bg_gradient_color_4.VALUE}});',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_hero_banner_contact_form_btn_bg_gradient_color_3',
+    [
+        'label' => esc_html__('Button Gradient Bg Color 3', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#69d619',
+        'selectors' => [
+            '{{WRAPPER}} .ag-btn' => 'background-image: linear-gradient(90deg, {{od_hero_banner_contact_form_btn_bg_gradient_color_1.VALUE}}, {{od_hero_banner_contact_form_btn_bg_gradient_color_2.VALUE}} ,{{VALUE}}, {{od_hero_banner_contact_form_btn_bg_gradient_color_4.VALUE}});',
+        ],
+    ]
+);
+$this->add_control(
+    'od_hero_banner_contact_form_btn_bg_gradient_color_4',
+    [
+        'label' => esc_html__('Button Gradient Bg Color 4', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#69d619',
+        'selectors' => [
+            '{{WRAPPER}} .ag-btn' => 'background-image: linear-gradient(90deg, {{od_hero_banner_contact_form_btn_bg_gradient_color_1.VALUE}}, {{od_hero_banner_contact_form_btn_bg_gradient_color_2.VALUE}} , {{od_hero_banner_contact_form_btn_bg_gradient_color_3.VALUE}}, {{VALUE}});',
+        ],
     ]
 );
 

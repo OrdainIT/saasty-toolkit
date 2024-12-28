@@ -175,23 +175,52 @@ $this->start_controls_section(
 );
 
 $this->add_control(
-    'od_brand_full_bg_gradient',
+    'od_brand_gradient_direction',
     [
-        'label' => esc_html__('Brand BG Gradient', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::TEXTAREA,
-        'rows' => '3',
-        'default' => 'linear-gradient(180deg, #f1f5ff 0%, rgba(241, 245, 255, 0) 100%)',
-        'selectors' => [
-            '{{WRAPPER}} .cr-brand-bg' => 'background: {{VALUE}}',
+        'label' => esc_html__('Gradient Direction', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'default' => '180deg',
+        'options' => [
+            '0deg' => esc_html__('Top to Bottom', 'ordainit-toolkit'),
+            '90deg' => esc_html__('Left to Right', 'ordainit-toolkit'),
+            '180deg' => esc_html__('Bottom to Top', 'ordainit-toolkit'),
+            '270deg' => esc_html__('Right to Left', 'ordainit-toolkit'),
         ],
-        'label_block' => true,
     ]
 );
 
 $this->add_control(
-    'hr_4',
+    'od_brand_gradient_start_color',
     [
-        'type' => \Elementor\Controls_Manager::DIVIDER,
+        'label' => esc_html__('Gradient Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#f1f5ff',
+        'selectors' => [
+            '{{WRAPPER}} .cr-brand-bg' => 'background: linear-gradient({{od_brand_gradient_direction.VALUE}}, {{VALUE}} 0%, {{od_brand_gradient_end_color.VALUE}} 100%);',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_brand_gradient_end_color',
+    [
+        'label' => esc_html__('Gradient End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => 'rgba(241, 245, 255, 0)',
+        'selectors' => [
+            '{{WRAPPER}} .cr-brand-bg' => 'background: linear-gradient({{od_brand_gradient_direction.VALUE}}, {{od_brand_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);',
+        ],
+    ]
+);
+
+$this->end_controls_section();
+
+// Brand Style
+$this->start_controls_section(
+    'od_brand_full_content_style',
+    [
+        'label' => __('Brand Content Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
     ]
 );
 

@@ -161,17 +161,30 @@ $this->add_control(
     ]
 );
 
+
 $this->add_control(
-    'od_image_box_border_gradient',
+    'od_image_box_border_gradient_start_color',
     [
-        'label' => esc_html__('Border Gradient', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::TEXTAREA,
-        'rows' => '3',
-        'default' => 'linear-gradient(to right, #0BCF77, #69D619)',
+        'label' => esc_html__('Border Gradient Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#0BCF77',
         'selectors' => [
-            '{{WRAPPER}} .ag-service-style .ai-service-item::after' => 'background: {{VALUE}}',
+            '{{WRAPPER}} .ag-service-style .ai-service-item::after' => 'background: linear-gradient(to right, {{VALUE}} 0%, {{od_image_box_border_gradient_end_color.VALUE}} 100%);',
         ],
-        'label_block' => true,
+        'condition' => [
+            'od_design_style' => 'layout-1',
+        ],
+    ]
+);
+$this->add_control(
+    'od_image_box_border_gradient_end_color',
+    [
+        'label' => esc_html__('Border Gradient End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#69D619',
+        'selectors' => [
+            '{{WRAPPER}} .ag-service-style .ai-service-item::after' => 'background: linear-gradient(to right, {{od_image_box_border_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);',
+        ],
         'condition' => [
             'od_design_style' => 'layout-1',
         ],
