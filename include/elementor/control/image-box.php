@@ -91,8 +91,7 @@ $this->add_control(
         'label' => esc_html__('Choose Thumbnail Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/svg-img/service-icon.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );

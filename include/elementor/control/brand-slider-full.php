@@ -59,8 +59,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/marketing-8-2.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -86,8 +85,7 @@ $this->add_control(
                 'label' => esc_html__('Choose Brand Image', 'ordainit-toolkit'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
-                    'url' =>
-                    ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/integration/integration-4-3.png',
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
 
             ],
@@ -124,8 +122,7 @@ $this->add_control(
                 'label' => esc_html__('Choose Brand Image', 'ordainit-toolkit'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
-                    'url' =>
-                    ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/integration/integration-4-8.png',
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
 
             ],

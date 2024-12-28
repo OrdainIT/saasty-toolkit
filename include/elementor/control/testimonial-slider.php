@@ -44,7 +44,7 @@ $this->add_control(
         'label' => esc_html__('Choose BG Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/testimonial-shape-3-1.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -129,8 +129,7 @@ $this->add_control(
                 'description' => esc_html__('It works for layout - 2 to 6'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
-                    'url' =>
-                    ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/testimonial/avatar.png',
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
 
             ],
@@ -169,8 +168,7 @@ $this->add_control(
                 'description' => esc_html__('It works for layout - 1'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
-                    'url' =>
-                    ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/testimonial/icon-1-1.png',
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
 
             ],
@@ -212,8 +210,7 @@ $this->add_control(
         'label' => esc_html__('Choose Thumbnail Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/testimonial/testimonial-1-1.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
 
     ]
@@ -236,8 +233,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 1', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/testimonial-shape-1-3.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
             'od_design_style' => ['layout-1', 'layout-2', 'layout-6']
@@ -251,8 +247,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 2', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/testimonial-shape-1-1.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
             'od_design_style' => ['layout-1', 'layout-2']
@@ -266,8 +261,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 3', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/testimonial-shape-1-2.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
             'od_design_style' => ['layout-1', 'layout-2']
@@ -281,8 +275,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 4', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/testimonial-shape-1-4.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
             'od_design_style' => ['layout-1', 'layout-2']
@@ -296,8 +289,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 5', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/testimonial/avatar-2.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
             'od_design_style' => ['layout-2']
@@ -311,8 +303,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 6', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/testimonial/avatar.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
             'od_design_style' => ['layout-2']
@@ -326,8 +317,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 7', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/testimonial-bg-2-1.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
         'condition' => [
             'od_design_style' => ['layout-2']

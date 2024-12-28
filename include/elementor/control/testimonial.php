@@ -39,8 +39,7 @@ $this->add_control(
         'label' => esc_html__('Choose Avatar', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/testimonial/avatar-3-3.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );

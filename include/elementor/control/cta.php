@@ -47,7 +47,7 @@ $this->add_control(
         'label' => esc_html__('Choose BG Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/cta/cta-bg-1-1.jpg',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -255,8 +255,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 1', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-2-1.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -267,8 +266,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 2', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-2-2.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -280,8 +278,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::MEDIA,
         'description' => 'It will works only for layout-5 & layout-8',
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-5-4.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -293,8 +290,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::MEDIA,
         'description' => 'It will works only for layout-5',
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-5-5.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );

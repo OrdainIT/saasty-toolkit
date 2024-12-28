@@ -43,7 +43,7 @@ $this->add_control(
         'label' => esc_html__('Choose BG Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/feature/feature-bg-3-1.jpg',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -99,8 +99,7 @@ $this->add_control(
         'label' => esc_html__('Choose Thumbnail Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/feature/feature-1-1.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
