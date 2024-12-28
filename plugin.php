@@ -100,6 +100,15 @@ class OD_Core_Plugin
 			[],
 			false
 		);
+
+		// Register and enqueue the style
+		wp_register_style(
+			'ordainit-toolkit-main',
+			plugins_url('/assets/css/main.css', __FILE__),
+			[],
+			false
+		);
+		wp_enqueue_style('ordainit-toolkit-main');
 		wp_enqueue_style('ordainit-toolkit-style');
 	}
 
