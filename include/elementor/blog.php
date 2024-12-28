@@ -251,7 +251,7 @@ class Od_Blog_Post extends Widget_Base
                                                 </a>
                                             </h4>
                                             <p class="mb-35">
-                                                <?php echo wp_trim_words(get_the_excerpt(), 15, '...'); ?>
+                                                <?php echo wp_trim_words(get_the_excerpt(), 13, '...'); ?>
                                             </p>
                                             <a class="ss-btn" href="<?php the_permalink(); ?>">
                                                 <?php echo esc_html($od_blog_section_blog_btn, 'ordainit-toolkit'); ?>
@@ -338,7 +338,7 @@ class Od_Blog_Post extends Widget_Base
                                                         <?php the_title(); ?>
                                                     </a>
                                                 </h4>
-                                                <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+                                                <p><?php echo wp_trim_words(get_the_excerpt(), 13, '...'); ?></p>
                                                 <a class="it-blog-link border-line-theme title-hover" href="<?php the_permalink(); ?>">
                                                     <?php echo esc_html($od_blog_section_blog_btn, 'ordainit-toolkit'); ?>
                                                     <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">

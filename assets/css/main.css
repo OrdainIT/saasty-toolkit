@@ -1,3 +1,16 @@
 .od-custom-accordion2.pg-custom-accordion {
   margin-left: 0;
 }
+
+
+/* List Item css */
+
+.od-list-item.it-software-item-list {
+    margin-bottom: 0;
+}
+
+/* blog css */
+
+.it-blog-wrap {
+    padding-bottom: 0;
+}

@@ -135,9 +135,6 @@ $this->add_control(
                 'default' => [
                     'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
-                'condition' => [
-                    'od_design_style' => ['layout-1'],
-                ],
             ],
 
             [
