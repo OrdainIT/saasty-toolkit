@@ -117,9 +117,6 @@ $this->add_control(
     [
         'label' => esc_html__('Shap Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
-        'default' => [
-            'url' =>  ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/faq/faq-7-1.png',
-        ],
     ]
 );
 

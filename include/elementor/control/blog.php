@@ -233,9 +233,6 @@ $this->add_control(
     [
         'label' => esc_html__('Shap 1', 'textdomain'),
         'type' => \Elementor\Controls_Manager::MEDIA,
-        'default' => [
-            'url' =>  ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/blog-shape-5-1.png',
-        ],
     ]
 );
 $this->add_control(
@@ -243,9 +240,6 @@ $this->add_control(
     [
         'label' => esc_html__('Shap 2', 'textdomain'),
         'type' => \Elementor\Controls_Manager::MEDIA,
-        'default' => [
-            'url' =>  ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/testimonial-shape-5-1.png',
-        ],
     ]
 );
 $this->add_control(
@@ -253,9 +247,6 @@ $this->add_control(
     [
         'label' => esc_html__('Shap 3', 'textdomain'),
         'type' => \Elementor\Controls_Manager::MEDIA,
-        'default' => [
-            'url' =>  ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/blog-shape-5-2.png',
-        ],
     ]
 );
 

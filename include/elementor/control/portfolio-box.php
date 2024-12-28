@@ -64,9 +64,6 @@ $this->add_control(
     [
         'label' => __('Image', 'ordainit-toolkit'),
         'type' => Controls_Manager::MEDIA,
-        'default' => [
-            'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/project/project-2-1.jpg',
-        ],
         'label_block' => true,
     ]
 );

@@ -68,9 +68,6 @@ $this->add_control(
                 'name' => 'od_tab_bg_image',
                 'label' => esc_html__('Tab Background Image', 'textdomain'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/analytics/analytics-1-1.jpg',
-                ],
                 'label_block' => true,
             ],
 
@@ -79,9 +76,6 @@ $this->add_control(
                 'name' => 'od_tab_shape_image_1',
                 'label' => esc_html__('Tab Shape Image 1', 'textdomain'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/analytics/analytics-1-2.png',
-                ],
                 'label_block' => true,
             ],
 
@@ -90,9 +84,6 @@ $this->add_control(
                 'name' => 'od_tab_shape_image_2',
                 'label' => esc_html__('Tab Shape Image 2', 'textdomain'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/analytics/analytics-1-3.png',
-                ],
                 'label_block' => true,
             ],
 
@@ -101,9 +92,6 @@ $this->add_control(
                 'name' => 'od_tab_shape_image_3',
                 'label' => esc_html__('Tab Shape Image 3', 'textdomain'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [
-                    'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/analytics/analytics-1-4.png',
-                ],
                 'label_block' => true,
             ],
 
@@ -153,9 +141,6 @@ $this->add_control(
     [
         'label' => __('Tab Shape Image 1', 'ordainit-toolkit'),
         'type' => Controls_Manager::MEDIA,
-        'default' => [
-            'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/analytics-1-2.png',
-        ],
     ]
 );
 
@@ -164,9 +149,6 @@ $this->add_control(
     [
         'label' => __('Tab Shape Image 2', 'ordainit-toolkit'),
         'type' => Controls_Manager::MEDIA,
-        'default' => [
-            'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/analytics-1-1.png',
-        ],
     ]
 );
 
