@@ -14,9 +14,8 @@ class CustomSaastyContainer
     }
 
     public function register_controls($element)
-    
     {
-
+        // Data Fade Animation Control
         $element->start_controls_section(
             'data_fade_animation_wrapper',
             [
@@ -38,9 +37,6 @@ class CustomSaastyContainer
         );
 
         $element->end_controls_section();
-
-
-  
 
         // Data Fade From Control
         $element->start_controls_section(
@@ -69,7 +65,6 @@ class CustomSaastyContainer
 
         $element->end_controls_section();
 
-
         // Data Delay Control
         $element->start_controls_section(
             'data_delay_wrapper',
@@ -91,12 +86,29 @@ class CustomSaastyContainer
 
         $element->end_controls_section();
 
+        // Bootstrap Grid Layout Control
+        $element->start_controls_section(
+            'saasty_boostrap_grid',
+            [
+                'label' => __('Saasty Boostrap', 'ordainit-toolkit'),
+                'tab' => Controls_Manager::TAB_ADVANCED,
+            ]
+        );
 
+        $element->add_control(
+            'saasty_bootstrap_grid_layout',
+            [
+                'label' => __('Saasty Boostrap Layout', 'ordainit-toolkit'),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'none',
+                'options' => [
+                    'none' => __('None', 'ordainit-toolkit'),
+                    'container' => __('container', 'ordainit-toolkit'),
+                ],
+            ]
+        );
 
-
-
-      
-
+        $element->end_controls_section();
     }
 
     public function before_render($element)
@@ -118,6 +130,12 @@ class CustomSaastyContainer
             $element->add_render_attribute('_wrapper', 'class', 'it-fade-anim');
         }
 
+         // Add the it-fade-anim class if the switcher is set to "yes"
+         if (!empty($settings['saasty_bootstrap_grid_layout']))  {
+            $element->add_render_attribute('_wrapper', 'class', $settings['saasty_bootstrap_grid_layout']);
+        }
+
+       
     }
 }
 
