@@ -67,6 +67,8 @@ class CustomSaastyContainer
             ]
         );
 
+        $element->end_controls_section();
+
 
         // Data Delay Control
         $element->start_controls_section(
@@ -91,7 +93,6 @@ class CustomSaastyContainer
 
 
 
-        $element->end_controls_section();
 
 
       
