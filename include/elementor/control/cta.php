@@ -47,7 +47,7 @@ $this->add_control(
         'label' => esc_html__('Choose BG Image', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' => ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/cta/cta-bg-1-1.jpg',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -255,8 +255,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 1', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-2-1.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -267,8 +266,7 @@ $this->add_control(
         'label' => esc_html__('Choose Shape Image 2', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-2-2.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -280,8 +278,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::MEDIA,
         'description' => 'It will works only for layout-5 & layout-8',
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-5-4.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -293,8 +290,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::MEDIA,
         'description' => 'It will works only for layout-5',
         'default' => [
-            'url' =>
-            ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-shape-5-5.png',
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
         ],
     ]
 );
@@ -406,18 +402,42 @@ $this->start_controls_section(
     ]
 );
 
+$this->add_control(
+    'od_cta_wrap_bg_gradient_direction',
+    [
+        'label' => esc_html__('Gradient Direction', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'default' => '90deg',
+        'options' => [
+            '0deg' => esc_html__('Top to Bottom', 'ordainit-toolkit'),
+            '90deg' => esc_html__('Left to Right', 'ordainit-toolkit'),
+            '180deg' => esc_html__('Bottom to Top', 'ordainit-toolkit'),
+            '270deg' => esc_html__('Right to Left', 'ordainit-toolkit'),
+        ],
+    ]
+);
 
 $this->add_control(
-    'od_cta_wrap_bg_gradient',
+    'od_cta_wrap_bg_gradient_start_color',
     [
-        'label' => esc_html__('CTA Wrap BG Gradient', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::TEXTAREA,
-        'rows' => '3',
-        'default' => 'linear-gradient(90deg, #0bcf77 0%, #69d619 100%)',
+        'label' => esc_html__('Gradient Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#0bcf77',
         'selectors' => [
-            '{{WRAPPER}} .ag-cta-style .ai-cta-wrap' => 'background: {{VALUE}}',
+            '{{WRAPPER}} .ag-cta-style .ai-cta-wrap' => 'background: linear-gradient({{od_cta_wrap_bg_gradient_direction.VALUE}}, {{VALUE}} 0%, {{od_cta_wrap_bg_gradient_end_color.VALUE}} 100%);',
         ],
-        'label_block' => true,
+    ]
+);
+
+$this->add_control(
+    'od_cta_wrap_bg_gradient_end_color',
+    [
+        'label' => esc_html__('Gradient End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#69d619',
+        'selectors' => [
+            '{{WRAPPER}} .ag-cta-style .ai-cta-wrap' => 'background: linear-gradient({{od_cta_wrap_bg_gradient_direction.VALUE}}, {{od_cta_wrap_bg_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);',
+        ],
     ]
 );
 

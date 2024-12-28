@@ -230,6 +230,8 @@ class OD_Core_Plugin
 			'single-service',
 			'video-popup',
 			'video-button',
+			'funfact-box',
+			'single-funfact',
 		];
 	}
 

@@ -75,8 +75,40 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .dt-video-box a' => 'background-color: {{VALUE}}',
             '{{WRAPPER}} .cr-video-btn' => 'background-color: {{VALUE}}',
-            '{{WRAPPER}} .cr-video-btn' => 'background: linear-gradient(90deg, {{VALUE}} 0%, {{VALUE}} 100%);',
-        ]
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-1', 'layout-2'],
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_video_btn_bg_gradient_start_color',
+    [
+        'label' => esc_html__('Gradient BG Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#0bcf77',
+        'selectors' => [
+            '{{WRAPPER}} .ag-video-style .cr-video-btn' => 'background: linear-gradient(90deg, {{VALUE}} 0%, {{od_video_btn_bg_gradient_end_color.VALUE}} 100%);',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-3'],
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_video_btn_bg_gradient_end_color',
+    [
+        'label' => esc_html__('Gradient BG End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'default' => '#69d619',
+        'selectors' => [
+            '{{WRAPPER}} .ag-video-style .cr-video-btn' => 'background: linear-gradient(90deg, {{od_video_btn_bg_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-3'],
+        ],
     ]
 );
 

@@ -71,3 +71,8 @@
   position: inherit;
   transform: none;
 }
+
+/* Home- 7 Counter */
+.elementor-widget-container .seo-choose-item span i {
+  font-style: normal;
+}
