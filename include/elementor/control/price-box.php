@@ -132,6 +132,9 @@ $this->add_control(
                 'name' => 'od_price_monlty_price_box_image',
                 'label' => esc_html__('Choose Image', 'ordainit-toolkit'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
                 'condition' => [
                     'od_design_style' => ['layout-1'],
                 ],
@@ -226,6 +229,9 @@ $this->add_control(
                 'name' => 'od_price_yearly_price_box_image',
                 'label' => esc_html__('Choose Image', 'ordainit-toolkit'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
             ],
 
             [

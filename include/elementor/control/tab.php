@@ -68,6 +68,9 @@ $this->add_control(
                 'name' => 'od_tab_bg_image',
                 'label' => esc_html__('Tab Background Image', 'textdomain'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
                 'label_block' => true,
             ],
 
@@ -76,6 +79,9 @@ $this->add_control(
                 'name' => 'od_tab_shape_image_1',
                 'label' => esc_html__('Tab Shape Image 1', 'textdomain'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
                 'label_block' => true,
             ],
 
@@ -84,6 +90,9 @@ $this->add_control(
                 'name' => 'od_tab_shape_image_2',
                 'label' => esc_html__('Tab Shape Image 2', 'textdomain'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
                 'label_block' => true,
             ],
 
@@ -92,6 +101,9 @@ $this->add_control(
                 'name' => 'od_tab_shape_image_3',
                 'label' => esc_html__('Tab Shape Image 3', 'textdomain'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
                 'label_block' => true,
             ],
 

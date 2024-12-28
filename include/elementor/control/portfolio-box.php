@@ -64,6 +64,9 @@ $this->add_control(
     [
         'label' => __('Image', 'ordainit-toolkit'),
         'type' => Controls_Manager::MEDIA,
+        'default' => [
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
+        ],
         'label_block' => true,
     ]
 );

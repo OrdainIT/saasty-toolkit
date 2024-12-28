@@ -233,6 +233,9 @@ $this->add_control(
     [
         'label' => esc_html__('Shap 1', 'textdomain'),
         'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
+        ],
     ]
 );
 $this->add_control(
@@ -240,6 +243,9 @@ $this->add_control(
     [
         'label' => esc_html__('Shap 2', 'textdomain'),
         'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
+        ],
     ]
 );
 $this->add_control(
@@ -247,6 +253,9 @@ $this->add_control(
     [
         'label' => esc_html__('Shap 3', 'textdomain'),
         'type' => \Elementor\Controls_Manager::MEDIA,
+        'default' => [
+            'url' => \Elementor\Utils::get_placeholder_image_src(),
+        ],
     ]
 );
 

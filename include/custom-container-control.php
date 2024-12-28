@@ -14,62 +14,8 @@ class CustomSaastyContainer
     }
 
     public function register_controls($element)
+    
     {
-        // Data Delay Control
-        $element->start_controls_section(
-            'data_delay_wrapper',
-            [
-                'label' => __('Saasy Data Delay', 'ordainit-toolkit'),
-                'tab' => Controls_Manager::TAB_ADVANCED,
-            ]
-        );
-
-        $element->add_control(
-            'data_delay',
-            [
-                'label' => __('Saasy Data Delay', 'ordainit-toolkit'),
-                'type' => Controls_Manager::NUMBER,
-                'default' => 0,
-                'description' => __('Enter delay in milliseconds.', 'ordainit-toolkit'),
-            ]
-        );
-
-        $element->end_controls_section();
-
-        // Data Fade From Control
-        $element->start_controls_section(
-            'data_fade_from_wrapper',
-            [
-                'label' => __('Saasy Data Fade From', 'ordainit-toolkit'),
-                'tab' => Controls_Manager::TAB_ADVANCED,
-            ]
-        );
-
-        $element->add_control(
-            'data_fade_from',
-            [
-                'label' => __('Saasy Data Fade From', 'ordainit-toolkit'),
-                'type' => Controls_Manager::SELECT,
-                'default' => 'none',
-                'options' => [
-                    'none' => __('None', 'ordainit-toolkit'),
-                    'left' => __('Left', 'ordainit-toolkit'),
-                    'right' => __('Right', 'ordainit-toolkit'),
-                    'top' => __('Top', 'ordainit-toolkit'),
-                    'bottom' => __('Bottom', 'ordainit-toolkit'),
-                ],
-            ]
-        );
-
-        // Data Fade animation switch control
-
-   
-
-
-
-
-        $element->end_controls_section();
-
 
         $element->start_controls_section(
             'data_fade_animation_wrapper',
@@ -92,6 +38,63 @@ class CustomSaastyContainer
         );
 
         $element->end_controls_section();
+
+
+  
+
+        // Data Fade From Control
+        $element->start_controls_section(
+            'data_fade_from_wrapper',
+            [
+                'label' => __('Saasty Data Fade From', 'ordainit-toolkit'),
+                'tab' => Controls_Manager::TAB_ADVANCED,
+            ]
+        );
+
+        $element->add_control(
+            'data_fade_from',
+            [
+                'label' => __('Saasy Data Fade From', 'ordainit-toolkit'),
+                'type' => Controls_Manager::SELECT,
+                'default' => 'none',
+                'options' => [
+                    'none' => __('None', 'ordainit-toolkit'),
+                    'left' => __('Left', 'ordainit-toolkit'),
+                    'right' => __('Right', 'ordainit-toolkit'),
+                    'top' => __('Top', 'ordainit-toolkit'),
+                    'bottom' => __('Bottom', 'ordainit-toolkit'),
+                ],
+            ]
+        );
+
+
+        // Data Delay Control
+        $element->start_controls_section(
+            'data_delay_wrapper',
+            [
+                'label' => __('Saasty Data Delay', 'ordainit-toolkit'),
+                'tab' => Controls_Manager::TAB_ADVANCED,
+            ]
+        );
+
+        $element->add_control(
+            'data_delay',
+            [
+                'label' => __('Saasty Data Delay', 'ordainit-toolkit'),
+                'type' => Controls_Manager::NUMBER,
+                'default' => 0,
+                'description' => __('Enter delay in milliseconds.', 'ordainit-toolkit'),
+            ]
+        );
+
+        $element->end_controls_section();
+
+
+
+        $element->end_controls_section();
+
+
+      
 
     }
 
