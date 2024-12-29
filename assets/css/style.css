@@ -76,3 +76,7 @@
 .elementor-widget-container .seo-choose-item span i {
   font-style: normal;
 }
+
+.elementor-widget-container .rotate-anim-360 {
+  animation: rotate2 15s linear infinite;
+}

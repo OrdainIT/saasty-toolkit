@@ -233,6 +233,7 @@ class OD_Core_Plugin
 			'funfact-box',
 			'single-funfact',
 			'process-box',
+			'card-box',
 		];
 	}
 
