@@ -232,6 +232,7 @@ class OD_Core_Plugin
 			'video-button',
 			'funfact-box',
 			'single-funfact',
+			'process-box',
 		];
 	}
 
@@ -413,9 +414,9 @@ class OD_Core_Plugin
 	 * @access public
 	 */
 	public function __construct()
-	
+
 	{
-		
+
 
 		// Register widget scripts
 		add_action('elementor/frontend/after_register_scripts', [$this, 'widget_scripts_and_styles']);
