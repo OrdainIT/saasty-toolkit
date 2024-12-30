@@ -238,6 +238,7 @@ class OD_Core_Plugin
 			'water-mark-text-slider',
 			'about-tab',
 			'contact-form',
+			'about-img-box',
 		];
 	}
 
