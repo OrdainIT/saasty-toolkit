@@ -320,7 +320,6 @@ class OD_Testimonial_Slider extends Widget_Base
                     </div>
                 </div>
             </div>
-            </div>
 
         <?php elseif ($settings['od_design_style']  == 'layout-4'): ?>
 
@@ -895,7 +894,7 @@ class OD_Testimonial_Slider extends Widget_Base
                     loop: true,
                     slidesPerView: 1,
                     spaceBetween: 35,
-                    autoplay: sliderAutoplay ? {
+                    autoplay: sliderAutoplay3 ? {
                         delay: 3000
                     } : false,
                     breakpoints: {
@@ -932,7 +931,7 @@ class OD_Testimonial_Slider extends Widget_Base
                     loop: true,
                     slidesPerView: 1,
                     spaceBetween: 40,
-                    autoplay: sliderAutoplay ? {
+                    autoplay: sliderAutoplay4 ? {
                         delay: 3000
                     } : false,
                     breakpoints: {
