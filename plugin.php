@@ -234,6 +234,7 @@ class OD_Core_Plugin
 			'single-funfact',
 			'process-box',
 			'card-box',
+			'webgl-img-anim',
 		];
 	}
 

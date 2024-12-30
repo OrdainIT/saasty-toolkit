@@ -145,6 +145,7 @@ class OD_Image_Box extends Widget_Base
                             <a class="border-line-black"
                                 href="<?php echo esc_url($od_image_box_url['url'], 'ordainit-toolkit'); ?>">
                                 <?php echo od_kses($od_image_box_title, 'ordainit-toolkit'); ?>
+                            </a>
                         </h4>
                         <p class="mb-0">
                             <?php echo od_kses($od_image_box_description, 'ordainit-toolkit'); ?>
