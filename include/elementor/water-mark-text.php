@@ -13,7 +13,7 @@ if (! defined('ABSPATH')) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class OD_Webgl_Image_Anim extends Widget_Base
+class OD_Water_Mark_Text extends Widget_Base
 {
 
     /**
@@ -27,7 +27,7 @@ class OD_Webgl_Image_Anim extends Widget_Base
      */
     public function get_name()
     {
-        return 'od-webgl-img-anim';
+        return 'od-water-mark-text';
     }
 
     /**
@@ -41,7 +41,7 @@ class OD_Webgl_Image_Anim extends Widget_Base
      */
     public function get_title()
     {
-        return __('Webgl Image', 'ordainit-toolkit');
+        return __('Water Mark Text', 'ordainit-toolkit');
     }
 
     /**
@@ -104,7 +104,7 @@ class OD_Webgl_Image_Anim extends Widget_Base
      */
     protected function register_controls()
     {
-        include_once(ORDAINIT_TOOLKIT_ELEMENTS_PATH . '/control/webgl-img-anim.php');
+        include_once(ORDAINIT_TOOLKIT_ELEMENTS_PATH . '/control/water-mark-text.php');
     }
 
     /**
@@ -119,26 +119,14 @@ class OD_Webgl_Image_Anim extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $od_webgl_img_thumbnail = $settings['od_webgl_img_thumbnail'];
-        $od_webgl_img_anim_thumbnail = $settings['od_webgl_img_anim_thumbnail'];
+        $od_water_mark_text = $settings['od_water_mark_text'];
 ?>
-
-
-
-        <div class="it-img-anim-wrap">
-            <div class="it-img-anim" data-displacement="<?php echo esc_url($od_webgl_img_anim_thumbnail['url'], 'ordainit-toolkit'); ?>" data-intensity="0.6" data-speedin="1" data-speedout="1">
-                <img src="<?php echo esc_url($od_webgl_img_thumbnail['url'], 'ordainit-toolkit'); ?>" alt="">
-            </div>
+        <div class="ag-price-style">
+            <h6 class="ag-price-big-text">Pricing Plan</h6>
         </div>
-
-
-
-
 
         <script>
             jQuery(document).ready(function($) {
-
-
 
             });
         </script>
@@ -146,4 +134,4 @@ class OD_Webgl_Image_Anim extends Widget_Base
     }
 }
 
-$widgets_manager->register(new OD_Webgl_Image_Anim());
+$widgets_manager->register(new OD_Water_Mark_Text());

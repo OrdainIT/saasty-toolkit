@@ -13,7 +13,7 @@ if (! defined('ABSPATH')) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class OD_Webgl_Image_Anim extends Widget_Base
+class OD_Water_Mark_Text_Slider extends Widget_Base
 {
 
     /**
@@ -27,7 +27,7 @@ class OD_Webgl_Image_Anim extends Widget_Base
      */
     public function get_name()
     {
-        return 'od-webgl-img-anim';
+        return 'od-water-mark-text-slider';
     }
 
     /**
@@ -41,7 +41,7 @@ class OD_Webgl_Image_Anim extends Widget_Base
      */
     public function get_title()
     {
-        return __('Webgl Image', 'ordainit-toolkit');
+        return __('Water Mark Slider', 'ordainit-toolkit');
     }
 
     /**
@@ -104,7 +104,7 @@ class OD_Webgl_Image_Anim extends Widget_Base
      */
     protected function register_controls()
     {
-        include_once(ORDAINIT_TOOLKIT_ELEMENTS_PATH . '/control/webgl-img-anim.php');
+        include_once(ORDAINIT_TOOLKIT_ELEMENTS_PATH . '/control/water-mark-text-slider.php');
     }
 
     /**
@@ -119,31 +119,53 @@ class OD_Webgl_Image_Anim extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $od_webgl_img_thumbnail = $settings['od_webgl_img_thumbnail'];
-        $od_webgl_img_anim_thumbnail = $settings['od_webgl_img_anim_thumbnail'];
+        $od_water_mark_slider_lists = $settings['od_water_mark_slider_lists'];
 ?>
 
 
-
-        <div class="it-img-anim-wrap">
-            <div class="it-img-anim" data-displacement="<?php echo esc_url($od_webgl_img_anim_thumbnail['url'], 'ordainit-toolkit'); ?>" data-intensity="0.6" data-speedin="1" data-speedout="1">
-                <img src="<?php echo esc_url($od_webgl_img_thumbnail['url'], 'ordainit-toolkit'); ?>" alt="">
+        <div class="it-text-slider-area fix black-2-bg">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12 it-fade-anim" data-fade-from="bottom" data-delay=".3">
+                        <div class="swiper-container it-text-active">
+                            <div class="swiper-wrapper slider-transtion">
+                                <?php foreach ($od_water_mark_slider_lists as $od_water_mark_slider_list): ?>
+                                    <div class="swiper-slide">
+                                        <div class="it-text-slider-item">
+                                            <span><?php echo esc_html($od_water_mark_slider_list['od_water_mark_slider_list_text'], 'ordainit-toolkit'); ?></span>
+                                            <img src="<?php echo esc_url($od_water_mark_slider_list['od_water_mark_slider_list_image']['url'], 'ordainit-toolkit') ?>" alt="">
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
-
 
 
         <script>
             jQuery(document).ready(function($) {
 
 
-
+                var it_text_slider = new Swiper(".it-text-active", {
+                    loop: true,
+                    freemode: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 0,
+                    centeredSlides: true,
+                    allowTouchMove: false,
+                    speed: 5000,
+                    autoplay: {
+                        delay: 1,
+                        disableOnInteraction: true,
+                    },
+                });
             });
         </script>
 <?php
     }
 }
 
-$widgets_manager->register(new OD_Webgl_Image_Anim());
+$widgets_manager->register(new OD_Water_Mark_Text_Slider());

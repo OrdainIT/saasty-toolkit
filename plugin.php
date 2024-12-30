@@ -235,6 +235,8 @@ class OD_Core_Plugin
 			'process-box',
 			'card-box',
 			'webgl-img-anim',
+			'water-mark-text-slider',
+			'water-mark-text',
 		];
 	}
 
