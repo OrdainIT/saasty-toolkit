@@ -208,6 +208,7 @@ $this->add_control(
     ]
 );
 
+
 // list item title typography
 
 $this->add_group_control(
@@ -257,6 +258,86 @@ $this->add_responsive_control(
         'size_units' => ['px', 'em', '%'],
         'selectors' => [
             '{{WRAPPER}} .it-software-item-list ul li' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+        ],
+    ]
+);
+
+
+// list item description color  
+
+$this->add_control(
+    'list_description_color',
+    [
+        'label' => esc_html__('Description Color', 'ordainit-toolkit'),
+        'type' => Controls_Manager::COLOR,
+        'default' => '#000',
+        'condition' => [
+            'od_design_style' => 'layout-2',
+        ],
+        'selectors' => [
+            '{{WRAPPER}} .od-list-item.it-software-item-list ul li p' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
+// list item description typography
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'name' => 'list_description_typography',
+        'label' => esc_html__('Typography', 'ordainit-toolkit'),
+        'selector' => '{{WRAPPER}} .od-list-item.it-software-item-list ul li p',
+        'condition' => [
+            'od_design_style' => 'layout-2',
+        ],
+    ]
+);
+
+// list item description margin
+
+$this->add_responsive_control(
+    'list_description_margin',
+    [
+        'label' => esc_html__('Description Margin', 'ordainit-toolkit'),
+        'type' => Controls_Manager::DIMENSIONS,
+        'default' => [
+            'top' => '0',
+            'right' => '0',
+            'bottom' => '0',
+            'left' => '0',
+            'unit' => 'px',
+        ],
+        'size_units' => ['px', 'em', '%'],
+        'selectors' => [
+            '{{WRAPPER}} .it-software-item-list ul li p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+        ],
+        'condition' => [
+            'od_design_style' => 'layout-2',
+        ],
+    ]
+);
+
+// list item description padding
+
+$this->add_responsive_control(
+    'list_description_padding',
+    [
+        'label' => esc_html__('Description Padding', 'ordainit-toolkit'),
+        'type' => Controls_Manager::DIMENSIONS,
+        'default' => [
+            'top' => '0',
+            'right' => '0',
+            'bottom' => '0',
+            'left' => '0',
+            'unit' => 'px',
+        ],
+        'size_units' => ['px', 'em', '%'],
+        'selectors' => [
+            '{{WRAPPER}} .it-software-item-list ul li p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+        ],
+        'condition' => [
+            'od_design_style' => 'layout-2',
         ],
     ]
 );

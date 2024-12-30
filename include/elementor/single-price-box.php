@@ -137,7 +137,7 @@ class Od_Single_Price_Box extends Widget_Base
                 <div class="it-price-head">
                     <div class="it-price-value-wrap d-flex justify-content-between">
                         <div>
-                            <span class="it-price-value">39.99$</span>
+                            <span class="it-price-value"><?php echo esc_html($single_price_box_package_price, 'ordainit-toolkit');?></span>
                             <i><?php echo esc_html($single_price_box_package_title, 'ordainit-toolkit'); ?></i>
                         </div>
                         <div class="it-price-value-icon">

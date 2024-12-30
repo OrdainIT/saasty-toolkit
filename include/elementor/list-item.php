@@ -127,7 +127,7 @@ class Od_List_Item extends Widget_Base
 ?>
 
         <?php if ($settings['od_design_style']  == 'layout-2'): ?>
-            <div class="it-software-item-list" data-fade-from="<?php echo esc_attr($list_fade_animation, 'ordainit-toolkit'); ?>" data-delay="<?php echo esc_attr($list_fade_delay, 'ordainit-toolkit'); ?>">
+            <div class="od-list-item it-software-item-list" data-fade-from="<?php echo esc_attr($list_fade_animation, 'ordainit-toolkit'); ?>" data-delay="<?php echo esc_attr($list_fade_delay, 'ordainit-toolkit'); ?>">
 
                 <ul>
 

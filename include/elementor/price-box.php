@@ -235,7 +235,7 @@ class Od_Price_Box extends Widget_Base
                                 <div class="row">
                                     <!-- pricing box for montly package loop -->
 
-                                    <?php foreach ($od_price_monlty_price_box_items as $montlybox3): ?>
+                                    <?php  $i = -1; foreach ($od_price_monlty_price_box_items as $montlybox3): $i++; ?>
 
 
 
