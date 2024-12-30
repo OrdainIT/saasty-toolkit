@@ -158,7 +158,7 @@ $this->add_control(
     'od_title_box_description',
     [
         'label' => __('Description', 'ordainit-toolkit'),
-        'type' => Controls_Manager::WYSIWYG,
+        'type' => Controls_Manager::TEXTAREA,
         'default' => esc_html__('OD Description', 'ordainit-toolkit'),
         'placeholder' => esc_html__('Type description here', 'ordainit-toolkit'),
         'label_block' => true,
@@ -179,10 +179,27 @@ $this->start_controls_section(
     ]
 );
 
+// Add control for selecting animation type
+$this->add_control(
+    'od_title_animation_type',
+    [
+        'label' => __('Animation Type', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'options' => [
+            'it-split-text' => __('Split Text', 'ordainit-toolkit'),
+            'it_text_reveal_anim' => __('Text Reveal Animation', 'ordainit-toolkit'),
+            'it-char-animation' => __('Character Animation', 'ordainit-toolkit'),
+        ],
+        'default' => 'it-split-text',
+        'label_block' => true,
+    ]
+);
+
+// Add control for split-in direction (only relevant for 'it-split-text')
 $this->add_control(
     'od_title_box_animation_split_in',
     [
-        'label' => __('Title Split In', 'ordainit-toolkit'),
+        'label' => __('Split Direction', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::SELECT,
         'options' => [
             'right' => __('Right', 'ordainit-toolkit'),
@@ -192,6 +209,9 @@ $this->add_control(
         ],
         'default' => 'right',
         'label_block' => true,
+        'condition' => [
+            'od_title_animation_type' => 'it-split-text',
+        ],
     ]
 );
 

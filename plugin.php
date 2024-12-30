@@ -236,7 +236,9 @@ class OD_Core_Plugin
 			'card-box',
 			'webgl-img-anim',
 			'water-mark-text-slider',
-			'water-mark-text',
+			'about-tab',
+			'contact-form',
+			'about-img-box',
 		];
 	}
 

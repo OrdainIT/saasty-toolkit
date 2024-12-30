@@ -13,7 +13,7 @@ if (! defined('ABSPATH')) exit; // Exit if accessed directly
  *
  * @since 1.0.0
  */
-class OD_Water_Mark_Text extends Widget_Base
+class OD_Contact_Form extends Widget_Base
 {
 
     /**
@@ -27,7 +27,7 @@ class OD_Water_Mark_Text extends Widget_Base
      */
     public function get_name()
     {
-        return 'od-water-mark-text';
+        return 'od-contact-form';
     }
 
     /**
@@ -41,7 +41,7 @@ class OD_Water_Mark_Text extends Widget_Base
      */
     public function get_title()
     {
-        return __('Water Mark Text', 'ordainit-toolkit');
+        return __('Contact Form', 'ordainit-toolkit');
     }
 
     /**
@@ -93,6 +93,26 @@ class OD_Water_Mark_Text extends Widget_Base
         return ['ordainit-toolkit'];
     }
 
+    // Contact 7
+    public function get_od_contact_form()
+    {
+        if (! class_exists('WPCF7')) {
+            return;
+        }
+        $od_cfa         = array();
+        $od_cf_args     = array('posts_per_page' => -1, 'post_type' => 'wpcf7_contact_form');
+        $od_forms       = get_posts($od_cf_args);
+        $od_cfa         = ['0' => esc_html__('Select Form', 'odcore')];
+        if ($od_forms) {
+            foreach ($od_forms as $od_form) {
+                $od_cfa[$od_form->ID] = $od_form->post_title;
+            }
+        } else {
+            $od_cfa[esc_html__('No contact form found', 'odcore')] = 0;
+        }
+        return $od_cfa;
+    }
+
     /**
      * Register the widget controls.
      *
@@ -104,7 +124,7 @@ class OD_Water_Mark_Text extends Widget_Base
      */
     protected function register_controls()
     {
-        include_once(ORDAINIT_TOOLKIT_ELEMENTS_PATH . '/control/water-mark-text.php');
+        include_once(ORDAINIT_TOOLKIT_ELEMENTS_PATH . '/control/contact-form.php');
     }
 
     /**
@@ -119,14 +139,17 @@ class OD_Water_Mark_Text extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
-        $od_water_mark_text = $settings['od_water_mark_text'];
+        $od_contact_form_list = $settings['od_contact_form_list'];
 ?>
-        <div class="ag-price-style">
-            <h6 class="ag-price-big-text">Pricing Plan</h6>
-        </div>
+
+
+        <?php echo do_shortcode('[contact-form-7  id="' . $od_contact_form_list . '"]'); ?>
+
 
         <script>
             jQuery(document).ready(function($) {
+
+
 
             });
         </script>
@@ -134,4 +157,4 @@ class OD_Water_Mark_Text extends Widget_Base
     }
 }
 
-$widgets_manager->register(new OD_Water_Mark_Text());
+$widgets_manager->register(new OD_Contact_Form());
