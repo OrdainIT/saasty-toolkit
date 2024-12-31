@@ -239,6 +239,7 @@ class OD_Core_Plugin
 			'about-tab',
 			'contact-form',
 			'about-img-box',
+			'title-box-fade',
 		];
 	}
 

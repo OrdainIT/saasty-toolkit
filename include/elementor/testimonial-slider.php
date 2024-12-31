@@ -146,7 +146,7 @@ class OD_Testimonial_Slider extends Widget_Base
             <div class="ag-testimonial-style it-testimonial-area p-relative black-2-bg">
                 <div class="ag-testimonial-thumb it-img-anim-wrap">
                     <div class="it-img-anim"
-                        data-displacement="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/webgl/pattern-1.jpg'; ?>"
+                        data-displacement="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/img/webgl/pattern-1.jpg'; ?>"
                         data-intensity="0.6"
                         data-speedin="1"
                         data-speedout="1">
@@ -154,7 +154,7 @@ class OD_Testimonial_Slider extends Widget_Base
                     </div>
 
                 </div>
-                <img class="it-testimonial-shape-11" src="<?php echo esc_url($od_testimonial_slider_shape_image_1['url'], 'ordainit-toolkit'); ?>" alt="">
+                <img class="it-testimonial-shape-4" src="<?php echo esc_url($od_testimonial_slider_shape_image_1['url'], 'ordainit-toolkit'); ?>" alt="">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="offset-xl-5 offset-lg-5 col-xl-7 col-lg-7">
