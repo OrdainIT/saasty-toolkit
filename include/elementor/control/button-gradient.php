@@ -147,7 +147,7 @@ $this->add_control(
             'unit' => 'px',
         ],
         'selectors' => [
-            '{{WRAPPER}} .it-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-btn' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
@@ -166,7 +166,7 @@ $this->add_control(
             'unit' => 'px',
         ],
         'selectors' => [
-            '{{WRAPPER}} .it-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
@@ -176,7 +176,7 @@ $this->add_group_control(
     \Elementor\Group_Control_Border::get_type(),
     [
         'name' => 'border',
-        'selector' => '{{WRAPPER}} .it-btn',
+        'selector' => '{{WRAPPER}} .ag-btn',
     ]
 );
 
@@ -194,7 +194,7 @@ $this->add_control(
             'unit' => 'px',
         ],
         'selectors' => [
-            '{{WRAPPER}} .it-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-btn' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
@@ -223,18 +223,7 @@ $this->add_control(
         'label' => esc_html__('Button Text Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .it-btn' => 'color: {{VALUE}};',
-        ],
-    ]
-);
-
-$this->add_control(
-    'od_btn_style_normal_bg_color',
-    [
-        'label' => esc_html__('Button BG Color', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::COLOR,
-        'selectors' => [
-            '{{WRAPPER}} .it-btn' => 'background-color: {{VALUE}};',
+            '{{WRAPPER}} .ag-btn' => 'color: {{VALUE}};',
         ],
     ]
 );
@@ -254,17 +243,7 @@ $this->add_control(
         'label' => esc_html__('Button Hover Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .it-btn:hover' => 'color: {{VALUE}};',
-        ],
-    ]
-);
-$this->add_control(
-    'od_btn_style_hover_bg_color',
-    [
-        'label' => esc_html__('Button Hover BG Color', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::COLOR,
-        'selectors' => [
-            '{{WRAPPER}} .it-btn::after' => 'background-color: {{VALUE}};',
+            '{{WRAPPER}} .ag-btn:hover' => 'color: {{VALUE}};',
         ],
     ]
 );
@@ -272,13 +251,65 @@ $this->add_control(
 $this->end_controls_tab();
 $this->end_controls_tabs();
 
+
+$this->add_control(
+    'hr_3',
+    [
+        'type' => \Elementor\Controls_Manager::DIVIDER,
+    ]
+);
+// Button Gradient BG
+
+$this->add_control(
+    'od_btn_bg_gradient_color_1',
+    [
+        'label' => esc_html__('Button Gradient Bg Color 1', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-btn' => 'background-image: linear-gradient(90deg, {{VALUE}}, {{od_btn_bg_gradient_color_2.VALUE}}, {{od_btn_bg_gradient_color_3.VALUE}}, {{od_btn_bg_gradient_color_4.VALUE}});',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_btn_bg_gradient_color_2',
+    [
+        'label' => esc_html__('Button Gradient Bg Color 2', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-btn' => 'background-image: linear-gradient(90deg, {{od_btn_bg_gradient_color_1.VALUE}}, {{VALUE}} , {{od_btn_bg_gradient_color_3.VALUE}}, {{od_btn_bg_gradient_color_4.VALUE}});',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_btn_bg_gradient_color_3',
+    [
+        'label' => esc_html__('Button Gradient Bg Color 3', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-btn' => 'background-image: linear-gradient(90deg, {{od_btn_bg_gradient_color_1.VALUE}}, {{od_btn_bg_gradient_color_2.VALUE}} ,{{VALUE}}, {{od_btn_bg_gradient_color_4.VALUE}});',
+        ],
+    ]
+);
+$this->add_control(
+    'od_btn_bg_gradient_color_4',
+    [
+        'label' => esc_html__('Button Gradient Bg Color 4', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-btn' => 'background-image: linear-gradient(90deg, {{od_btn_bg_gradient_color_1.VALUE}}, {{od_btn_bg_gradient_color_2.VALUE}} , {{od_btn_bg_gradient_color_3.VALUE}}, {{VALUE}});',
+        ],
+    ]
+);
+
 // Button Typography
 $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
         'label' => esc_html__('Button Typography', 'ordainit-toolkit'),
         'name' => 'od_button_typography',
-        'selector' => '{{WRAPPER}} .it-btn',
+        'selector' => '{{WRAPPER}} .ag-btn',
     ]
 );
 
