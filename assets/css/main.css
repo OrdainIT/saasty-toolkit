@@ -24,3 +24,7 @@
  
     transform: rotate(0);
 }
+
+.elementor-widget-container .ag-hero-thumb img {
+    border-radius: 10px;
+}

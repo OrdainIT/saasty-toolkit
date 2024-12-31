@@ -159,12 +159,13 @@ class Od_Price_Box extends Widget_Base
                                         $recomment_switch = $montlybox4['od_price_monlty_price_box_recomended_switcher'];
 
                                     ?>
-                                        <?php if ($recomment_switch === 'yes'): ?>
-                                            <span class="it-price-recommend"><?php echo esc_html($montlybox4['od_price_monlty_price_box_recomended_text'], 'ordainit-toolkit'); ?></span>
 
-                                        <?php endif; ?>
                                         <div class="col-xl-4 col-lg-6 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay="<?php echo esc_attr(.3 + $i * .2); ?>">
                                             <div class="it-price-item p-relative <?php echo ($i === 1) ? 'active' : ''; ?> mb-30">
+                                                <?php if ($recomment_switch === 'yes'): ?>
+                                                    <span class="it-price-recommend"><?php echo esc_html($montlybox4['od_price_monlty_price_box_recomended_text'], 'ordainit-toolkit'); ?></span>
+
+                                                <?php endif; ?>
                                                 <div class="it-price-tag"><span><?php echo esc_html($montlybox4['od_price_monlty_price_box_package_title']); ?></span></div>
                                                 <div class="it-price-head">
                                                     <span class="it-price-value"><?php echo od_kses($montlybox4['od_price_monlty_price_box_price']); ?></span>
