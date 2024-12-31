@@ -128,16 +128,53 @@ $this->add_control(
     ]
 );
 
+// title active color 
+
+$this->add_control(
+    'od_faq_title_active_color',
+    [
+        'label' => esc_html__('Title Active Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'condition' => [
+            'od_design_style' => 'layout-1',
+        ],
+        'selectors' => [
+            '{{WRAPPER}} .it-custom-accordion .accordion-buttons:not(.collapsed)' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .pg-custom-accordion .accordion-buttons:not(.collapsed)' => 'color: {{VALUE}}',
+        ],
+    ]
+);
+
 // title Gradient color
 
 $this->add_control(
-    'od_faq_title_gradient_color',
+    'od_faq_title_gradient_start_color',
     [
-        'label' => __('Title Gradient Color', 'ordainit-toolkit'),
-        'type' => Controls_Manager::COLOR,
+        'label' => esc_html__('Gradient Start Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'condition' => [
+            'od_design_style' => 'layout-2',
+        ],
         'selectors' => [
-            '{{WRAPPER}} .it-custom-accordion .accordion-buttons' => 'background: linear-gradient(45deg, {{od_faq_title_color.VALUE}}, {{VALUE}})',
-            '{{WRAPPER}} .pg-custom-accordion .accordion-buttons' => 'background: linear-gradient(45deg, {{od_faq_title_color.VALUE}}, {{VALUE}})',
+            '{{WRAPPER}} .od-custom-accordion2.pg-custom-accordion .accordion-buttons:not(.collapsed)' => 'background: linear-gradient(90deg, {{VALUE}} 0%, {{od_faq_title_gradient_end_color.VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_faq_title_gradient_end_color',
+    [
+        'label' => esc_html__('Gradient End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'condition' => [
+            'od_design_style' => 'layout-2',
+        ],
+        'selectors' => [
+            '{{WRAPPER}} .od-custom-accordion2.pg-custom-accordion .accordion-buttons:not(.collapsed)' => 'background: linear-gradient(90deg, {{od_faq_title_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
         ],
     ]
 );

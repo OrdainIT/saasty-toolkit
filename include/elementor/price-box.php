@@ -154,7 +154,15 @@ class Od_Price_Box extends Widget_Base
                             <div id="it-tab-monthly" class="it-price-tab it-tab-hide">
                                 <div class="row">
                                     <?php $i = -1;
-                                    foreach ($od_price_monlty_price_box_items as $montlybox4): $i++; ?>
+                                    foreach ($od_price_monlty_price_box_items as $montlybox4): $i++;
+
+                                        $recomment_switch = $montlybox4['od_price_monlty_price_box_recomended_switcher'];
+
+                                    ?>
+                                        <?php if ($recomment_switch === 'yes'): ?>
+                                            <span class="it-price-recommend"><?php echo esc_html($montlybox4['od_price_monlty_price_box_recomended_text'], 'ordainit-toolkit'); ?></span>
+
+                                        <?php endif; ?>
                                         <div class="col-xl-4 col-lg-6 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay="<?php echo esc_attr(.3 + $i * .2); ?>">
                                             <div class="it-price-item p-relative <?php echo ($i === 1) ? 'active' : ''; ?> mb-30">
                                                 <div class="it-price-tag"><span><?php echo esc_html($montlybox4['od_price_monlty_price_box_package_title']); ?></span></div>
@@ -183,9 +191,19 @@ class Od_Price_Box extends Widget_Base
                                 <div class="row">
                                     <?php
                                     $i = -1;
-                                    foreach ($od_price_yearly_price_box_items as $yearlybox4): $i++; ?>
+                                    foreach ($od_price_yearly_price_box_items as $yearlybox4): $i++;
+
+                                        $recomment_switch = $yearlybox4['od_price_yearly_price_box_recomended_switcher'];
+
+
+                                    ?>
                                         <div class="col-xl-4 col-lg-6 col-md-6 it-fade-anim" data-fade-from="bottom" data-delay="<?php echo esc_attr(.3 + $i * .2); ?>">
                                             <div class="it-price-item p-relative <?php echo ($i === 1) ? 'active' : ''; ?> mb-30">
+
+                                                <?php if ($recomment_switch === 'yes'): ?>
+                                                    <span class="it-price-recommend"><?php echo esc_html($yearlybox4['od_price_yearly_price_box_recomended_text'], 'ordainit-toolkit'); ?></span>
+
+                                                <?php endif; ?>
                                                 <div class="it-price-tag"><span><?php echo esc_html($yearlybox4['od_price_yearly_price_box_package_title']); ?></span></div>
                                                 <div class="it-price-head">
                                                     <span class="it-price-value"><?php echo od_kses($yearlybox4['od_price_yearly_price_box_price']); ?></span>
@@ -235,7 +253,8 @@ class Od_Price_Box extends Widget_Base
                                 <div class="row">
                                     <!-- pricing box for montly package loop -->
 
-                                    <?php  $i = -1; foreach ($od_price_monlty_price_box_items as $montlybox3): $i++; ?>
+                                    <?php $i = -1;
+                                    foreach ($od_price_monlty_price_box_items as $montlybox3): $i++; ?>
 
 
 
@@ -326,9 +345,18 @@ class Od_Price_Box extends Widget_Base
                             <div id="it-tab-monthly" class="it-price-tab it-tab-hide">
                                 <div class="row">
                                     <?php $i = 0;
-                                    foreach ($od_price_monlty_price_box_items as $monthly_pricebox2): $i++; ?>
+                                    foreach ($od_price_monlty_price_box_items as $monthly_pricebox2): $i++;
+
+                                        $recomment_switch = $monthly_pricebox2['od_price_monlty_price_box_recomended_switcher'];
+
+
+                                    ?>
                                         <div class="col-xl-4 col-lg-6 col-md-6">
                                             <div class="it-price-item <?php echo ($i === 2) ? 'active' : ''; ?> p-relative mb-30">
+                                                <?php if ($recomment_switch === 'yes'): ?>
+                                                    <span class="it-price-recommend"><?php echo esc_html($monthly_pricebox2['od_price_monlty_price_box_recomended_text'], 'ordainit-toolkit'); ?></span>
+
+                                                <?php endif; ?>
                                                 <div class="it-price-tag"><span><?php echo esc_html($monthly_pricebox2['od_price_monlty_price_box_package_title']); ?> </span></div>
                                                 <div class="it-price-head">
                                                     <span class="it-price-value">
@@ -356,9 +384,20 @@ class Od_Price_Box extends Widget_Base
                                     <!-- pricing box for yearly -->
 
                                     <?php $i = 0;
-                                    foreach ($od_price_yearly_price_box_items as $yearly_pricebox2): $i++; ?>
+                                    foreach ($od_price_yearly_price_box_items as $yearly_pricebox2): $i++;
+
+                                        $recomment_switch = $yearly_pricebox2['od_price_yearly_price_box_recomended_switcher'];
+
+
+                                    ?>
                                         <div class="col-xl-4 col-lg-6 col-md-6">
                                             <div class="it-price-item <?php echo ($i === 2) ? 'active' : ''; ?> p-relative mb-30">
+
+                                                <?php if ($recomment_switch === 'yes'): ?>
+                                                    <span class="it-price-recommend"><?php echo esc_html($yearly_pricebox2['od_price_yearly_price_box_recomended_text'], 'ordainit-toolkit'); ?></span>
+
+                                                <?php endif; ?>
+
                                                 <div class="it-price-tag"><span><?php echo esc_html($yearly_pricebox2['od_price_yearly_price_box_package_title']); ?> </span></div>
                                                 <div class="it-price-head">
                                                     <span class="it-price-value">

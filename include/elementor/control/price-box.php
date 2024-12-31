@@ -161,6 +161,28 @@ $this->add_control(
                 'label_block' => true,
             ],
 
+            // recomend switcher
+
+            [
+                'name' => 'od_price_monlty_price_box_recomended_switcher',
+                'label' => esc_html__('Recomended', 'ordainit-toolkit'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'ordainit-toolkit'),
+                'label_off' => esc_html__('No', 'ordainit-toolkit'),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ],
+       
+
+            [
+                'name' => 'od_price_monlty_price_box_recomended_text',
+                'description' => esc_html__('Only Style For 2, 4', 'ordainit-toolkit'),
+                'label' => esc_html__('Recomended Text', 'ordainit-toolkit'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('Recommend', 'ordainit-toolkit'),
+                'label_block' => true,
+            ],
+
 
 
 
@@ -254,6 +276,30 @@ $this->add_control(
                 'default' => esc_html__('#', 'ordainit-toolkit'),
                 'label_block' => true,
             ],
+
+            // recomend switcher
+
+            [
+                'name' => 'od_price_yearly_price_box_recomended_switcher',
+                'label' => esc_html__('Recomended', 'ordainit-toolkit'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => esc_html__('Yes', 'ordainit-toolkit'),
+                'label_off' => esc_html__('No', 'ordainit-toolkit'),
+                'return_value' => 'yes',
+                'default' => 'no',
+            ],
+       
+
+            [
+                'name' => 'od_price_yearly_price_box_recomended_text',
+                'description' => esc_html__('Only Style For 2, 4', 'ordainit-toolkit'),
+                'label' => esc_html__('Recomended Text', 'ordainit-toolkit'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('Recommend', 'ordainit-toolkit'),
+                'label_block' => true,
+            ],
+
+            
 
         ],
         'default' => [
