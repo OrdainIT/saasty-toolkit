@@ -240,6 +240,7 @@ class OD_Core_Plugin
 			'contact-form',
 			'about-img-box',
 			'title-box-fade',
+			'button-gradient',
 		];
 	}
 
