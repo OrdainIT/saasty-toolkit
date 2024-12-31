@@ -128,7 +128,33 @@ class OD_Single_Service extends Widget_Base
         $od_single_service_bottom_title = $settings['od_single_service_bottom_title'];
         $od_single_service_bottom_description = $settings['od_single_service_bottom_description'];
 ?>
-        <?php if ($settings['od_design_style']  == 'layout-2'): ?>
+        <?php if ($settings['od_design_style']  == 'layout-3'): ?>
+
+            <div class="ma-service-style it-fade-anim"
+                data-fade-from="<?php echo esc_attr($od_single_service_animation_fade_from, 'ordainit-toolkit'); ?>"
+                data-delay="<?php echo esc_attr($od_single_service_animation_delay, 'ordainit-toolkit'); ?>">
+                <div class="dt-service-item mb-30">
+                    <span class="dt-service-icon mb-40 d-block"><img src="<?php echo esc_url($od_single_service_thumbnail_image['url'], 'ordainit-toolkit'); ?>" alt=""></span>
+                    <div class="dt-service-content">
+                        <h4 class="dt-service-title mb-25">
+                            <a class="border-line-black"
+                                href="<?php echo esc_url($od_single_service_url['url'], 'ordainit-toolkit'); ?>">
+                                <?php echo od_kses($od_single_service_title, 'ordainit-toolkit'); ?>
+                            </a>
+                        </h4>
+                        <p class="mb-35"><?php echo od_kses($od_single_service_description, 'ordainit-toolkit'); ?></p>
+                        <div class="dt-service-link">
+                            <a class="dt-service-link" href="<?php echo esc_url($od_single_service_url['url'], 'ordainit-toolkit'); ?>">
+                                <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.7709 4.44699C19.7706 4.44676 19.7704 4.44648 19.7702 4.44625L15.688 0.383747C15.3821 0.0794115 14.8875 0.0805441 14.5831 0.386403C14.2787 0.692224 14.2799 1.18687 14.5857 1.49125L17.3265 4.21875H0.78125C0.349766 4.21875 0 4.56851 0 5C0 5.43148 0.349766 5.78125 0.78125 5.78125H17.3264L14.5857 8.50875C14.2799 8.81312 14.2788 9.30777 14.5831 9.61359C14.8875 9.91949 15.3822 9.92054 15.688 9.61625L19.7702 5.55375C19.7704 5.55351 19.7706 5.55324 19.7709 5.55301C20.0769 5.24761 20.0759 4.75136 19.7709 4.44699Z" fill="currentcolor" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php elseif ($settings['od_design_style']  == 'layout-2'): ?>
 
             <div class="seo-service-style pg-service-style  it-fade-anim"
                 data-fade-from="<?php echo esc_attr($od_single_service_animation_fade_from, 'ordainit-toolkit'); ?>"
@@ -155,6 +181,7 @@ class OD_Single_Service extends Widget_Base
                     </div>
                 </div>
             </div>
+
         <?php else: ?>
 
             <div class="ss-service-style it-fade-anim"

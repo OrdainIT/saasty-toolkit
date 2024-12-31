@@ -16,6 +16,7 @@ $this->add_control(
         'options' => [
             'layout-1' => esc_html__('Layout 1', 'ordainit-toolkit'),
             'layout-2' => esc_html__('Layout 2', 'ordainit-toolkit'),
+            'layout-3' => esc_html__('Layout 3', 'ordainit-toolkit'),
         ],
         'default' => 'layout-1',
     ]
@@ -172,6 +173,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .ss-service-style .dt-service-item' => 'background: {{VALUE}}',
             '{{WRAPPER}} .pg-service-style .dt-service-item' => 'background: {{VALUE}}',
+            '{{WRAPPER}} .ma-service-style .dt-service-item' => 'background: {{VALUE}}',
         ],
     ]
 );
@@ -184,6 +186,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .ss-service-style .dt-service-item::after' => 'background: {{VALUE}}',
             '{{WRAPPER}} .seo-service-style .dt-service-item::after' => 'background: {{VALUE}}',
+            '{{WRAPPER}} .ma-service-style .dt-service-item:hover' => 'background: {{VALUE}}',
         ],
     ]
 );
@@ -195,9 +198,24 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .ss-service-style .dt-service-item' => 'border-color: {{VALUE}}',
+            '{{WRAPPER}} .ma-service-style .dt-service-item' => 'border-color: {{VALUE}}',
         ],
         'condition' => [
-            'od_design_style' => ['layout-1']
+            'od_design_style' => ['layout-1', 'layout-3']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_single_service_border_hover_color',
+    [
+        'label' => esc_html__('Border Hover Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ma-service-style .dt-service-item:hover' => 'border-color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-3']
         ],
     ]
 );
@@ -253,6 +271,8 @@ $this->add_control(
         ],
     ]
 );
+
+
 $this->add_control(
     'od_single_service_title_hover_color',
     [
@@ -274,6 +294,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .border-line-white' => 'background-image :linear-gradient({{VALUE}}, {{VALUE}}), linear-gradient({{VALUE}}, {{VALUE}});',
+            '{{WRAPPER}} .border-line-black' => 'background-image :linear-gradient({{VALUE}}, {{VALUE}}), linear-gradient({{VALUE}}, {{VALUE}});',
         ],
     ]
 );
@@ -291,6 +312,32 @@ $this->add_group_control(
 );
 
 $this->add_control(
+    'od_single_service_title_span_color',
+    [
+        'label' => esc_html__('Title Span Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}}  .dt-service-title span' => 'color: {{VALUE}}',
+        ],
+        'condition' => [
+            'od_design_style' => ['layout-3']
+        ],
+    ]
+);
+
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Title Typography', 'ordainit-toolkit'),
+        'name' => 'od_single_service_title_span_typography',
+        'selector' => '{{WRAPPER}} .dt-service-title span',
+        'condition' => [
+            'od_design_style' => ['layout-3']
+        ],
+    ]
+);
+
+$this->add_control(
     'od_single_service_description_color',
     [
         'label' => esc_html__('Description Color', 'ordainit-toolkit'),
@@ -298,6 +345,7 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .ss-service-style .dt-service-content p' => 'color: {{VALUE}}',
             '{{WRAPPER}} .seo-service-style .dt-service-content p' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .dt-service-content p' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -323,7 +371,8 @@ $this->add_group_control(
         'name' => 'od_single_service_description_typography',
         'selector' => '
             {{WRAPPER}} .ss-service-style .dt-service-content p,
-            {{WRAPPER}} .seo-service-style .dt-service-content p
+            {{WRAPPER}} .seo-service-style .dt-service-content p,
+            {{WRAPPER}} .dt-service-content p
         ',
     ]
 );
@@ -338,7 +387,7 @@ $this->start_controls_section(
         'label' => __('Button Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_design_style' => ['layout-1']
+            'od_design_style' => ['layout-1', 'layout-3']
         ],
     ]
 );
@@ -362,6 +411,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .dt-service-link' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ma-service-style .dt-service-link' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -373,6 +423,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .ss-service-style .dt-service-link' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ma-service-style .dt-service-link' => 'background-color: {{VALUE}}',
         ],
     ]
 );
@@ -395,6 +446,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .ss-service-style .dt-service-item:hover .dt-service-link' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ma-service-style .dt-service-link:hover' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -406,6 +458,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .ss-service-style .dt-service-link::after' => 'background-color: {{VALUE}}',
+            '{{WRAPPER}} .ma-service-style .dt-service-link::after' => 'background-color: {{VALUE}}',
         ],
     ]
 );
