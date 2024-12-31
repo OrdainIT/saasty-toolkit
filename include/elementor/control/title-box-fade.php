@@ -81,7 +81,7 @@ $this->add_control(
     'od_title_box_title',
     [
         'label' => __('Heading Title', 'ordainit-toolkit'),
-        'type' => Controls_Manager::TEXT,
+        'type' => Controls_Manager::TEXTAREA,
         'default' => esc_html__('OD Heading', 'ordainit-toolkit'),
         'placeholder' => esc_html__('Type title here', 'ordainit-toolkit'),
         'label_block' => true,
@@ -179,44 +179,46 @@ $this->start_controls_section(
     ]
 );
 
-// Add control for selecting animation type
+
+// Title 
 $this->add_control(
-    'od_title_animation_type',
+    'od_title_box_title_anim_heading',
     [
-        'label' => __('Animation Type', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::SELECT,
-        'options' => [
-            'it-split-text' => __('Split Text', 'ordainit-toolkit'),
-            'it_text_reveal_anim' => __('Text Reveal Animation', 'ordainit-toolkit'),
-            'it-char-animation' => __('Character Animation', 'ordainit-toolkit'),
-        ],
-        'default' => 'it-split-text',
-        'label_block' => true,
+        'label' => esc_html__('Title Animation', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::HEADING,
+        'separator' => 'before',
     ]
 );
 
-// Add control for split-in direction (only relevant for 'it-split-text')
 $this->add_control(
-    'od_title_box_animation_split_in',
+    'od_title_box_title_fade_from',
     [
-        'label' => __('Split Direction', 'ordainit-toolkit'),
+        'label' => __('Data Fade From', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::SELECT,
         'options' => [
             'right' => __('Right', 'ordainit-toolkit'),
             'left' => __('Left', 'ordainit-toolkit'),
-            'up' => __('Top', 'ordainit-toolkit'),
-            'down' => __('Bottom', 'ordainit-toolkit'),
+            'top' => __('Top', 'ordainit-toolkit'),
+            'bottom' => __('Bottom', 'ordainit-toolkit'),
         ],
-        'default' => 'right',
+        'default' => 'top',
         'label_block' => true,
-        'condition' => [
-            'od_title_animation_type' => 'it-split-text',
-        ],
+    ]
+);
+
+$this->add_control(
+    'od_title_box_title_data_delay',
+    [
+        'label' => __('Data Delay', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXT,
+        'default' => esc_html__('.3', 'ordainit-toolkit'),
+        'placeholder' => esc_html__('Type delay in s here', 'ordainit-toolkit'),
+        'label_block' => true,
     ]
 );
 
 
-// Subtitle
+// Subtitle 
 $this->add_control(
     'od_title_box_subtitle_anim_heading',
     [
@@ -229,7 +231,6 @@ $this->add_control(
     ]
 );
 
-// Subtitle 
 $this->add_control(
     'od_title_box_subtitle_anim',
     [
@@ -287,7 +288,7 @@ $this->end_controls_section();
 
 // Style Starts
 $this->start_controls_section(
-    'od_title_box_titel_style',
+    'od_title_box_title_style',
     [
         'label' => __('Title Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
@@ -300,18 +301,33 @@ $this->add_control(
         'label' => esc_html__('Title Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .it-section-title' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-section-title' => 'color: {{VALUE}}',
         ],
     ]
 );
 
 $this->add_control(
-    'od_title_box_title_span_color',
+    'od_title_box_title_gradient_start_color',
     [
-        'label' => esc_html__('Title Span Color', 'ordainit-toolkit'),
+        'label' => esc_html__('Gradient Start Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .it-section-title span' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-section-title span' => 'background: linear-gradient(90deg, {{VALUE}} 0%, {{od_title_box_title_gradient_end_color.VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_title_box_title_gradient_end_color',
+    [
+        'label' => esc_html__('Gradient End Color', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .ag-section-title span' => 'background: linear-gradient(90deg, {{od_title_box_title_gradient_start_color.VALUE}} 0%, {{VALUE}} 100%);
+                                                 -webkit-background-clip: text;
+                                                 -webkit-text-fill-color: transparent;',
         ],
     ]
 );
@@ -321,7 +337,7 @@ $this->add_group_control(
     [
         'label' => esc_html__('Title Typography', 'ordainit-toolkit'),
         'name' => 'od_title_box_title_typography',
-        'selector' => '{{WRAPPER}} .it-section-title',
+        'selector' => '{{WRAPPER}} .ag-section-title',
     ]
 );
 
@@ -332,7 +348,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem'],
         'selectors' => [
-            '{{WRAPPER}} .it-section-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-section-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
@@ -344,7 +360,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem'],
         'selectors' => [
-            '{{WRAPPER}} .it-section-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-section-title' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
@@ -370,29 +386,7 @@ $this->add_control(
         'label' => esc_html__('Subtitle Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .seo-section-subtitle' => 'color: {{VALUE}}',
-        ],
-    ]
-);
-
-$this->add_control(
-    'od_title_box_subtitle_bg_color',
-    [
-        'label' => esc_html__('Subtitle BG Color', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::COLOR,
-        'selectors' => [
-            '{{WRAPPER}} .seo-section-subtitle' => 'background-color: {{VALUE}}',
-        ],
-    ]
-);
-
-$this->add_control(
-    'od_title_box_subtitle_border_color',
-    [
-        'label' => esc_html__('Subtitle Border Color', 'ordainit-toolkit'),
-        'type' => \Elementor\Controls_Manager::COLOR,
-        'selectors' => [
-            '{{WRAPPER}} .seo-section-subtitle' => 'border-color: {{VALUE}}',
+            '{{WRAPPER}} .ag-section-subtitle' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -402,7 +396,7 @@ $this->add_group_control(
     [
         'label' => esc_html__('Subtitle Typography', 'ordainit-toolkit'),
         'name' => 'od_title_box_subtitle_typography',
-        'selector' => '{{WRAPPER}} .seo-section-subtitle',
+        'selector' => '{{WRAPPER}} .ag-section-subtitle',
     ]
 );
 
@@ -413,7 +407,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem'],
         'selectors' => [
-            '{{WRAPPER}} .seo-section-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-section-subtitle' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
@@ -425,11 +419,10 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem'],
         'selectors' => [
-            '{{WRAPPER}} .seo-section-subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-section-subtitle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
-
 
 $this->end_controls_section();
 
@@ -452,7 +445,7 @@ $this->add_control(
         'label' => esc_html__('Description Color', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::COLOR,
         'selectors' => [
-            '{{WRAPPER}} .it-section-title-box p' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .ag-section-title-box p' => 'color: {{VALUE}}',
         ],
     ]
 );
@@ -461,7 +454,7 @@ $this->add_group_control(
     [
         'label' => esc_html__('Description Typography', 'ordainit-toolkit'),
         'name' => 'od_title_box_description_typography',
-        'selector' => '{{WRAPPER}} .it-section-title-box p',
+        'selector' => '{{WRAPPER}} .ag-section-title-box p',
     ]
 );
 
@@ -472,7 +465,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem'],
         'selectors' => [
-            '{{WRAPPER}} .it-section-title-box p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-section-title-box p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
@@ -484,7 +477,7 @@ $this->add_control(
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem'],
         'selectors' => [
-            '{{WRAPPER}} .it-section-title-box p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .ag-section-title-box p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
     ]
 );
