@@ -28,3 +28,28 @@
 .elementor-widget-container .ag-hero-thumb img {
     border-radius: 10px;
 }
+
+/* single job css */
+
+
+
+
+.it-career-details-left h4, .it-career-details-left h6, .it-career-details-left h1, .it-career-details-left h2, .it-career-details-left h3, .it-career-details-left h5{
+margin-bottom: 30px;
+}
+
+
+.it-career-details-left p strong {
+    font-weight: 600;
+    font-style: normal;
+    display: inline-block;
+    margin-right: 5px;
+    color: var(--it-common-black);
+}
+
+.it-career-details-left p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: var(--it-ff-roboto);
+}

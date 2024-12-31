@@ -705,6 +705,18 @@ function od_service_init()
         'before_title'  => '<h4 class="it-sv-sidebar-widget-title">',
         'after_title'   => '</h4>',
     ]);
+    /**
+     * Job Sidebar
+     */
+    register_sidebar([
+        'name'          => esc_html__('JOB Sidebar', 'ordainit-toolkit'),
+        'id'            => 'job-sidebar',
+        'description'          => esc_html__('Set Your Job Widget', 'ordainit-toolkit'),
+        'before_widget' => '<div id="%1$s" class="it-common-sidebar-widget it-career-sidebar-widget-wrap  %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="it-career-sidebar-title mb-35">',
+        'after_title'   => '</h4>',
+    ]);
 }
 add_action('widgets_init', 'od_service_init');
 

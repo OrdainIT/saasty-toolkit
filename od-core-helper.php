@@ -31,7 +31,7 @@ define('ORDAINIT_TOOLKIT_INCLUDE_PATH', ORDAINIT_TOOLKIT_ADDONS_DIR . '/include'
 /**
  * Include all files
  */
-//include_once(ORDAINIT_TOOLKIT_ADDONS_DIR . '/include/custom-post-team.php');
+include_once(ORDAINIT_TOOLKIT_ADDONS_DIR . '/include/custom-post-job.php');
 include_once(ORDAINIT_TOOLKIT_ADDONS_DIR . '/include/custom-post-service.php');
 include_once(ORDAINIT_TOOLKIT_ADDONS_DIR . '/include/custom-post-team.php');
 include_once(ORDAINIT_TOOLKIT_ADDONS_DIR . '/include/custom-post-megamenu.php');
