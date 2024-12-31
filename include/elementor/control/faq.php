@@ -128,6 +128,20 @@ $this->add_control(
     ]
 );
 
+// title Gradient color
+
+$this->add_control(
+    'od_faq_title_gradient_color',
+    [
+        'label' => __('Title Gradient Color', 'ordainit-toolkit'),
+        'type' => Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-custom-accordion .accordion-buttons' => 'background: linear-gradient(45deg, {{od_faq_title_color.VALUE}}, {{VALUE}})',
+            '{{WRAPPER}} .pg-custom-accordion .accordion-buttons' => 'background: linear-gradient(45deg, {{od_faq_title_color.VALUE}}, {{VALUE}})',
+        ],
+    ]
+);
+
 // accordion title typography
 
 $this->add_group_control(

@@ -213,7 +213,7 @@ class Od_Price_Box extends Widget_Base
                 </div>
             </div>
         <?php elseif ($settings['od_design_style']  == 'layout-3'): ?>
-            <div class="ma-price-style  ai-price-style">
+            <div class="od-price-box3 ma-price-style  ai-price-style">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12">
