@@ -51,7 +51,7 @@ class OD_Job_Latest_Post_Widget extends WP_Widget
                 $job_location = $job_meta_slider['job_location'];
         ?>
 
-                <div class="it-career-sidebar-widget style-2 mb-20">
+                <div class="it-career-sidebar-widget job style-2 mb-20">
                     <div class="d-flex">
                         <?php if (has_post_thumbnail()) : ?>
                             <div class="it-career-sidebar-widget-icon mr-20">

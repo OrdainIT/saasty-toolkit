@@ -242,6 +242,7 @@ class OD_Core_Plugin
 			'title-box-fade',
 			'button-gradient',
 			'job',
+			'compare-plan',
 		];
 	}
 

@@ -259,7 +259,7 @@ $this->add_control(
             'top' => __('Top', 'ordainit-toolkit'),
             'bottom' => __('Bottom', 'ordainit-toolkit'),
         ],
-        'default' => 'top',
+        'default' => 'bottom',
         'label_block' => true,
         'condition' => [
             'od_title_box_subtitle_anim' => 'it-fade-anim',
@@ -279,6 +279,73 @@ $this->add_control(
         'condition' => [
             'od_title_box_subtitle_anim' => 'it-fade-anim',
             'od_title_box_subtitle_show' => 'yes',
+        ]
+    ]
+);
+
+// Description
+$this->add_control(
+    'od_title_box_description_anim_heading',
+    [
+        'label' => esc_html__('Description Animation', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::HEADING,
+        'separator' => 'before',
+        'condition' => [
+            'od_title_box_description_show' => 'yes',
+        ]
+    ]
+);
+
+// Description
+$this->add_control(
+    'od_title_box_description_anim',
+    [
+        'label' => __('Description Anim', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'options' => [
+            'it-text-anim' => __('Text Anim', 'ordainit-toolkit'),
+            'it-fade-anim' => __('Fade Anim', 'ordainit-toolkit'),
+        ],
+        'default' => 'it-text-anim',
+        'label_block' => true,
+        'condition' => [
+            'od_title_box_description_show' => 'yes',
+        ]
+    ]
+);
+
+
+$this->add_control(
+    'od_title_box_description_fade_from',
+    [
+        'label' => __('Data Fade From', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'options' => [
+            'right' => __('Right', 'ordainit-toolkit'),
+            'left' => __('Left', 'ordainit-toolkit'),
+            'top' => __('Top', 'ordainit-toolkit'),
+            'bottom' => __('Bottom', 'ordainit-toolkit'),
+        ],
+        'default' => 'bottom',
+        'label_block' => true,
+        'condition' => [
+            'od_title_box_description_anim' => 'it-fade-anim',
+            'od_title_box_description_show' => 'yes',
+        ]
+    ]
+);
+
+$this->add_control(
+    'od_title_box_description_data_delay',
+    [
+        'label' => __('Data Delay', 'ordainit-toolkit'),
+        'type' => Controls_Manager::TEXT,
+        'default' => esc_html__('.3', 'ordainit-toolkit'),
+        'placeholder' => esc_html__('Type delay in s here', 'ordainit-toolkit'),
+        'label_block' => true,
+        'condition' => [
+            'od_title_box_description_anim' => 'it-fade-anim',
+            'od_title_box_description_show' => 'yes',
         ]
     ]
 );

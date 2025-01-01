@@ -25,7 +25,7 @@ $this->add_control(
 
 $this->end_controls_section();
 
-// feature content style
+// Image Box Content
 $this->start_controls_section(
     'od_image_box_content',
     [

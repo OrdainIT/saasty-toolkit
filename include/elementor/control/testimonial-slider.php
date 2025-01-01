@@ -562,6 +562,44 @@ $this->add_control(
 
 $this->end_controls_section();
 
+// Testimonial Style
+$this->start_controls_section(
+    'od_testimonial_slider_dimension_style',
+    [
+        'label' => __('Testimonial Dimension Style', 'ordainit-toolkit'),
+        'tab' => Controls_Manager::TAB_STYLE,
+        'condition' => [
+            'od_design_style' => ['layout-3']
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_slider_margin',
+    [
+        'label' => esc_html__('Margin', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .pg-testimonial-ptb' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
+
+$this->add_control(
+    'od_testimonial_slider_padding',
+    [
+        'label' => esc_html__('Padding', 'ordainit-toolkit'),
+        'type' => \Elementor\Controls_Manager::DIMENSIONS,
+        'size_units' => ['px', '%', 'em', 'rem'],
+        'selectors' => [
+            '{{WRAPPER}} .pg-testimonial-ptb' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        ],
+    ]
+);
+
+$this->end_controls_section();
+
 
 // Heading Style
 $this->start_controls_section(
