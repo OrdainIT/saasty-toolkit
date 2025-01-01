@@ -128,9 +128,13 @@ class OD_Title_Box extends Widget_Base
         $od_title_box_subtitle_anim = $settings['od_title_box_subtitle_anim'];
         $od_title_box_subtitle_fade_from = $settings['od_title_box_subtitle_fade_from'];
         $od_title_box_subtitle_data_delay = $settings['od_title_box_subtitle_data_delay'];
+        $od_title_box_description_anim = $settings['od_title_box_description_anim'];
+        $od_title_box_description_fade_from = $settings['od_title_box_description_fade_from'];
+        $od_title_box_description_data_delay = $settings['od_title_box_description_data_delay'];
 
         // Add render attribute for the parent div alignment
-        $this->add_render_attribute('section_title_box_args', 'class', 'it-section-title-box it-text-anim');
+        $text_anim = ($od_title_box_description_anim === 'it-text-anim') ? esc_attr($od_title_box_description_anim) : '';
+        $this->add_render_attribute('section_title_box_args', 'class', 'it-section-title-box ' . $text_anim);
         $this->add_render_attribute('section_title_box_args', 'style', 'text-align: ' . $od_heading_title_alignment . ';');
 
         // Get the selected split direction or default to 'right'
@@ -183,8 +187,17 @@ class OD_Title_Box extends Widget_Base
 
             echo "<{$heading_tag} {$heading_attributes}>{$heading_content}</{$heading_tag}>";
             ?>
+
             <?php if (!empty($od_title_box_description_show)): ?>
-                <p><?php echo od_kses($od_heading_description, 'ordainit-toolkit'); ?></p>
+                <?php if ($od_title_box_description_anim === 'it-text-anim'): ?>
+                    <p><?php echo od_kses($od_heading_description, 'ordainit-toolkit'); ?></p>
+                <?php else: ?>
+                    <div class="<?php echo esc_attr($od_title_box_description_anim); ?>"
+                        data-fade-from="<?php echo esc_attr($od_title_box_description_fade_from); ?>"
+                        data-delay="<?php echo esc_attr($od_title_box_description_data_delay); ?>">
+                        <p><?php echo od_kses($od_heading_description, 'ordainit-toolkit'); ?></p>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
 
