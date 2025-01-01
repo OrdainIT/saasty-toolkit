@@ -53,3 +53,15 @@ margin-bottom: 30px;
     line-height: 1.6;
     font-family: var(--it-ff-roboto);
 }
+
+.it-career-details-social-wrap {
+    padding-top: 80px;
+    border-top: 1px solid rgba(95, 97, 104, 0.5);
+    margin-top: 50px;
+}
+
+.it-career-sidebar-widget-icon.mr-20 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

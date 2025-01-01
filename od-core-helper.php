@@ -55,8 +55,9 @@ add_action('plugins_loaded', 'load_custom_container_control');
 /**
  * OD Custom Widget
  */
-include_once(ORDAINIT_TOOLKIT_WIDGET_PATH . '/od-blog-post-sidebar.php');
+//include_once(ORDAINIT_TOOLKIT_WIDGET_PATH . '/od-blog-post-sidebar.php');
 include_once(ORDAINIT_TOOLKIT_WIDGET_PATH . '/od-sidebar-form-widget.php');
+include_once(ORDAINIT_TOOLKIT_WIDGET_PATH . '/od-job-lastest-post.php');
 //include_once(ORDAINIT_TOOLKIT_WIDGET_PATH . '/od-portfolio-info-widget.php');
 //include_once(ORDAINIT_TOOLKIT_WIDGET_PATH . '/od-service-list.php');
 include_once(ORDAINIT_TOOLKIT_WIDGET_PATH . '/od-sidebar-post.php');

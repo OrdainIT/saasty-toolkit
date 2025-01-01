@@ -241,6 +241,7 @@ class OD_Core_Plugin
 			'about-img-box',
 			'title-box-fade',
 			'button-gradient',
+			'job',
 		];
 	}
 

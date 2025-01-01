@@ -685,6 +685,22 @@ function od_get_all_categories_for_team()
     return $category_options;
 }
 
+function od_get_all_categories_for_job()
+{
+    $categories = get_categories([
+        'taxonomy'   => 'job-cat', // Replace 'category' with your custom taxonomy if needed
+        'hide_empty' => false,
+        'object_type' => ['job'], // Target the 'service' post type
+    ]);
+
+    $category_options = [];
+    foreach ($categories as $category) {
+        $category_options[$category->term_id] = $category->name;
+    }
+
+    return $category_options;
+}
+
 
 
 
@@ -729,7 +745,7 @@ function get_share_buttons($url, $title)
     $facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . urlencode($url);
     $instagram_url = 'https://www.instagram.com/';
 
-    $html = '<a href="' . $facebook_url . '" target="_blank" class="share-button facebook"><i class="fa-brands fa-facebook"></i></a>';
+    $html = '<a href="' . $facebook_url . '" target="_blank" class="share-button facebook"><i class="fa-brands fa-facebook-f"></i></a>';
     $html .= '<a href="' . $instagram_url . '" target="_blank" class="share-button instagram"><i class="fa-brands fa-instagram"></i></a>';
     $html .= '<a href="' . $twitter_url . '" target="_blank" class="share-button twitter"><i class="fab fa-twitter"></i></a>';
 
