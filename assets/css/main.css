@@ -91,3 +91,21 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
     top: 2.5px;
     transform: translateY(0);
 }
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
+    position: absolute;
+    top: 9px;
+    transform: translateY(0);
+    right: 7px;
+}
+
+.wpcf7-form-control-wrap input {
+    width: 100%;
+}
+
+form.wpcf7-form .pg-hero-input-icon {
+    position: absolute;
+    top: 15%;
+    transform: translateY(0);
+    left: 22px;
+}
