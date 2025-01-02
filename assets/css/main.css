@@ -66,6 +66,10 @@ margin-bottom: 30px;
     object-fit: cover;
 }
 
+ .elementor-widget-container .it-hero-thumb img {
+    max-width: inherit;
+ }
+
 @media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px){
 
     .elementor-widget-container .it-hero-thumb img {
@@ -79,4 +83,11 @@ margin-bottom: 30px;
 body.active_menu_class header .it-header-area{
     padding: 15px 0;
 }
+}
+
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+    right: 6px;
+    top: 2.5px;
+    transform: translateY(0);
 }
