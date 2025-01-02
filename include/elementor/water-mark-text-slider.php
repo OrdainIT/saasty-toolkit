@@ -147,8 +147,6 @@ class OD_Water_Mark_Text_Slider extends Widget_Base
 
         <script>
             jQuery(document).ready(function($) {
-
-
                 var it_text_slider = new Swiper(".it-text-active", {
                     loop: true,
                     freemode: true,
