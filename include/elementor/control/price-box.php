@@ -399,6 +399,16 @@ $this->end_controls_tab();
 
 $this->end_controls_tabs();
 
+// box shadow control
+
+$this->add_group_control(
+    \Elementor\Group_Control_Box_Shadow::get_type(),
+    [
+        'name' => 'od_price_box_wrap_box_shadow',
+        'selector' => '{{WRAPPER}}  .it-price-item',
+    ]
+);
+
 
 // price box wrap border color
 

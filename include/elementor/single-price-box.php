@@ -157,6 +157,7 @@ class Od_Single_Price_Box extends Widget_Base
                 </div>
             </div>
         </div>
+        
 
 
 
