@@ -225,7 +225,7 @@ class OD_Brand_Slider_Full extends Widget_Base
 
                 const sliderAutoplay = <?php echo $od_brand_full_slider_autoplay ? 'true' : 'false'; ?>;
 
-                var cr_brand_slider = new Swiper(".cr-brand-active", {
+                const cr_brand_slider = new Swiper(".cr-brand-active", {
                     loop: true,
                     freemode: true,
                     slidesPerView: 'auto',
@@ -233,13 +233,13 @@ class OD_Brand_Slider_Full extends Widget_Base
                     centeredSlides: true,
                     allowTouchMove: false,
                     speed: 4000,
-                    autoplay: sliderAutoplay ? {
-                        delay: 3000,
+                    autoplay: {
+                        delay: 1,
                         disableOnInteraction: true,
-                    } : false,
+                    }
                 });
 
-                var cr_brand_slider = new Swiper(".cr-brand-active-2", {
+                const cr_brand_slider_2 = new Swiper(".cr-brand-active-2", {
                     loop: true,
                     freemode: true,
                     slidesPerView: 'auto',
@@ -247,10 +247,10 @@ class OD_Brand_Slider_Full extends Widget_Base
                     centeredSlides: true,
                     allowTouchMove: false,
                     speed: 4000,
-                    autoplay: sliderAutoplay ? {
-                        delay: 3000,
+                    autoplay: {
+                        delay: 1,
                         disableOnInteraction: true,
-                    } : false,
+                    }
                 });
 
             });

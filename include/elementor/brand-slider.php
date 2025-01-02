@@ -261,7 +261,7 @@ class OD_Brand_Slider extends Widget_Base
                 const sliderAutoplay3 = <?php echo $od_brand_slider_autoplay ? 'true' : 'false'; ?>;
 
                 // Layout-1
-                var cr_brand_slider = new Swiper(".it-brand-active", {
+                const cr_brand_slider = new Swiper(".it-brand-active", {
                     loop: true,
                     freemode: true,
                     slidesPerView: 'auto',
@@ -269,14 +269,18 @@ class OD_Brand_Slider extends Widget_Base
                     centeredSlides: true,
                     allowTouchMove: false,
                     speed: 2500,
-                    autoplay: sliderAutoplay ? {
-                        delay: 3000,
+                    autoplay: {
+                        delay: 1,
                         disableOnInteraction: true,
-                    } : false,
+                    }
+                    // autoplay: sliderAutoplay ? {
+                    //     delay: 1,
+                    //     disableOnInteraction: true,
+                    // } : false,
                 });
 
                 // Layout 2
-                var cr_brand_slider = new Swiper(".ss-brand-active", {
+                const cr_brand_slider_2 = new Swiper(".ss-brand-active", {
                     loop: true,
                     freemode: true,
                     slidesPerView: 'auto',
@@ -284,14 +288,14 @@ class OD_Brand_Slider extends Widget_Base
                     centeredSlides: true,
                     allowTouchMove: false,
                     speed: 2500,
-                    autoplay: sliderAutoplay2 ? {
-                        delay: 3000,
+                    autoplay: {
+                        delay: 1,
                         disableOnInteraction: true,
-                    } : false,
+                    }
                 });
 
                 // layout -3
-                var cr_brand_slider = new Swiper(".ss-brand-active-2", {
+                const cr_brand_slider_3 = new Swiper(".ss-brand-active-2", {
                     loop: true,
                     freemode: true,
                     slidesPerView: 'auto',
@@ -299,10 +303,10 @@ class OD_Brand_Slider extends Widget_Base
                     centeredSlides: true,
                     allowTouchMove: false,
                     speed: 2500,
-                    autoplay: sliderAutoplay3 ? {
-                        delay: 3000,
+                    autoplay: {
+                        delay: 1,
                         disableOnInteraction: true,
-                    } : false,
+                    }
                 });
 
             });
