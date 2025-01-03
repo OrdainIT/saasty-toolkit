@@ -80,7 +80,7 @@ margin-bottom: 30px;
 
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px){
 
-body.active_menu_class header .it-header-area{
+body header .it-header-area{
     padding: 15px 0;
 }
 }
@@ -99,13 +99,21 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
     right: 7px;
 }
 
+@media only screen and (min-width: 576px) and (max-width: 767px){
+    button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
+        top: 4px;
+    }
+}
+
 .wpcf7-form-control-wrap input {
     width: 100%;
 }
 
 form.wpcf7-form .pg-hero-input-icon {
     position: absolute;
-    top: 15%;
+    top: 33%;
     transform: translateY(0);
     left: 22px;
 }
+
+
