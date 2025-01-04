@@ -80,9 +80,10 @@ margin-bottom: 30px;
 
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px){
 
-body header .it-header-area{
-    padding: 15px 0;
+header .it-header-area{
+    padding: 15px 0 !important;
 }
+
 }
 
 
@@ -123,6 +124,15 @@ form.wpcf7-form .pg-hero-input-icon {
     top: 33%;
     transform: translateY(0);
     left: 22px;
+}
+
+
+input.wpcf7-form-control {
+    border-radius: 30px;
+}
+
+.elementor-widget-od-image-box .ag-service-style {
+    padding: 0;
 }
 
 
