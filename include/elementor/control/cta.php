@@ -23,6 +23,7 @@ $this->add_control(
             'layout-6' => esc_html__('Layout 6', 'ordainit-toolkit'),
             'layout-7' => esc_html__('Layout 7', 'ordainit-toolkit'),
             'layout-8' => esc_html__('Layout 8', 'ordainit-toolkit'),
+            'layout-9' => esc_html__('Layout 9', 'ordainit-toolkit'),
         ],
         'default' => 'layout-1',
     ]
@@ -36,7 +37,7 @@ $this->start_controls_section(
     [
         'label' => __('Background Image', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-2', 'layout-4', 'layout-5', 'layout-6', 'layout-7']
+            'od_cta_design_style' => ['layout-1', 'layout-2', 'layout-4', 'layout-5', 'layout-6', 'layout-7', 'layout-9']
         ],
     ]
 );
@@ -96,7 +97,7 @@ $this->add_control(
         'placeholder' => esc_html__('Type description here', 'ordainit-toolkit'),
         'label_block' => true,
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-6']
+            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-6', 'layout-9']
         ],
     ]
 );
@@ -177,7 +178,7 @@ $this->start_controls_section(
     [
         'label' => __('CTA Form', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-4']
+            'od_cta_design_style' => ['layout-1', 'layout-4', 'layout-9']
         ],
     ]
 );
@@ -200,7 +201,7 @@ $this->start_controls_section(
     [
         'label' => __('CTA Link Content', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-4']
+            'od_cta_design_style' => ['layout-1', 'layout-4', 'layout-9']
         ],
     ]
 );
@@ -244,7 +245,7 @@ $this->start_controls_section(
     [
         'label' => __('CTA Shape', 'ordainit-toolkit'),
         'condition' => [
-            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6', 'layout-7', 'layout-8']
+            'od_cta_design_style' => ['layout-2', 'layout-3', 'layout-4', 'layout-5', 'layout-6', 'layout-7', 'layout-8', 'layout-9']
         ],
     ]
 );
@@ -523,7 +524,7 @@ $this->add_control(
             '{{WRAPPER}} .it-section-title-box p' => 'color: {{VALUE}}',
         ],
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-6']
+            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-6', 'layout-9']
         ],
 
     ]
@@ -540,7 +541,7 @@ $this->add_group_control(
             {{WRAPPER}} .it-section-title-box p
         ',
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-6']
+            'od_cta_design_style' => ['layout-1', 'layout-3', 'layout-4', 'layout-6', 'layout-9']
         ],
     ]
 );
@@ -555,7 +556,7 @@ $this->start_controls_section(
         'label' => __('Contact Form Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-4']
+            'od_cta_design_style' => ['layout-1', 'layout-4', 'layout-9']
         ],
     ]
 );
@@ -962,7 +963,7 @@ $this->start_controls_section(
         'label' => __('Link Content Style', 'ordainit-toolkit'),
         'tab' => Controls_Manager::TAB_STYLE,
         'condition' => [
-            'od_cta_design_style' => ['layout-1', 'layout-4']
+            'od_cta_design_style' => ['layout-1', 'layout-4', 'layout-9']
         ],
     ]
 );

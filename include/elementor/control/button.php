@@ -152,10 +152,11 @@ $this->add_control(
     ]
 );
 
+
 $this->add_control(
     'od_btn_padding',
     [
-        'label' => esc_html__('Button Padding', 'ordainit-toolkit'),
+        'label' => esc_html__('Button Margin', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem'],
         'default' => [
@@ -170,6 +171,7 @@ $this->add_control(
         ],
     ]
 );
+
 
 // Border
 $this->add_group_control(
