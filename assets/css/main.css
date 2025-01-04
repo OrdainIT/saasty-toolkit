@@ -84,6 +84,27 @@ header .it-header-area{
     padding: 15px 0 !important;
 }
 
+
+.it-menu-mobile .it-megamenu-list ul li a span {
+    font-size: 16px !important;
+    color: var(--it-common-white) 16px !important;
+}
+
+.home-img-title h2 a {
+    color: #fff !important;
+}
+
+.it-menu-mobile h2.elementor-heading-title{
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 14px;
+    margin-right: 65px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    margin-top: 30px;
+}
+
+
 }
 
 
