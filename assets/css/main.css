@@ -103,10 +103,19 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
     button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
         top: 4px;
     }
+    button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
+        margin-top: 15px;
+    }
+    .elementor-widget-container .ma-hero-thumb img {
+        max-width: 100%;
+    }
 }
 
-.wpcf7-form-control-wrap input {
+ .wpcf7-form-control-wrap input {
     width: 100%;
+}
+.pg-hero-input-box .wpcf7-form-control-wrap input {
+    width: 100% !important;;
 }
 
 form.wpcf7-form .pg-hero-input-icon {
