@@ -81,3 +81,16 @@
 .elementor-widget-container .ma-about-thumb img {
   border-radius: 12px;
 }
+
+@media only screen and (min-width: 768px) and (max-width: 991px),
+  (max-width: 767px) {
+  .elementor-widget-container .ai-choose-thumb img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .elementor-widget-container .cr-cta-area img.cr-cta-shape-3 {
+    display: none;
+  }
+}

@@ -162,7 +162,43 @@ class OD_Cta extends Widget_Base
 ?>
 
 
-        <?php if ($settings['od_cta_design_style']  == 'layout-8'): ?>
+        <?php if ($settings['od_cta_design_style']  == 'layout-9'): ?>
+
+            <div class="cr-cta-area it-cta-inner-style z-index-1 fix p-relative pb-120">
+                <img class="cr-cta-shape-1" src="<?php echo esc_url($od_cta_background_image['url'], 'ordainit-toolkit'); ?>" alt="">
+                <img class="cr-cta-shape-2" src="<?php echo esc_url($od_cta_shape_image_1['url'], 'ordainit-toolkit'); ?>" alt="">
+                <img class="cr-cta-shape-3" src="<?php echo esc_url($od_cta_shape_image_2['url'], 'ordainit-toolkit'); ?>" alt="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="cr-cta-wrap text-center">
+                                <div class="it-section-title-box mb-30">
+                                    <h4 class="cr-section-title mb-15 it_text_reveal_anim"><?php echo od_kses($od_cta_section_title, 'ordainit-toolkit'); ?></h4>
+                                    <div class="it-fade-anim" data-fade-from="bottom" data-delay=".5">
+                                        <p class="pb-15"> <?php echo od_kses($od_cta_section_description, 'ordainit-toolkit'); ?></p>
+                                    </div>
+                                </div>
+                                <div class="it-cta-input-box p-relative mb-40 it-fade-anim" data-fade-from="bottom" data-delay=".7">
+                                    <?php echo do_shortcode('[contact-form-7  id="' . $od_cta_form_list . '"]'); ?>
+                                </div>
+                                <div class="it-cta-link it-fade-anim" data-fade-from="bottom" data-delay=".9">
+                                    <a
+                                        href="<?php echo esc_url($od_cta_link_url, 'ordainit-toolkit'); ?>">
+                                        <?php echo esc_html($od_cta_link_title, 'ordainit-toolkit'); ?>
+                                    </a>
+
+                                    <a
+                                        href="<?php echo esc_url($od_cta_link_url, 'ordainit-toolkit'); ?>">
+                                        <?php echo esc_html($od_cta_link_subtitle, 'ordainit-toolkit'); ?>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <?php elseif ($settings['od_cta_design_style']  == 'layout-8'): ?>
 
             <div class="it-cta-area ag-cta-style black-2-bg">
                 <div class="container">

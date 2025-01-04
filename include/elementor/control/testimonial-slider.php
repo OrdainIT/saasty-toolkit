@@ -1174,6 +1174,15 @@ $this->add_control(
     ]
 );
 
+$this->add_group_control(
+    \Elementor\Group_Control_Typography::get_type(),
+    [
+        'label' => esc_html__('Number Typography', 'ordainit-toolkit'),
+        'name' => 'od_testimonial_funfact_number_typography',
+        'selector' => '{{WRAPPER}} .dt-funfact-item h5',
+    ]
+);
+
 $this->add_control(
     'od_testimonial_funfact_description_color',
     [
@@ -1189,7 +1198,7 @@ $this->add_group_control(
     \Elementor\Group_Control_Typography::get_type(),
     [
         'label' => esc_html__('Description Typography', 'ordainit-toolkit'),
-        'name' => 'od_testimonial_funfact_description__typography',
+        'name' => 'od_testimonial_funfact_description_typography',
         'selector' => '{{WRAPPER}} .dt-funfact-item p',
     ]
 );
