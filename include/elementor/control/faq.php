@@ -383,7 +383,8 @@ $this->add_control(
         'type' => Controls_Manager::COLOR,
         'selectors' => [
             '{{WRAPPER}} .it-custom-accordion .accordion-buttons::after' => 'color: {{VALUE}}',
-            '{{WRAPPER}} .pg-custom-accordion .accordion-buttons::after' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .pg-custom-accordion .accordion-buttons:not(.collapsed)::after' => 'color: {{VALUE}}',
+            '{{WRAPPER}} .pg-custom-accordion  .accordion-buttons:not(.collapsed)::after' => '-webkit-text-fill-color: {{VALUE}}',
         ],
     ]
 );

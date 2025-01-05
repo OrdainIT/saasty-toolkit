@@ -94,13 +94,19 @@ header .it-header-area{
     color: #fff !important;
 }
 
-.it-menu-mobile h2.elementor-heading-title{
-    font-size: 18px;
-    margin-bottom: 15px;
+.home-img-title h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.it-menu-mobile h2.elementor-heading-title {
+    font-size: 18px !important;
+    margin-bottom: 0;
     padding-bottom: 14px;
-    margin-right: 65px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    color: #fff;
+    margin-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.4);
+    color: #fff !important;
     margin-top: 30px;
 }
 
@@ -154,6 +160,27 @@ input.wpcf7-form-control {
 
 .elementor-widget-od-image-box .ag-service-style {
     padding: 0;
+}
+
+.dt-hero-input-box span.wpcf7-form-control-wrap input {
+    width: 100% !important;
+}
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.ag-btn{
+    
+    top: 6px;
+    transform: translateY(0);
+    right: 5px;
+}
+
+.wpcf7 p {
+    margin-bottom: 0 !important;
+}
+.wpcf7{
+    position: relative;
+}
+.wpcf7-spinner {
+    position: absolute;
 }
 
 
