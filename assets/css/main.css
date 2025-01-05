@@ -84,6 +84,14 @@ header .it-header-area{
     padding: 15px 0 !important;
 }
 
+button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
+    margin-top: 15px;
+}
+
+.elementor-widget-container .ma-hero-thumb img {
+    max-width: 100% !important;
+}
+
 
 .it-menu-mobile .it-megamenu-list ul li a span {
     font-size: 16px !important;
@@ -148,7 +156,7 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
 
 form.wpcf7-form .pg-hero-input-icon {
     position: absolute;
-    top: 23%;
+    top: 30%;
     transform: translateY(0);
     left: 22px;
 }
@@ -162,9 +170,6 @@ input.wpcf7-form-control {
     padding: 0;
 }
 
-.dt-hero-input-box span.wpcf7-form-control-wrap input {
-    width: 100% !important;
-}
 
 button.wpcf7-form-control.wpcf7-submit.has-spinner.ag-btn{
     
@@ -181,6 +186,15 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.ag-btn{
 }
 .wpcf7-spinner {
     position: absolute !important;
+}
+
+.elementor-widget-container .dt-hero-thumb img {
+    border-radius: 14px;
+    box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.15);
+}
+
+.elementor-widget-od-about-img-box .ma-software-style {
+    padding: 0 !important;
 }
 
 
