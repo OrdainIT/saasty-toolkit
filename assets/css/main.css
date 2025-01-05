@@ -148,7 +148,7 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
 
 form.wpcf7-form .pg-hero-input-icon {
     position: absolute;
-    top: 33%;
+    top: 23%;
     transform: translateY(0);
     left: 22px;
 }
@@ -180,7 +180,7 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.ag-btn{
     position: relative;
 }
 .wpcf7-spinner {
-    position: absolute;
+    position: absolute !important;
 }
 
 
