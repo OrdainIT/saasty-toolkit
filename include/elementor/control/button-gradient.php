@@ -133,7 +133,7 @@ $this->start_controls_section(
     ]
 );
 
-$this->add_control(
+$this->add_responsive_control(
     'od_btn_margin',
     [
         'label' => esc_html__('Button Margin', 'ordainit-toolkit'),
@@ -152,7 +152,7 @@ $this->add_control(
     ]
 );
 
-$this->add_control(
+$this->add_responsive_control(
     'od_btn_padding',
     [
         'label' => esc_html__('Button Padding', 'ordainit-toolkit'),
