@@ -133,7 +133,7 @@ $this->start_controls_section(
     ]
 );
 
-$this->add_control(
+$this->add_responsive_control(
     'od_btn_margin',
     [
         'label' => esc_html__('Button Margin', 'ordainit-toolkit'),
@@ -152,11 +152,10 @@ $this->add_control(
     ]
 );
 
-
-$this->add_control(
+$this->add_responsive_control(
     'od_btn_padding',
     [
-        'label' => esc_html__('Button Margin', 'ordainit-toolkit'),
+        'label' => esc_html__('Button Padding', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem'],
         'default' => [
@@ -169,6 +168,16 @@ $this->add_control(
         'selectors' => [
             '{{WRAPPER}} .it-btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
         ],
+    ]
+);
+
+// box shadow
+
+$this->add_group_control(
+    \Elementor\Group_Control_Box_Shadow::get_type(),
+    [
+        'name' => 'od_btn_box_shadow',
+        'selector' => '{{WRAPPER}} .it-btn',
     ]
 );
 
