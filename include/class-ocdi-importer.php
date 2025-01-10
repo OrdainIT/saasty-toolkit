@@ -16,7 +16,7 @@ function od_ocdi_import_files()
       'local_import_customizer_file' => trailingslashit(get_template_directory()) . 'sample-data/theme-customizer.dat',
       'import_preview_image_url' => plugins_url('assets/img/demo/screenshot.png', dirname(__FILE__)),
       'import_notice'              => esc_html__('After you import this demo, you will have to click the Primary Menu From Appearance->Menu-> Primary Menu .', 'ordainit-toolkit'),
-      'preview_url'                => 'https://ordainit.com/wp-theme/travello-demo/',
+      'preview_url'                => 'https://ordainit.com/wp-theme/saasty/',
     ),
 
   );
@@ -24,7 +24,7 @@ function od_ocdi_import_files()
 add_filter('ocdi/import_files', 'od_ocdi_import_files');
 
 
-function od_ocdi_page($od_page_name = 'Home')
+function od_ocdi_page($od_page_name = 'Home 01')
 {
   $posts = get_posts(
     array(
@@ -64,8 +64,8 @@ function od_ocdi_after_import_setup()
     )
   );
   // Assign front page and posts page (blog page).
-  $front_page_id = get_page_by_title('Car Repair');
-  $blog_page_id  = get_page_by_title('Blog Sidebar');
+  $front_page_id = get_page_by_title('Home 01');
+  $blog_page_id  = get_page_by_title('Blog');
 
   update_option('show_on_front', 'page');
   update_option('page_on_front', $front_page_id->ID);
