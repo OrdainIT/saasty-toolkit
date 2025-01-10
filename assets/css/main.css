@@ -70,11 +70,29 @@ margin-bottom: 30px;
     max-width: inherit;
  }
 
+ button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+    right: 6px;
+    top: 2.5px;
+    transform: translateY(0);
+}
+
 @media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px){
 
-    .elementor-widget-container .it-hero-thumb img {
+.elementor-widget-container .it-hero-thumb img {
     max-width: 100%;
 }
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+   
+    top: 4.5px;
+}
+.dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+   
+    top: 1.5px;
+}
+
+
+
 
 }
 
@@ -121,19 +139,23 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
 
 }
 
-
-button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
-    right: 6px;
-    top: 2.5px;
-    transform: translateY(0);
-}
-
 button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
     position: absolute;
     top: 9px;
     transform: translateY(0);
     right: 7px;
 }
+
+@media (max-width: 767px) {
+    button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
+        top: 5px;
+    }
+}
+
+
+
+
+
 
 @media only screen and (min-width: 576px) and (max-width: 767px){
     button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
@@ -144,6 +166,12 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
     }
     .elementor-widget-container .ma-hero-thumb img {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 569px) {
+    button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
+        margin-top: 0;
     }
 }
 

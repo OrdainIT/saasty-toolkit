@@ -261,7 +261,7 @@ class OD_Brand_Slider extends Widget_Base
                 const sliderAutoplay3 = <?php echo $od_brand_slider_autoplay ? 'true' : 'false'; ?>;
 
                 // Layout-1
-                const cr_brand_slider = new Swiper(".it-brand-active", {
+                var cr_brand_slider = new Swiper(".it-brand-active", {
                     loop: true,
                     freemode: true,
                     slidesPerView: 'auto',
@@ -270,13 +270,9 @@ class OD_Brand_Slider extends Widget_Base
                     allowTouchMove: false,
                     speed: 2500,
                     autoplay: {
-                        delay: 1,
-                        disableOnInteraction: true,
-                    }
-                    // autoplay: sliderAutoplay ? {
-                    //     delay: 1,
-                    //     disableOnInteraction: true,
-                    // } : false,
+                    delay: 1,
+                    disableOnInteraction: true,
+                    },
                 });
 
                 // Layout 2
