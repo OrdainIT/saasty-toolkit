@@ -157,3 +157,9 @@ input.wpcf7-form-control {
 }
 
 
+.elementor-widget-container .cr-brand-item img {
+    border-radius: 80px;
+    box-shadow: 0 4px 10px 0 rgba(20, 50, 48, 0.1);
+}
+
+
