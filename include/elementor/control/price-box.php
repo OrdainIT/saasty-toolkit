@@ -504,6 +504,19 @@ $this->add_control(
     ]
 );
 
+// package active color
+
+$this->add_control(
+    'od_price_box_package_active_color',
+    [
+        'label' => __('Active Color', 'ordainit-toolkit'),
+        'type' => Controls_Manager::COLOR,
+        'selectors' => [
+            '{{WRAPPER}} .it-price-item.active .it-price-tag span' => 'background-color: {{VALUE}}',
+        ],
+    ]
+);
+
 // write control for package title color
 
 $this->add_control(

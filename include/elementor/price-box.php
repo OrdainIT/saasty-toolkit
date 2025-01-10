@@ -263,7 +263,7 @@ class Od_Price_Box extends Widget_Base
                                             <div class="it-price-item text-center p-relative mb-30">
                                                 <div class="it-price-tag"><span><?php echo esc_html($montlybox3['od_price_monlty_price_box_package_title']); ?></span></div>
                                                 <div class="it-price-text">
-                                                    <p><?php echo od_kses($montlybox3['od_price_monlty_price_box_description_']); ?>/p>
+                                                    <p><?php echo od_kses($montlybox3['od_price_monlty_price_box_description_']); ?></p>
                                                 </div>
                                                 <div class="cr-price-button mb-25">
                                                     <a class="cr-btn hover-2" href="<?php echo esc_html($montlybox3['od_price_monlty_price_box_button_url']); ?>"><?php echo esc_html($montlybox3['od_price_monlty_price_box_button_text']); ?></a>
