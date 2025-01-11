@@ -146,7 +146,7 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.ag-btn{
 
 .it-cta-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
    
-    top: 1.5px;
+    top: 2.9px;
 }
 
 .ss-about-funfact-item {
@@ -164,6 +164,8 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.ag-btn{
 .elementor-widget-container .it-hero-thumb img {
     max-width: 100%;
 }
+
+
 
 button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
    
@@ -183,11 +185,18 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
     top: 1.5px;
 }
 
+.elementor-widget-container .it-hero-thumb img {
+    max-width: 100%;
+}
+
 
 }
 
 
 @media only screen and (min-width: 992px) and (max-width: 1199px){
+    .elementor-widget-container .it-hero-thumb img {
+    max-width: 100%;
+}
 button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
     top: 4.5px;
 }
@@ -200,9 +209,20 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
     margin-top: 15px;
 }
 
+.elementor-widget-container .ai-service-style-2 {
+    padding: 0 !important;
+}
+
+.it-cta-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+    top: 2px;
+}
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px){
+    .elementor-widget-container .it-hero-thumb img {
+    max-width: 100%;
+}
 
     button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
     top: 5.5px;
@@ -218,6 +238,9 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
 
 
 @media only screen and (min-width: 576px) and (max-width: 767px){
+    .elementor-widget-container .it-hero-thumb img {
+    max-width: 100%;
+}
 
 header .it-header-area{
     padding: 15px 0 !important;
@@ -299,6 +322,9 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
 
 
 @media only screen and (max-width: 575px){
+    .elementor-widget-container .it-hero-thumb img {
+    max-width: 100%;
+}
 
 button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
         margin-top: 0;
@@ -309,8 +335,9 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
     top: 6px;;
 }
 
-.it-cta-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{
- padding: 14.4px 25px;
+.it-cta-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+    padding: 14.4px 25px;
+    top: 1.9px;
 }
 
 .dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{

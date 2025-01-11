@@ -94,10 +94,10 @@ if (!empty($service_slider_list) && is_array($service_slider_list)) {
 
 <!-- cta-area-start -->
 <div class="cr-cta-area it-cta-inner-style z-index-1 fix p-relative pb-120">
-    <img class="cr-cta-shape-1" src="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-4-1.png'; ?>" alt="">
+    <img class="cr-cta-shape-1" src="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/img/shap/cta-4-1.png'; ?>" alt="">
 
-    <img class="cr-cta-shape-2" src="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-4-2.png'; ?>" alt="">
-    <img class="cr-cta-shape-3" src="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/dummy/shape/cta-4-3.png'; ?>" alt="">
+    <img class="cr-cta-shape-2" src="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/img/shap/cta-4-2.png'; ?>" alt="">
+    <img class="cr-cta-shape-3" src="<?php echo ORDAINIT_TOOLKIT_ADDONS_URL . 'assets/img/shap/cta-4-3.png'; ?>" alt="">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
