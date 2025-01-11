@@ -72,71 +72,8 @@ margin-bottom: 30px;
 
  button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
     right: 6px;
-    top: 2.5px;
+    top: 2.9px;
     transform: translateY(0);
-}
-
-@media only screen and (min-width: 1400px) and (max-width: 1599px), only screen and (min-width: 1200px) and (max-width: 1399px), only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px){
-
-.elementor-widget-container .it-hero-thumb img {
-    max-width: 100%;
-}
-
-button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
-   
-    top: 4.5px;
-}
-.dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
-   
-    top: 1.5px;
-}
-
-
-
-
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px){
-
-header .it-header-area{
-    padding: 15px 0 !important;
-}
-
-button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
-    margin-top: 15px;
-}
-
-.elementor-widget-container .ma-hero-thumb img {
-    max-width: 100% !important;
-}
-
-
-.it-menu-mobile .it-megamenu-list ul li a span {
-    font-size: 16px !important;
-    color: var(--it-common-white) 16px !important;
-}
-
-.home-img-title h2 a {
-    color: #fff !important;
-}
-
-.home-img-title h2 {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-}
-
-.it-menu-mobile h2.elementor-heading-title {
-    font-size: 18px !important;
-    margin-bottom: 0;
-    padding-bottom: 14px;
-    margin-right: 0;
-    border-bottom: 1px solid rgba(255,255,255,.4);
-    color: #fff !important;
-    margin-top: 30px;
-}
-
-
 }
 
 button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
@@ -146,34 +83,7 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
     right: 7px;
 }
 
-@media (max-width: 767px) {
-    button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
-        top: 5px;
-    }
-}
 
-
-
-
-
-
-@media only screen and (min-width: 576px) and (max-width: 767px){
-    button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
-        top: 4px;
-    }
-    button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
-        margin-top: 15px;
-    }
-    .elementor-widget-container .ma-hero-thumb img {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 569px) {
-    button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
-        margin-top: 0;
-    }
-}
 
  .wpcf7-form-control-wrap input {
     width: 100%;
@@ -233,6 +143,192 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.ag-btn{
     border-radius: 80px;
     box-shadow: 0 4px 10px 0 rgba(20, 50, 48, 0.1);
 }
+
+.it-cta-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+   
+    top: 1.5px;
+}
+
+.ss-about-funfact-item {
+    text-align: center;
+}
+
+
+
+
+/* start Responsive */
+
+
+@media only screen and (min-width: 1400px) and (max-width: 1599px){
+
+.elementor-widget-container .it-hero-thumb img {
+    max-width: 100%;
+}
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+   
+    top: 4.5px;
+}
+.dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+   
+    top: 1.5px;
+}
+
+
+
+}
+@media only screen and (min-width: 1200px) and (max-width: 1399px){
+  .dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+   
+    top: 1.5px;
+}
+
+
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+    top: 4.5px;
+}
+
+.dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{
+    top:1.2px
+}
+
+.ma-hero-content button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
+    margin-top: 15px;
+}
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+
+    button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+    top: 5.5px;
+}
+
+.dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{
+    top:1.2px
+}
+
+}
+
+
+
+
+@media only screen and (min-width: 576px) and (max-width: 767px){
+
+header .it-header-area{
+    padding: 15px 0 !important;
+}
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
+    margin-top: 15px;
+}
+
+.elementor-widget-container .ma-hero-thumb img {
+    max-width: 100% !important;
+}
+
+
+.it-menu-mobile .it-megamenu-list ul li a span {
+    font-size: 16px !important;
+    color: var(--it-common-white) 16px !important;
+}
+
+.home-img-title h2 a {
+    color: #fff !important;
+}
+
+.home-img-title h2 {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+.it-menu-mobile h2.elementor-heading-title {
+    font-size: 18px !important;
+    margin-bottom: 0;
+    padding-bottom: 14px;
+    margin-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.4);
+    color: #fff !important;
+    margin-top: 30px;
+}
+
+.it-testimonial-shape-4 {
+   display: none !important;
+}
+
+ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
+        top: 5px;
+    }
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
+        top: 4px;
+    }
+button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
+        margin-top: 15px;
+    }
+.elementor-widget-container .ma-hero-thumb img {
+        max-width: 100%;
+    }
+
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
+
+    top: 3px;
+}
+
+.it-cta-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{
+ padding: 14.4px 25px;
+}
+
+.dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{
+    top:2.1px
+}
+
+
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 575px){
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
+        margin-top: 0;
+    }
+
+
+button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
+    top: 6px;;
+}
+
+.it-cta-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{
+ padding: 14.4px 25px;
+}
+
+.dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{
+    top:1.7px
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 

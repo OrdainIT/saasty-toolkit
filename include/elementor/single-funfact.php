@@ -138,7 +138,7 @@ class OD_Single_FunFact extends Widget_Base
 
         <?php else: ?>
 
-            <div class="it-fade-anim" data-fade-from="bottom" data-delay=".7">
+           
                 <div class="ss-about-funfact-item">
                     <h5><i class="purecounter"
                             data-purecounter-duration="1"
@@ -146,7 +146,7 @@ class OD_Single_FunFact extends Widget_Base
                             0</i><?php echo esc_html($od_single_funfact_suffix, 'ordainit-toolkit') ?></h5>
                     <span><?php echo od_kses($od_single_funfact_description, 'ordainit-toolkit') ?></span>
                 </div>
-            </div>
+         
 
         <?php endif; ?>
 

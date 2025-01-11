@@ -228,28 +228,71 @@ class OD_Brand_Slider extends Widget_Base
                     <div class="row">
                         <div class="col-12">
                             <div class="it-brand-wrap">
-                                <div class="swiper-container it-brand-active">
-                                    <div class="swiper-wrapper slider-transtion">
+                                <div class="brand-marquee">
+                                    <div class="brand-track">
                                         <?php foreach ($od_brand_lists as $od_brand_list):
                                             $brand_thumbnail = $od_brand_list['od_brand_list_thumbnail'];
                                         ?>
-                                            <div class="swiper-slide">
-                                                <div
-                                                    class="it-brand-item text-center text-xxl-start">
-                                                    <img
-                                                        src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit') ?>"
-                                                        alt="" />
-                                                </div>
+                                            <div class="it-brand-item">
+                                                <img src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit'); ?>" alt="" />
+                                            </div>
+                                        <?php endforeach; ?>
+
+                                        <!-- Duplicate the content for seamless scrolling -->
+                                        <?php foreach ($od_brand_lists as $od_brand_list):
+                                            $brand_thumbnail = $od_brand_list['od_brand_list_thumbnail'];
+                                        ?>
+                                            <div class="it-brand-item">
+                                                <img src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit'); ?>" alt="" />
+                                            </div>
+                                        <?php endforeach; ?>
+
+                                        <!-- Duplicate the content for seamless scrolling -->
+                                        <?php foreach ($od_brand_lists as $od_brand_list):
+                                            $brand_thumbnail = $od_brand_list['od_brand_list_thumbnail'];
+                                        ?>
+                                            <div class="it-brand-item">
+                                                <img src="<?php echo esc_url($brand_thumbnail['url'], 'ordainit-toolkit'); ?>" alt="" />
                                             </div>
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         <?php endif; ?>
+
+        <style>
+            .brand-marquee {
+                overflow: hidden;
+                white-space: nowrap;
+                width: 100%;
+            }
+
+            .brand-track {
+                animation: scrollLeft 7s linear infinite;
+            }
+
+            .it-brand-item {
+                display: inline-block;
+                margin: 0 50px;
+            }
+
+
+
+            @keyframes scrollLeft {
+                100% {
+                    transform: translateX(-50%);
+                }
+
+                0% {
+                    transform: translateX(0%);
+                }
+            }
+        </style>
 
 
 
@@ -270,8 +313,8 @@ class OD_Brand_Slider extends Widget_Base
                     allowTouchMove: false,
                     speed: 2500,
                     autoplay: {
-                    delay: 1,
-                    disableOnInteraction: true,
+                        delay: 1,
+                        disableOnInteraction: false,
                     },
                 });
 
