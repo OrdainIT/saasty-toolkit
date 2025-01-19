@@ -90,7 +90,7 @@ $this->add_control(
 $this->add_control(
     'od_single_funfact_margin',
     [
-        'label' => esc_html__('Fun Fact Padding', 'ordainit-toolkit'),
+        'label' => esc_html__('Fun Fact Margin', 'ordainit-toolkit'),
         'type' => \Elementor\Controls_Manager::DIMENSIONS,
         'size_units' => ['px', '%', 'em', 'rem', 'custom'],
         'selectors' => [
