@@ -952,30 +952,30 @@ add_action('elementor/frontend/widget/before_render', function ($widget) {
 // RTL Functions
 
 // Add an option for RTL
-function medito_add_rtl_option()
+function saasty_add_rtl_option()
 {
-    add_option('mcssa_rtl', 'off'); // Default value is 'off'
+    add_option('saasty_rtl', 'off'); // Default value is 'off'
 }
-add_action('after_switch_theme', 'medito_add_rtl_option');
+add_action('after_switch_theme', 'saasty_add_rtl_option');
 
 // Function to register the settings
 function medito_register_settings()
 {
-    register_setting('medito_options_group', 'mcssa_rtl');
+    register_setting('saasty_options_group', 'saasty_rtl');
 }
 add_action('admin_init', 'medito_register_settings');
 
 
-function mcssa_rtl_admin_page()
+function saasty_rtl_admin_page()
 {
 ?>
     <div class="wrap">
-        <h1><?php esc_html_e('RTL Settings', 'medito'); ?></h1>
+        <h1><?php esc_html_e('RTL Settings', 'ordainit-toolkit'); ?></h1>
         <form method="post" action="options.php">
-            <?php settings_fields('medito_options_group'); ?>
-            <label for="mcssa_rtl">
-                <input type="checkbox" id="mcssa_rtl" name="mcssa_rtl" value="on" <?php checked('on', get_option('mcssa_rtl')); ?> />
-                <?php esc_html_e('Enable RTL', 'medito'); ?>
+            <?php settings_fields('saasty_options_group'); ?>
+            <label for="saasty_rtl">
+                <input type="checkbox" id="saasty_rtl" name="saasty_rtl" value="on" <?php checked('on', get_option('saasty_rtl')); ?> />
+                <?php esc_html_e('Enable RTL', 'ordainit-toolkit'); ?>
             </label>
             <?php submit_button(); ?>
         </form>
@@ -983,8 +983,8 @@ function mcssa_rtl_admin_page()
 <?php
 }
 
-function medito_add_admin_menu()
+function saasty_add_admin_menu()
 {
-    add_menu_page('RTL Settings', 'RTL Settings', 'manage_options', 'mcssa_rtl', 'mcssa_rtl_admin_page');
+    add_menu_page('RTL Settings', 'RTL Settings', 'manage_options', 'saasty_rtl', 'saasty_rtl_admin_page');
 }
-add_action('admin_menu', 'medito_add_admin_menu');
+add_action('admin_menu', 'saasty_add_admin_menu');
