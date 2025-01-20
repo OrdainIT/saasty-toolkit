@@ -10,13 +10,22 @@ function od_ocdi_import_files()
 
   return array(
     array(
-      'import_file_name'           => 'Import Demo',
+      'import_file_name'           => 'Main Demo',
       'local_import_file'             => trailingslashit(get_template_directory()) . 'sample-data/contents-demo.xml',
       'local_import_widget_file' => trailingslashit(get_template_directory()) . 'sample-data/theme-widget.json',
       'local_import_customizer_file' => trailingslashit(get_template_directory()) . 'sample-data/theme-customizer.dat',
       'import_preview_image_url' => plugins_url('assets/img/demo/screenshot.png', dirname(__FILE__)),
       'import_notice'              => esc_html__('After you import this demo, you will have to click the Primary Menu From Appearance->Menu-> Primary Menu .', 'ordainit-toolkit'),
       'preview_url'                => 'https://ordainit.com/wp-theme/saasty/',
+    ),
+    array(
+      'import_file_name'           => 'RTL Demo',
+      'local_import_file'             => trailingslashit(get_template_directory()) . 'sample-data/rtl-contents-demo.xml',
+      'local_import_widget_file' => trailingslashit(get_template_directory()) . 'sample-data/rtl-theme-widget.json',
+      'local_import_customizer_file' => trailingslashit(get_template_directory()) . 'sample-data/rtl-theme-customizer.dat',
+      'import_preview_image_url' => plugins_url('assets/img/demo/screenshot.png', dirname(__FILE__)),
+      'import_notice'              => esc_html__('After you import this RTL demo, you will have to click the Primary Menu From Appearance->Menu-> Primary Menu .', 'ordainit-toolkit'),
+      'preview_url'                => 'https://ordainit.com/wp-theme/saasty-rtl/',
     ),
 
   );
