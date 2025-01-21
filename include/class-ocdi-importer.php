@@ -15,17 +15,17 @@ function od_ocdi_import_files()
       'import_preview_image_url'   => plugins_url('assets/img/demo/screenshot.png', dirname(__FILE__)),
       'import_notice'              => esc_html__('After you import this demo, you will have to click the Primary Menu From Appearance->Menu-> Primary Menu.', 'ordainit-toolkit'),
       'preview_url'                => 'https://ordainit.com/wp-theme/saasty/',
-      'site_settings_file'         => trailingslashit(get_template_directory()) . 'sample-data/site-settings.json', // Custom key for site settings
+  
     ),
     array(
       'import_file_name'           => 'RTL Demo',
-      'local_import_file'          => trailingslashit(get_template_directory()) . 'sample-data/rtl-contents-demo.xml',
-      'local_import_widget_file'   => trailingslashit(get_template_directory()) . 'sample-data/rtl-theme-widget.json',
-      'local_import_customizer_file' => trailingslashit(get_template_directory()) . 'sample-data/rtl-theme-customizer.dat',
+      'local_import_file'          => trailingslashit(get_template_directory()) . 'sample-data/rtl/rtl-contents-demo.xml',
+      'local_import_widget_file'   => trailingslashit(get_template_directory()) . 'sample-data/rtl/rtl-theme-widget.json',
+      'local_import_customizer_file' => trailingslashit(get_template_directory()) . 'sample-data/rtl/rtl-theme-customizer.dat',
       'import_preview_image_url'   => plugins_url('assets/img/demo/screenshot.png', dirname(__FILE__)),
       'import_notice'              => esc_html__('After you import this RTL demo, you will have to click the Primary Menu From Appearance->Menu-> Primary Menu.', 'ordainit-toolkit'),
       'preview_url'                => 'https://ordainit.com/wp-theme/saasty-rtl/',
-      'site_settings_file'         => trailingslashit(get_template_directory()) . 'sample-data/site-settings.json', // Custom key for site settings
+
     ),
   );
 }
@@ -90,23 +90,25 @@ function od_ocdi_after_import_setup()
     update_option('page_for_posts', $blog_page->ID);
   }
 
-  // Update Elementor settings from JSON.
-  $json_file = trailingslashit(get_template_directory()) . 'sample-data/site-settings.json';
-  if (file_exists($json_file)) {
-    $settings_data = json_decode(file_get_contents($json_file), true);
+  // Path to the demo data files
+  $demo_path = get_template_directory() . 'sample-data/';
 
-    if (is_array($settings_data)) {
-      foreach ($settings_data as $key => $value) {
-        update_option($key, $value); // Apply each setting to the database.
-      }
+  // Elementor Site Settings JSON file
+  $site_settings_file = $demo_path . 'site-settings.json';
+
+  // Check if files exist
+  if (file_exists($site_settings_file)) {
+    // Import Elementor Site Settings
+    $site_settings = file_get_contents($site_settings_file);
+    $site_settings_data = json_decode($site_settings, true);
+
+    if (!empty($site_settings_data)) {
+      // Update Elementor Site Settings in the database
+      update_option('elementor_settings', $site_settings_data);
     }
+
   }
 
-
-  // Clear theme cache (useful for Elementor or similar plugins).
-  if (function_exists('Elementor\Plugin')) {
-    \Elementor\Plugin::$instance->files_manager->clear_cache();
-  }
 }
 add_action('ocdi/after_import', 'od_ocdi_after_import_setup');
 
