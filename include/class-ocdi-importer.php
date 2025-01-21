@@ -90,24 +90,7 @@ function od_ocdi_after_import_setup()
     update_option('page_for_posts', $blog_page->ID);
   }
 
-  // Path to the demo data files
-  $demo_path = get_template_directory() . 'sample-data/';
 
-  // Elementor Site Settings JSON file
-  $site_settings_file = $demo_path . 'site-settings.json';
-
-  // Check if files exist
-  if (file_exists($site_settings_file)) {
-    // Import Elementor Site Settings
-    $site_settings = file_get_contents($site_settings_file);
-    $site_settings_data = json_decode($site_settings, true);
-
-    if (!empty($site_settings_data)) {
-      // Update Elementor Site Settings in the database
-      update_option('elementor_settings', $site_settings_data);
-    }
-
-  }
 
 }
 add_action('ocdi/after_import', 'od_ocdi_after_import_setup');
