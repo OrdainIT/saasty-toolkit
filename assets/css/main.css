@@ -216,10 +216,23 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
 .it-cta-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
     top: 2px;
 }
+header .it-header-area {
+    padding: 15px 0 !important;
+}
+
+.it-submenu.has-home-img-width h2, .it-submenu.has-home-img-width .elementor-heading-title {
+    color: #fff;
+}
+
 
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px){
+
+    header .it-header-area {
+    padding: 15px 0 !important;
+}
+
     .elementor-widget-container .it-hero-thumb img {
     max-width: 100%;
 }
@@ -342,6 +355,10 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.pg-btn.green-bg {
 
 .dt-hero-input-box button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn{
     top:1.7px
+}
+
+header .it-header-area {
+    padding: 15px 0 !important;
 }
 
 
