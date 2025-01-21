@@ -232,6 +232,9 @@ header .it-header-area {
     header .it-header-area {
     padding: 15px 0 !important;
 }
+.it-submenu.has-home-img-width h2, .it-submenu.has-home-img-width .elementor-heading-title {
+    color: #fff;
+}
 
     .elementor-widget-container .it-hero-thumb img {
     max-width: 100%;
@@ -253,6 +256,9 @@ header .it-header-area {
 @media only screen and (min-width: 576px) and (max-width: 767px){
     .elementor-widget-container .it-hero-thumb img {
     max-width: 100%;
+}
+.it-submenu.has-home-img-width h2, .it-submenu.has-home-img-width .elementor-heading-title {
+    color: #fff;
 }
 
 header .it-header-area{
@@ -337,6 +343,9 @@ button.wpcf7-form-control.wpcf7-submit.has-spinner.it-btn {
 @media only screen and (max-width: 575px){
     .elementor-widget-container .it-hero-thumb img {
     max-width: 100%;
+}
+.it-submenu.has-home-img-width h2, .it-submenu.has-home-img-width .elementor-heading-title {
+    color: #fff;
 }
 
 button.wpcf7-form-control.wpcf7-submit.has-spinner.cr-btn {
