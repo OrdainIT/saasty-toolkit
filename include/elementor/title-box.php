@@ -176,10 +176,13 @@ class OD_Title_Box extends Widget_Base
                 </span>
             <?php endif; ?>
 
+
             <?php
-            $heading_tag = esc_attr($settings['od_title_box_title_tag']);
+            $heading_tag = !empty($settings['od_title_box_title_tag']) ? esc_attr($settings['od_title_box_title_tag']) : 'h4';
             $heading_attributes = $this->get_render_attribute_string('heading_title_args');
             $heading_content = od_kses($od_heading_title, 'ordainit-toolkit');
+
+            $link_attributes = isset($link_attributes) ? $link_attributes : '';
 
             if ($link_attributes) {
                 $heading_content = '<a ' . $link_attributes . '>' . $heading_content . '</a>';
@@ -187,6 +190,7 @@ class OD_Title_Box extends Widget_Base
 
             echo "<{$heading_tag} {$heading_attributes}>{$heading_content}</{$heading_tag}>";
             ?>
+
 
             <?php if (!empty($od_title_box_description_show)): ?>
                 <?php if ($od_title_box_description_anim === 'it-text-anim'): ?>
