@@ -1,7 +1,8 @@
 <?php
 
 use Elementor\Controls_Manager;
-// Hero Contact Form
+
+//  Contact Form
 $this->start_controls_section(
     'od_contact_form',
     [

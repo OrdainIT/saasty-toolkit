@@ -15,7 +15,7 @@ function od_ocdi_import_files()
       'import_preview_image_url'   => plugins_url('assets/img/demo/screenshot.png', dirname(__FILE__)),
       'import_notice'              => esc_html__('After you import this demo, you will have to click the Primary Menu From Appearance->Menu-> Primary Menu.', 'ordainit-toolkit'),
       'preview_url'                => 'https://ordainit.com/wp-theme/saasty/',
-  
+
     ),
     array(
       'import_file_name'           => 'RTL Demo',
@@ -60,6 +60,9 @@ function od_ocdi_page($od_page_name = 'Home 01')
 }
 
 
+
+
+
 // after demo imports
 function od_ocdi_after_import_setup()
 {
@@ -91,7 +94,7 @@ function od_ocdi_after_import_setup()
   }
 
 
-
+  od_import_elementor_settings();
 }
 add_action('ocdi/after_import', 'od_ocdi_after_import_setup');
 

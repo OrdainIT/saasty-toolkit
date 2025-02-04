@@ -1,6 +1,5 @@
 <?php
 
-use Elementor\Controls_Manager;
 
 
 $this->start_controls_section(

@@ -2,6 +2,7 @@
 
 namespace ordainit_toolkit\Widgets;
 
+use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
 
 if (! defined('ABSPATH')) exit; // Exit if accessed directly
@@ -124,7 +125,26 @@ class OD_Contact_Form extends Widget_Base
      */
     protected function register_controls()
     {
-        include_once(ORDAINIT_TOOLKIT_ELEMENTS_PATH . '/control/contact-form.php');
+        //  Contact Form
+        $this->start_controls_section(
+            'od_contact_form',
+            [
+                'label' => __('Contact Form', 'ordainit-toolkit'),
+            ]
+        );
+
+        $this->add_control(
+            'od_contact_form_list',
+            [
+                'label' => esc_html__('Select Form', 'odcore'),
+                'type' => Controls_Manager::SELECT,
+                'default' => '0',
+                'options' => $this->get_od_contact_form(),
+            ]
+        );
+
+        $this->end_controls_section();
+
     }
 
     /**
